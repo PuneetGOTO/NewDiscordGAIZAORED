@@ -5,6 +5,7 @@
 </h1>
 
 <h4 align="center">多功能 Discord 機器人 | 音樂、管理、問答、直播通知、經濟系統 | 支援中英雙語</h4>
+<h5 align="center">基於 <a href="https://github.com/Cog-Creators/Red-DiscordBot">Red-DiscordBot</a> 二次開發</h5>
 
 <p align="center">
   <a href="https://www.python.org/downloads/">
@@ -146,6 +147,10 @@ redbot <實例名稱> --token <你的Token> --prefix !
 
 # 授權
 
-本項目基於 [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) 授權。
+本項目基於 [Red-DiscordBot](https://github.com/Cog-Creators/Red-DiscordBot) (Cog Creators) 二次開發，沿用 [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) 授權。
+
+原始項目版權所有 &copy; Cog Creators  
+Red 名字來源於遊戲《Transistor》(Super Giant Games) 的主角  
+Red 機器人插畫由 [Sinlaire](https://sinlaire.deviantart.com/) 創作  
 
 本項目使用了 [discord.py](https://github.com/Rapptz/discord.py) 和 [discord.ext.menus](https://github.com/Rapptz/discord-ext-menus) (MIT License)。
