@@ -1,0 +1,451 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2026-03-04 20:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 57\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/warnings/helpers.py:73
+msgid "I could not find a command from that input!"
+msgstr "我无法从该输入中找到命令！"
+
+#: redbot/cogs/warnings/helpers.py:79
+msgid "That command requires bot owner. I can't allow you to use that for an action"
+msgstr "该命令需要机器人所有者权限。我无法允许您将其用于操作"
+
+#: redbot/cogs/warnings/helpers.py:88
+msgid "Enter the command to be run when the user **exceeds the points for this action to occur.**\n"
+"**If you do not wish to have a command run, enter** `none`.\n\n"
+"Enter it exactly as you would if you were actually trying to run the command, except don't put a prefix and use `{user}` in place of any user/member arguments\n\n"
+"WARNING: The command entered will be run without regard to checks or cooldowns. Commands requiring bot owner are not allowed for security reasons.\n\n"
+"Please wait 15 seconds before entering your response."
+msgstr ""
+"请输入当用户**超出触发此操作所需的点数**时要运行的命令。\n"
+"**如果您不希望运行命令，请输入** `none`。\n\n"
+"请按照您实际运行命令的方式输入，但不要添加前缀，并在任何用户/成员参数的位置使用 `{user}`\n\n"
+"警告：输入的命令将在不考虑检查或冷却时间的情况下运行。出于安全原因，不允许使用需要机器人所有者权限的命令。\n\n"
+"请等待15秒后再输入您的回复。"
+
+#: redbot/cogs/warnings/helpers.py:101 redbot/cogs/warnings/helpers.py:145
+msgid "You may enter your response now."
+msgstr "您现在可以输入您的回复了。"
+
+#: redbot/cogs/warnings/helpers.py:130
+msgid "Enter the command to be run when the user **returns to a value below the points for this action to occur.** Please note that this is intended to be used for reversal of the action taken when the user exceeded the action's point value.\n"
+"**If you do not wish to have a command run on dropping points, enter** `none`.\n\n"
+"Enter it exactly as you would if you were actually trying to run the command, except don't put a prefix and use `{user}` in place of any user/member arguments\n\n"
+"WARNING: The command entered will be run without regard to checks or cooldowns. Commands requiring bot owner are not allowed for security reasons.\n\n"
+"Please wait 15 seconds before entering your response."
+msgstr ""
+"请输入当用户**回落到触发此操作所需的点数以下**时要运行的命令。请注意，这是用于撤销用户超出操作点数阈值时所采取的操作。\n"
+"**如果您不希望在点数回落时运行命令，请输入** `none`。\n\n"
+"请按照您实际运行命令的方式输入，但不要添加前缀，并在任何用户/成员参数的位置使用 `{user}`\n\n"
+"警告：输入的命令将在不考虑检查或冷却时间的情况下运行。出于安全原因，不允许使用需要机器人所有者权限的命令。\n\n"
+"请等待15秒后再输入您的回复。"
+
+#: redbot/cogs/warnings/warnings.py:31
+#, docstring
+msgid "Warn misbehaving users and take automated actions."
+msgstr "警告行为不当的用户并执行自动操作。"
+
+#: redbot/cogs/warnings/warnings.py:117
+#, docstring
+msgid "Manage settings for Warnings."
+msgstr "管理警告的设置。"
+
+#: redbot/cogs/warnings/warnings.py:123
+#, docstring
+msgid "Enable or disable custom reasons for a warning."
+msgstr "启用或禁用警告的自定义原因。"
+
+#: redbot/cogs/warnings/warnings.py:127
+msgid "Custom reasons have been enabled."
+msgstr "自定义原因已启用。"
+
+#: redbot/cogs/warnings/warnings.py:129
+msgid "Custom reasons have been disabled."
+msgstr "自定义原因已禁用。"
+
+#: redbot/cogs/warnings/warnings.py:134
+#, docstring
+msgid "Set whether warnings should be sent to users in DMs."
+msgstr "设置是否向用户发送私信中的警告。"
+
+#: redbot/cogs/warnings/warnings.py:137
+msgid "I will now try to send warnings to users DMs."
+msgstr "我现在将尝试向用户发送私信中的警告。"
+
+#: redbot/cogs/warnings/warnings.py:139
+msgid "Warnings will no longer be sent to users DMs."
+msgstr "警告将不再发送到用户的私信中。"
+
+#: redbot/cogs/warnings/warnings.py:144
+#, docstring
+msgid "Decide whether the name of the moderator warning a user should be included in the DM to that user when being\n"
+"        warned or self requesting their warnings."
+msgstr "决定在向用户发送警告私信或用户自己请求查看警告时，是否包含发出警告的管理员名称。"
+
+#: redbot/cogs/warnings/warnings.py:149
+msgid "I will include the name of the moderator who issued the warning when sending a DM to a user or when they self request their warnings."
+msgstr "我将包括发送给用户或他们自己请求警告时发出警告的主持人的名字。"
+
+#: redbot/cogs/warnings/warnings.py:156
+msgid "I will not include the name of the moderator who issued the warning when sending a DM to a user or when they self request their warnings."
+msgstr "当向用户发送DM或他们自己请求他们的警告时，我将不包括发出警告的主持人的名字。"
+
+#: redbot/cogs/warnings/warnings.py:169
+#, docstring
+msgid "Set the channel where warnings should be sent to.\n\n"
+"        Leave empty to use the channel `[p]warn` command was called in.\n"
+"        "
+msgstr "设置警告发送到的频道。\n\n"
+"        留空则使用调用 `[p]warn` 命令的频道。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:177
+msgid "The warn channel has been set to {channel}."
+msgstr "警告频道已设置为 {channel}。"
+
+#: redbot/cogs/warnings/warnings.py:181 redbot/cogs/warnings/warnings.py:197
+msgid "Warnings will now be sent in the channel command was used in."
+msgstr "警告现在将发送到使用命令的频道中。"
+
+#: redbot/cogs/warnings/warnings.py:186
+#, docstring
+msgid "\n"
+"        Set if warnings should be sent to a channel set with `[p]warningset warnchannel`.\n"
+"        "
+msgstr "\n"
+"        设置是否将警告发送到通过 `[p]warningset warnchannel` 设置的频道。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:194
+msgid "Warnings will now be sent to {channel}."
+msgstr "警告现在将发送到 {channel}。"
+
+#: redbot/cogs/warnings/warnings.py:199
+msgid "Toggle channel has been disabled."
+msgstr "频道切换已禁用。"
+
+#: redbot/cogs/warnings/warnings.py:204
+#, docstring
+msgid "\n"
+"        Manage the settings for `[p]mywarnings`.\n"
+"        "
+msgstr "\n"
+"        管理`[p]mywarnings`的设置。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:212
+#, docstring
+msgid "\n"
+"        Whether a member self requesting their warnings with `[p]mywarnings` should get them sent to DMs or in the current channel.\n"
+"        "
+msgstr "\n"
+"        设置成员使用 `[p]mywarnings` 自行请求查看警告时，是通过私信发送还是在当前频道显示。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:217
+msgid "I will send self requested user warnings to their DMs."
+msgstr "我将向他们的DM女士发送自己请求的用户警告"
+
+#: redbot/cogs/warnings/warnings.py:219
+msgid "I will send self requested user warnings to the current channel."
+msgstr "我将向当前频道发送自己请求的用户警告。"
+
+#: redbot/cogs/warnings/warnings.py:225
+#, docstring
+msgid "Manage automated actions for Warnings.\n\n"
+"        Actions are essentially command macros. Any command can be run\n"
+"        when the action is initially triggered, and/or when the action\n"
+"        is lifted.\n"
+"        Actions must be given a name and a points threshold. When a\n"
+"        user is warned enough so that their points go over this\n"
+"        threshold, the action will be executed.\n"
+"        "
+msgstr "管理警告的自动操作。\n\n"
+"        操作本质上是命令宏。可以在操作初始触发和/或操作解除时运行任何命令。\n"
+"        操作必须指定一个名称和点数阈值。当用户被警告的次数足够多，使其点数超过此\n"
+"        阈值时，将执行该操作。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:239
+#, docstring
+msgid "Create an automated action.\n\n"
+"        Duplicate action names are not allowed.\n"
+"        "
+msgstr "创建自动操作。\n\n"
+"        不允许重复的操作名称。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:260
+msgid "Duplicate action name found!"
+msgstr "发现重复的操作名称！"
+
+#: redbot/cogs/warnings/warnings.py:267
+msgid "Action {name} has been added."
+msgstr "操作 {name} 已添加。"
+
+#: redbot/cogs/warnings/warnings.py:272
+#, docstring
+msgid "Delete the action with the specified name."
+msgstr "删除指定名称的操作。"
+
+#: redbot/cogs/warnings/warnings.py:285
+msgid "No action named {name} exists!"
+msgstr "不存在名为 {name} 的操作！"
+
+#: redbot/cogs/warnings/warnings.py:291
+#, docstring
+msgid "Manage warning reasons.\n\n"
+"        Reasons must be given a name, description and points value. The\n"
+"        name of the reason must be given when a user is warned.\n"
+"        "
+msgstr "管理警告原因。\n\n"
+"        每个原因必须指定名称、描述和点数值。\n"
+"        警告用户时必须提供原因名称。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:303
+#, docstring
+msgid "Create a warning reason."
+msgstr "创建警告原因。"
+
+#: redbot/cogs/warnings/warnings.py:307
+msgid "*Custom* cannot be used as a reason name!"
+msgstr "*Custom* 不能用作原因名称！"
+
+#: redbot/cogs/warnings/warnings.py:317
+msgid "The new reason has been registered."
+msgstr "新原因已注册。"
+
+#: redbot/cogs/warnings/warnings.py:322
+#, docstring
+msgid "Delete a warning reason."
+msgstr "删除警告原因。"
+
+#: redbot/cogs/warnings/warnings.py:329
+msgid "That is not a registered reason name."
+msgstr "那不是已注册的原因名称。"
+
+#: redbot/cogs/warnings/warnings.py:335
+#, docstring
+msgid "List all configured reasons for Warnings."
+msgstr "列出警告的所有已配置原因。"
+
+#: redbot/cogs/warnings/warnings.py:343
+msgid "Reason: {name}"
+msgstr "原因：{name}"
+
+#: redbot/cogs/warnings/warnings.py:347 redbot/cogs/warnings/warnings.py:375
+#: redbot/cogs/warnings/warnings.py:523 redbot/cogs/warnings/warnings.py:558
+msgid "Points"
+msgstr "点数"
+
+#: redbot/cogs/warnings/warnings.py:351
+msgid "Name: {reason_name}\n"
+"Points: {points}\n"
+"Description: {description}"
+msgstr "名称：{reason_name}\n"
+"点数：{points}\n"
+"描述：{description}"
+
+#: redbot/cogs/warnings/warnings.py:358
+msgid "There are no reasons configured!"
+msgstr "没有配置任何原因！"
+
+#: redbot/cogs/warnings/warnings.py:364
+#, docstring
+msgid "List all configured automated actions for Warnings."
+msgstr "列出警告的所有已配置自动操作。"
+
+#: redbot/cogs/warnings/warnings.py:372
+msgid "Action: {name}"
+msgstr "操作：{name}"
+
+#: redbot/cogs/warnings/warnings.py:377
+msgid "Exceed command"
+msgstr "超出命令"
+
+#: redbot/cogs/warnings/warnings.py:381
+msgid "Drop command"
+msgstr "回落命令"
+
+#: redbot/cogs/warnings/warnings.py:385
+msgid "Name: {action_name}\n"
+"Points: {points}\n"
+"Exceed command: {exceed_command}\n"
+"Drop command: {drop_command}"
+msgstr "名称：{action_name}\n"
+"点数：{points}\n"
+"超出命令：{exceed_command}\n"
+"回落命令：{drop_command}"
+
+#: redbot/cogs/warnings/warnings.py:393
+msgid "There are no actions configured!"
+msgstr "没有配置任何操作！"
+
+#: redbot/cogs/warnings/warnings.py:406
+#, docstring
+msgid "Warn the user for the specified reason.\n\n"
+"        `<points>` number of points the warning should be for. If no number is supplied\n"
+"        1 point will be given. Pre-set warnings disregard this.\n"
+"        `<reason>` is reason for the warning. This can be a registered reason,\n"
+"        or a custom reason if ``[p]warningset allowcustomreasons`` is set.\n"
+"        "
+msgstr "根据指定原因警告用户。\n\n"
+"        `<points>` 警告应给予的点数。如果未提供点数，\n"
+"        将默认给予1点。预设警告忽略此参数。\n"
+"        `<reason>` 是警告的原因。可以是已注册的原因，\n"
+"        也可以是在启用了 ``[p]warningset allowcustomreasons`` 后的自定义原因。\n"
+"        "
+
+#: redbot/cogs/warnings/warnings.py:419
+msgid "User `{user}` is not in the server."
+msgstr "用户 `{user}` 不在服务器中。"
+
+#: redbot/cogs/warnings/warnings.py:425
+msgid "User `{user}` is not in the server. Would you like to ban them instead?"
+msgstr "用户 `{user}` 不在服务器中。您要改为封禁他们吗？"
+
+#: redbot/cogs/warnings/warnings.py:447
+msgid "An error occurred while trying to ban the user. Error: {error}"
+msgstr "尝试封禁用户时发生错误。错误：{error}"
+
+#: redbot/cogs/warnings/warnings.py:452
+msgid "No action taken."
+msgstr "未执行任何操作。"
+
+#: redbot/cogs/warnings/warnings.py:458
+msgid "You cannot warn yourself."
+msgstr "您不能警告自己。"
+
+#: redbot/cogs/warnings/warnings.py:460
+msgid "You cannot warn other bots."
+msgstr "您不能警告其他机器人。"
+
+#: redbot/cogs/warnings/warnings.py:462
+msgid "You cannot warn the server owner."
+msgstr "您不能警告服务器所有者。"
+
+#: redbot/cogs/warnings/warnings.py:465
+msgid "The person you're trying to warn is equal or higher than you in the discord hierarchy, you cannot warn them."
+msgstr "您尝试警告的人在Discord层级中与您平级或高于您，您无法警告他们。"
+
+#: redbot/cogs/warnings/warnings.py:475
+msgid "That is not a registered reason!"
+msgstr "那不是已注册的原因！"
+
+#: redbot/cogs/warnings/warnings.py:478
+msgid "You cannot apply negative points."
+msgstr "您不能应用负点数。"
+
+#: redbot/cogs/warnings/warnings.py:494
+msgid "Do `{prefix}warningset allowcustomreasons true` to enable custom reasons."
+msgstr "请输入 `{prefix}warningset allowcustomreasons true` 来启用自定义原因。"
+
+#: redbot/cogs/warnings/warnings.py:515 redbot/cogs/warnings/warnings.py:550
+msgid "Warning from {user}"
+msgstr "来自 {user} 的警告"
+
+#: redbot/cogs/warnings/warnings.py:517 redbot/cogs/warnings/warnings.py:552
+msgid "Warning"
+msgstr "警告"
+
+#: redbot/cogs/warnings/warnings.py:526
+msgid "You have received a warning in {guild_name}."
+msgstr "您在 {guild_name} 收到了一条警告。"
+
+#: redbot/cogs/warnings/warnings.py:536
+msgid "A warning for {user} has been issued, but I wasn't able to send them a warn message."
+msgstr "已对 {user} 发出警告，但我无法向他们发送警告消息。"
+
+#: redbot/cogs/warnings/warnings.py:564 redbot/cogs/warnings/warnings.py:573
+msgid "{user} has been warned."
+msgstr "{user} 已被警告。"
+
+#: redbot/cogs/warnings/warnings.py:579
+msgid "{reason}\n\n"
+"Use `{prefix}unwarn {user} {message}` to remove this warning."
+msgstr "{reason}\n\n"
+"使用 `{prefix}unwarn {user} {message}` 移除此警告。"
+
+#: redbot/cogs/warnings/warnings.py:582
+msgid "{description}\n"
+"Points: {points}"
+msgstr "{description}\n"
+"点数：{points}"
+
+#: redbot/cogs/warnings/warnings.py:605
+#, docstring
+msgid "List the warnings for the specified user."
+msgstr "列出指定用户的警告。"
+
+#: redbot/cogs/warnings/warnings.py:617
+msgid "That user has no warnings!"
+msgstr "该用户没有警告！"
+
+#: redbot/cogs/warnings/warnings.py:622 redbot/cogs/warnings/warnings.py:667
+msgid "Deleted Moderator"
+msgstr "已删除的管理员"
+
+#: redbot/cogs/warnings/warnings.py:624 redbot/cogs/warnings/warnings.py:672
+msgid "Unknown Moderator ({})"
+msgstr "未知管理员（{}）"
+
+#: redbot/cogs/warnings/warnings.py:627
+msgid "{num_points} point warning {reason_name} issued by {user} for {description}\n"
+msgstr "{num_points} 点警告 {reason_name}，由 {user} 发出，原因：{description}\n"
+
+#: redbot/cogs/warnings/warnings.py:638 redbot/cogs/warnings/warnings.py:687
+#: redbot/cogs/warnings/warnings.py:697
+msgid "Warnings for {user}"
+msgstr "{user} 的警告"
+
+#: redbot/cogs/warnings/warnings.py:646
+#, docstring
+msgid "List warnings for yourself."
+msgstr "列出您自己的警告。"
+
+#: redbot/cogs/warnings/warnings.py:655 redbot/cogs/warnings/warnings.py:661
+msgid "You have no warnings!"
+msgstr "您没有警告！"
+
+#: redbot/cogs/warnings/warnings.py:657 redbot/cogs/warnings/warnings.py:690
+msgid "I could not send you a DM. Do you have DMs disabled?"
+msgstr "我无法向您发送DM。您是否禁用了DM？"
+
+#: redbot/cogs/warnings/warnings.py:673
+msgid "{num_points} point warning {reason_name}"
+msgstr "{num_points} 点警告 {reason_name}"
+
+#: redbot/cogs/warnings/warnings.py:678
+msgid " issued by {user}"
+msgstr " 由 {user} 发出"
+
+#: redbot/cogs/warnings/warnings.py:679
+msgid " for {description}\n"
+msgstr "，原因：{description}\n"
+
+#: redbot/cogs/warnings/warnings.py:711
+#, docstring
+msgid "Remove a warning from a user."
+msgstr "从用户移除警告。"
+
+#: redbot/cogs/warnings/warnings.py:724
+msgid "You cannot remove warnings from yourself."
+msgstr "您不能移除自己的警告。"
+
+#: redbot/cogs/warnings/warnings.py:731
+msgid "That warning doesn't exist!"
+msgstr "该警告不存在！"

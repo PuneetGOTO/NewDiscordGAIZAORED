@@ -1,0 +1,274 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2025-03-04 22:39+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 31\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/cleanup/cleanup.py:25
+#, docstring
+msgid "This cog contains commands used for \"cleaning up\" (deleting) messages.\n\n"
+"    This is designed as a moderator tool and offers many convenient use cases.\n"
+"    All cleanup commands only apply to the channel the command is executed in.\n\n"
+"    Messages older than two weeks cannot be mass deleted.\n"
+"    This is a limitation of the API.\n"
+"    "
+msgstr ""
+"此模块包含用于"清理"（删除）消息的命令。\n\n"
+"    这是一个为管理员设计的工具，提供了许多便捷的用例。\n"
+"    所有清理命令仅作用于执行命令所在的频道。\n\n"
+"    超过两周的消息无法被批量删除。\n"
+"    这是 API 的限制。\n"
+"    "
+
+#: redbot/cogs/cleanup/cleanup.py:58
+msgid "Try a smaller number instead."
+msgstr "请尝试使用更小的数字。"
+
+#: redbot/cogs/cleanup/cleanup.py:61
+msgid "Are you sure you want to delete {number} messages?"
+msgstr "确定要删除 {number} 条消息吗？"
+
+#: redbot/cogs/cleanup/cleanup.py:75
+msgid "Cancelled."
+msgstr "已取消。"
+
+#: redbot/cogs/cleanup/cleanup.py:158
+msgid "1 message was deleted."
+msgstr "已删除 1 条消息。"
+
+#: redbot/cogs/cleanup/cleanup.py:161
+msgid "{num} messages were deleted."
+msgstr "已删除 {num} 条消息。"
+
+#: redbot/cogs/cleanup/cleanup.py:187
+#, docstring
+msgid "Base command for deleting messages."
+msgstr "删除消息的基础命令。"
+
+#: redbot/cogs/cleanup/cleanup.py:197
+#, docstring
+msgid "Delete the last X messages matching the specified text in the current channel.\n\n"
+"        Example:\n"
+"        - `[p]cleanup text \"test\" 5`\n\n"
+"        Remember to use double quotes.\n\n"
+"        **Arguments:**\n\n"
+"        - `<number>` The max number of messages to cleanup. Must be a positive integer.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"删除当前频道中最后 X 条包含指定文本的消息。\n\n"
+"        示例：\n"
+"        - `[p]cleanup text \"test\" 5`\n\n"
+"        请记得使用双引号。\n\n"
+"        **参数：**\n\n"
+"        - `<number>` 要清理的最大消息数量。必须为正整数。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:257
+#, docstring
+msgid "Delete the last X messages from a specified user in the current channel.\n\n"
+"        Examples:\n"
+"        - `[p]cleanup user @Twentysix 2`\n"
+"        - `[p]cleanup user Red 6`\n\n"
+"        **Arguments:**\n\n"
+"        - `<user>` The user whose messages are to be cleaned up.\n"
+"        - `<number>` The max number of messages to cleanup. Must be a positive integer.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"删除当前频道中指定用户的最后 X 条消息。\n\n"
+"        示例：\n"
+"        - `[p]cleanup user @Twentysix 2`\n"
+"        - `[p]cleanup user Red 6`\n\n"
+"        **参数：**\n\n"
+"        - `<user>` 要清理其消息的用户。\n"
+"        - `<number>` 要清理的最大消息数量。必须为正整数。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:327
+#, docstring
+msgid "Delete all messages after a specified message.\n\n"
+"        To get a message id, enable developer mode in Discord's\n"
+"        settings, 'appearance' tab. Then right click a message\n"
+"        and copy its id.\n"
+"        Replying to a message will cleanup all messages after it.\n\n"
+"        **Arguments:**\n\n"
+"        - `<message_id>` The id of the message to cleanup after. This message won't be deleted.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"删除指定消息之后的所有消息。\n\n"
+"        要获取消息 ID，请在 Discord 设置中的"外观"选项卡下启用开发者模式，\n"
+"        然后右键点击一条消息并复制其 ID。\n"
+"        回复一条消息将会清理该消息之后的所有消息。\n\n"
+"        **参数：**\n\n"
+"        - `<message_id>` 要从此消息之后开始清理的消息 ID。此消息不会被删除。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:348 redbot/cogs/cleanup/cleanup.py:403
+msgid "Message not found."
+msgstr "未找到消息。"
+
+#: redbot/cogs/cleanup/cleanup.py:381
+#, docstring
+msgid "Deletes X messages before the specified message.\n\n"
+"        To get a message id, enable developer mode in Discord's\n"
+"        settings, 'appearance' tab. Then right click a message\n"
+"        and copy its id.\n"
+"        Replying to a message will cleanup all messages before it.\n\n"
+"        **Arguments:**\n\n"
+"        - `<message_id>` The id of the message to cleanup before. This message won't be deleted.\n"
+"        - `<number>` The max number of messages to cleanup. Must be a positive integer.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"删除指定消息之前的 X 条消息。\n\n"
+"        要获取消息 ID，请在 Discord 设置中的"外观"选项卡下启用开发者模式，\n"
+"        然后右键点击一条消息并复制其 ID。\n"
+"        回复一条消息将会清理该消息之前的所有消息。\n\n"
+"        **参数：**\n\n"
+"        - `<message_id>` 要清理到此消息之前的消息 ID。此消息不会被删除。\n"
+"        - `<number>` 要清理的最大消息数量。必须为正整数。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:437
+#, docstring
+msgid "Delete the messages between Message One and Message Two, providing the messages IDs.\n\n"
+"        The first message ID should be the older message and the second one the newer.\n\n"
+"        Example:\n"
+"        - `[p]cleanup between 123456789123456789 987654321987654321`\n\n"
+"        **Arguments:**\n\n"
+"        - `<one>` The id of the message to cleanup after. This message won't be deleted.\n"
+"        - `<two>` The id of the message to cleanup before. This message won't be deleted.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"通过提供消息 ID 来删除消息一和消息二之间的所有消息。\n\n"
+"        第一个消息 ID 应为较早的消息，第二个应为较新的消息。\n\n"
+"        示例：\n"
+"        - `[p]cleanup between 123456789123456789 987654321987654321`\n\n"
+"        **参数：**\n\n"
+"        - `<one>` 要从此消息之后开始清理的消息 ID。此消息不会被删除。\n"
+"        - `<two>` 要清理到此消息之前的消息 ID。此消息不会被删除。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:486
+#, docstring
+msgid "Delete the last X messages in the current channel.\n\n"
+"        Example:\n"
+"        - `[p]cleanup messages 26`\n\n"
+"        **Arguments:**\n\n"
+"        - `<number>` The max number of messages to cleanup. Must be a positive integer.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"删除当前频道中的最后 X 条消息。\n\n"
+"        示例：\n"
+"        - `[p]cleanup messages 26`\n\n"
+"        **参数：**\n\n"
+"        - `<number>` 要清理的最大消息数量。必须为正整数。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:525
+#, docstring
+msgid "Clean up command messages and messages from the bot in the current channel.\n\n"
+"        Can only cleanup custom commands and alias commands if those cogs are loaded.\n\n"
+"        **Arguments:**\n\n"
+"        - `<number>` The max number of messages to cleanup. Must be a positive integer.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"清理当前频道中的命令消息和来自机器人的消息。\n\n"
+"        只有在加载了相应模块时才能清理自定义命令和别名命令。\n\n"
+"        **参数：**\n\n"
+"        - `<number>` 要清理的最大消息数量。必须为正整数。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:614
+#, docstring
+msgid "Clean up messages owned by the bot in the current channel.\n\n"
+"        By default, all messages are cleaned. If a second argument is specified,\n"
+"        it is used for pattern matching - only messages containing the given text will be deleted.\n\n"
+"        Examples:\n"
+"        - `[p]cleanup self 6`\n"
+"        - `[p]cleanup self 10 Pong`\n"
+"        - `[p]cleanup self 7 \"\" True`\n\n"
+"        **Arguments:**\n\n"
+"        - `<number>` The max number of messages to cleanup. Must be a positive integer.\n"
+"        - `<match_pattern>` The text that messages must contain to be deleted. Use \"\" to skip this.\n"
+"        - `<delete_pinned>` Whether to delete pinned messages or not. Defaults to False\n"
+"        "
+msgstr ""
+"清理当前频道中属于机器人的自身消息。\n\n"
+"        默认情况下，所有消息都会被清理。如果指定了第二个参数，\n"
+"        它将用于模式匹配——只有包含给定文本的消息才会被删除。\n\n"
+"        示例：\n"
+"        - `[p]cleanup self 6`\n"
+"        - `[p]cleanup self 10 Pong`\n"
+"        - `[p]cleanup self 7 \"\" True`\n\n"
+"        **参数：**\n\n"
+"        - `<number>` 要清理的最大消息数量。必须为正整数。\n"
+"        - `<match_pattern>` 消息必须包含的文本才能被删除。使用 \"\" 跳过此项。\n"
+"        - `<delete_pinned>` 是否删除已固定的消息。默认为 False\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:697
+#, docstring
+msgid "Deletes duplicate messages in the channel from the last X messages and keeps only one copy.\n\n"
+"        Defaults to 50.\n\n"
+"        **Arguments:**\n\n"
+"        - `<number>` The number of messages to check for duplicates. Must be a positive integer.\n"
+"        "
+msgstr ""
+"从最后 X 条消息中删除频道内的重复消息，仅保留一份副本。\n\n"
+"        默认为 50。\n\n"
+"        **参数：**\n\n"
+"        - `<number>` 要检查重复的消息数量。必须为正整数。\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:757
+#, docstring
+msgid "Manage the settings for the cleanup command."
+msgstr "管理清理命令的设置。"
+
+#: redbot/cogs/cleanup/cleanup.py:763
+#, docstring
+msgid "Toggle clean up notification settings.\n\n"
+"        When enabled, a message will be sent per cleanup, showing how many messages were deleted.\n"
+"        This message will be deleted after 5 seconds.\n"
+"        "
+msgstr ""
+"切换清理通知设置。\n\n"
+"        启用后，每次清理都会发送一条消息，显示已删除的消息数量。\n"
+"        此消息将在 5 秒后被删除。\n"
+"        "
+
+#: redbot/cogs/cleanup/cleanup.py:771
+msgid "I will no longer notify of message deletions."
+msgstr "我将不再通知消息删除。"
+
+#: redbot/cogs/cleanup/cleanup.py:774
+msgid "I will now notify of message deletions."
+msgstr "我现在将通知消息删除。"
+
+#: redbot/cogs/cleanup/converters.py:14
+msgid "{} doesn't look like a valid message ID."
+msgstr "{} 看起来不是一个有效的消息 ID。"

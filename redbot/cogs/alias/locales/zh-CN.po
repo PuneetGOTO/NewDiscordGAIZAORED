@@ -1,0 +1,195 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2025-08-09 20:56+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 8\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/alias/alias.py:35
+#, docstring
+msgid "Create aliases for commands.\n\n"
+"    Aliases are alternative names/shortcuts for commands. They\n"
+"    can act as both a lambda (storing arguments for repeated use)\n"
+"    or as simply a shortcut to saying \"x y z\".\n\n"
+"    When run, aliases will accept any additional arguments\n"
+"    and append them to the stored alias.\n"
+"    "
+msgstr "为命令创建别名。\n\n"
+"    别名是命令的替代名称/快捷方式。它们\n"
+"    既可以充当 lambda（存储参数以供重复使用），\n"
+"    也可以仅作为输入 \"x y z\" 的快捷方式。\n\n"
+"    运行时，别名将接受任何额外的参数\n"
+"    并将其追加到已存储的别名中。\n"
+"    "
+
+#: redbot/cogs/alias/alias.py:190
+msgid "Aliases:\n"
+msgstr "别名：\n"
+
+#: redbot/cogs/alias/alias.py:192
+msgid "\n\n"
+"Page {page}/{total}"
+msgstr "\n\n"
+"第 {page}/{total} 页"
+
+#: redbot/cogs/alias/alias.py:202
+#, docstring
+msgid "Manage command aliases."
+msgstr "管理命令别名。"
+
+#: redbot/cogs/alias/alias.py:207
+#, docstring
+msgid "Manage global aliases."
+msgstr "管理全局别名。"
+
+#: redbot/cogs/alias/alias.py:214
+#, docstring
+msgid "Add an alias for a command."
+msgstr "为命令添加别名。"
+
+#: redbot/cogs/alias/alias.py:219
+msgid "You attempted to create a new alias with the name {name} but that name is already a command on this bot."
+msgstr "您试图使用名称 {name} 创建新的别名，但该名称已是此机器人的命令。"
+
+#: redbot/cogs/alias/alias.py:230
+msgid "You attempted to create a new alias with the name {name} but that alias already exists."
+msgstr "您试图使用名称 {name} 创建新的别名，但该别名已存在。"
+
+#: redbot/cogs/alias/alias.py:241
+msgid "You attempted to create a new alias with the name {name} but that name is an invalid alias name. Alias names may not contain spaces."
+msgstr "您试图使用名称 {name} 创建新的别名，但该名称是无效的别名名称。别名名称不能包含空格。"
+
+#: redbot/cogs/alias/alias.py:253 redbot/cogs/alias/alias.py:312
+msgid "You attempted to create a new alias for a command that doesn't exist."
+msgstr "您试图为不存在的命令创建新的别名。"
+
+#: redbot/cogs/alias/alias.py:267
+msgid "A new alias with the trigger `{name}` has been created."
+msgstr "已创建触发词为 `{name}` 的新别名。"
+
+#: redbot/cogs/alias/alias.py:273
+#, docstring
+msgid "Add a global alias for a command."
+msgstr "为命令添加全局别名。"
+
+#: redbot/cogs/alias/alias.py:278
+msgid "You attempted to create a new global alias with the name {name} but that name is already a command on this bot."
+msgstr "您试图使用名称 {name} 创建新的全局别名，但该名称已是此机器人的命令。"
+
+#: redbot/cogs/alias/alias.py:289
+msgid "You attempted to create a new global alias with the name {name} but that alias already exists."
+msgstr "您试图使用名称 {name} 创建新的全局别名，但该别名已存在。"
+
+#: redbot/cogs/alias/alias.py:300
+msgid "You attempted to create a new global alias with the name {name} but that name is an invalid alias name. Alias names may not contain spaces."
+msgstr "您试图使用名称{name}创建新的全局别名，但该名称是无效的别名。别名不能包含空格。"
+
+#: redbot/cogs/alias/alias.py:323
+msgid "A new global alias with the trigger `{name}` has been created."
+msgstr "已经创建一个包含触发器`{name}`的全局别名。"
+
+#: redbot/cogs/alias/alias.py:332
+#, docstring
+msgid "Edit an existing alias in this server."
+msgstr "编辑此服务器中的现有别名。"
+
+#: redbot/cogs/alias/alias.py:337 redbot/cogs/alias/alias.py:372
+msgid "The alias with the name {name} does not exist."
+msgstr "名为 {name} 的别名不存在。"
+
+#: redbot/cogs/alias/alias.py:343 redbot/cogs/alias/alias.py:378
+msgid "You attempted to edit an alias to a command that doesn't exist."
+msgstr "您试图将别名编辑为不存在的命令。"
+
+#: redbot/cogs/alias/alias.py:352 redbot/cogs/alias/alias.py:385
+msgid "The alias with the trigger `{name}` has been edited successfully."
+msgstr "触发词为 `{name}` 的别名已成功编辑。"
+
+#: redbot/cogs/alias/alias.py:359 redbot/cogs/alias/alias.py:392
+msgid "Alias with the name `{name}` was not found."
+msgstr "找不到名为 `{name}` 的别名。"
+
+#: redbot/cogs/alias/alias.py:367
+#, docstring
+msgid "Edit an existing global alias."
+msgstr "编辑现有的全局别名。"
+
+#: redbot/cogs/alias/alias.py:399
+#, docstring
+msgid "Try to execute help for the base command of the alias."
+msgstr "尝试执行别名对应基础命令的帮助。"
+
+#: redbot/cogs/alias/alias.py:404
+msgid "No such alias exists."
+msgstr "不存在该别名。"
+
+#: redbot/cogs/alias/alias.py:408
+#, docstring
+msgid "Show what command the alias executes."
+msgstr "显示别名执行的命令。"
+
+#: redbot/cogs/alias/alias.py:413
+msgid "The `{alias_name}` alias will execute the command `{command}`"
+msgstr "`{alias_name}`别要名将执行命令`{command}`"
+
+#: redbot/cogs/alias/alias.py:418
+msgid "There is no alias with the name `{name}`"
+msgstr "没有名为`{name}`的别名"
+
+#: redbot/cogs/alias/alias.py:424
+#, docstring
+msgid "Delete an existing alias on this server."
+msgstr "删除此服务器中的现有别名。"
+
+#: redbot/cogs/alias/alias.py:426 redbot/cogs/alias/alias.py:458
+msgid "There are no aliases on this server."
+msgstr "在这个服务器上没有别名。"
+
+#: redbot/cogs/alias/alias.py:431 redbot/cogs/alias/alias.py:446
+msgid "Alias with the name `{name}` was successfully deleted."
+msgstr "已经成功删除名为`{name}`的别名。"
+
+#: redbot/cogs/alias/alias.py:434 redbot/cogs/alias/alias.py:449
+msgid "Alias with name `{name}` was not found."
+msgstr "找不到名为`{name}`的别名。"
+
+#: redbot/cogs/alias/alias.py:439
+#, docstring
+msgid "Delete an existing global alias."
+msgstr "删除现有的全局别名。"
+
+#: redbot/cogs/alias/alias.py:441
+msgid "There are no global aliases on this bot."
+msgstr "此机器人没有全局别名。"
+
+#: redbot/cogs/alias/alias.py:455
+#, docstring
+msgid "List the available aliases on this server."
+msgstr "列出此服务器中可用的别名。"
+
+#: redbot/cogs/alias/alias.py:464
+#, docstring
+msgid "List the available global aliases on this bot."
+msgstr "列出此机器人可用的全局别名。"
+
+#: redbot/cogs/alias/alias.py:467
+msgid "There are no global aliases."
+msgstr "没有全局别名。"
+
+#: redbot/cogs/alias/alias_entry.py:200
+msgid "Arguments must be specified with a number."
+msgstr "参数必须用数字指定。"
+
+#: redbot/cogs/alias/alias_entry.py:207
+msgid "Arguments must be sequential. Missing arguments: "
+msgstr "参数必须连续。缺少参数："

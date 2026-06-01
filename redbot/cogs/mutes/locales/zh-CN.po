@@ -1,0 +1,650 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2024-04-21 01:02+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 704\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/mutes/converters.py:57
+msgid "`{unit}` is not a valid unit of time for this command"
+msgstr "`{unit}` 不是此命令的有效时间"
+
+#: redbot/cogs/mutes/converters.py:65 redbot/cogs/mutes/mutes.py:1016
+msgid "The time provided is too long; use a more reasonable time."
+msgstr "提供的时间过长；请使用更合理的时间。"
+
+#: redbot/cogs/mutes/converters.py:68
+msgid "The time provided must not be in the past."
+msgstr "提供的时间不能是过去的时间。"
+
+#: redbot/cogs/mutes/mutes.py:34
+msgid "That user is already muted in {location}."
+msgstr "该用户在 {location} 中已被禁言。"
+
+#: redbot/cogs/mutes/mutes.py:35
+msgid "That user is not muted in {location}."
+msgstr "该用户在 {location} 中未被禁言。"
+
+#: redbot/cogs/mutes/mutes.py:36
+msgid "I cannot let you do that. You are not higher than the user in the role hierarchy."
+msgstr "我无法让您这样做。您在角色层级中不高于该用户。"
+
+#: redbot/cogs/mutes/mutes.py:39
+msgid "I cannot let you do that. You are not higher than the mute role in the role hierarchy."
+msgstr "我无法让您这样做。您在角色层级中不高于禁言角色。"
+
+#: redbot/cogs/mutes/mutes.py:42
+msgid "That user cannot be (un)muted, as they have the Administrator permission."
+msgstr "该用户无法被禁言或取消禁言，因为他们拥有管理员权限。"
+
+#: redbot/cogs/mutes/mutes.py:43
+msgid "Failed to mute or unmute user. I need the Manage Roles permission and the user I'm muting must be lower than myself in the role hierarchy."
+msgstr "禁言或取消禁言用户失败。我需要管理角色权限，并且我要禁言的用户必须在角色层级中低于我。"
+
+#: redbot/cogs/mutes/mutes.py:48
+msgid "Failed to mute or unmute user. I need the Timeout Members permission and the user I'm muting must be lower than myself in the role hierarchy."
+msgstr "禁言或取消禁言用户失败。我需要禁言成员权限，并且我要禁言的用户必须在角色层级中低于我。"
+
+#: redbot/cogs/mutes/mutes.py:53
+msgid "Failed to mute or unmute user. I need the Manage Permissions permission in {location}."
+msgstr "禁言或取消禁言用户失败。我需要在 {location} 中拥有管理权限权限。"
+
+#: redbot/cogs/mutes/mutes.py:56
+msgid "The user has left the server while applying an overwrite."
+msgstr "用户在应用覆盖时已离开服务器。"
+
+#: redbot/cogs/mutes/mutes.py:57
+msgid "The channel I tried to mute or unmute the user in isn't found."
+msgstr "我尝试在其中禁言或取消禁言用户的频道未找到。"
+
+#: redbot/cogs/mutes/mutes.py:58
+msgid "The mute role no longer exists."
+msgstr "禁言角色不再存在。"
+
+#: redbot/cogs/mutes/mutes.py:59
+msgid "Because I don't have the Move Members permission, this will take into effect when the user rejoins."
+msgstr "因为我没有移动成员权限，这将在用户重新加入时生效。"
+
+#: redbot/cogs/mutes/mutes.py:62
+msgid "Timeouts cannot be longer than 28 days."
+msgstr "禁言时长不能超过 28 天。"
+
+#: redbot/cogs/mutes/mutes.py:63
+msgid "You must provide a time for the timeout to end."
+msgstr "您必须提供禁言结束的时间。"
+
+#: redbot/cogs/mutes/mutes.py:64
+msgid "That user is channel muted in their current voice channel, not just voice muted. If you want to fully unmute this user in the channel, use {command} in their voice channel's text channel instead."
+msgstr "该用户在其当前语音频道中被频道禁言，而不仅仅是语音禁言。如果您想在此频道中完全取消禁言该用户，请改为在其语音频道的文字频道中使用 {command}。"
+
+#: redbot/cogs/mutes/mutes.py:88
+#, docstring
+msgid "\n"
+"    Mute users temporarily or indefinitely.\n"
+"    "
+msgstr "\n"
+"    临时或永久禁言用户。\n"
+"    "
+
+#: redbot/cogs/mutes/mutes.py:332 redbot/cogs/mutes/mutes.py:344
+#: redbot/cogs/mutes/mutes.py:348 redbot/cogs/mutes/mutes.py:439
+#: redbot/cogs/mutes/mutes.py:456 redbot/cogs/mutes/mutes.py:510
+#: redbot/cogs/mutes/mutes.py:530 redbot/cogs/mutes/mutes.py:535
+msgid "Automatic unmute"
+msgstr "自动取消禁言"
+
+#: redbot/cogs/mutes/mutes.py:348 redbot/cogs/mutes/mutes.py:456
+#: redbot/cogs/mutes/mutes.py:657 redbot/cogs/mutes/mutes.py:1510
+#: redbot/cogs/mutes/mutes.py:1584
+msgid "Server unmute"
+msgstr "服务器取消禁言"
+
+#: redbot/cogs/mutes/mutes.py:357
+msgid "I am unable to unmute {user} for the following reason:\n"
+"{reason}"
+msgstr "我无法取消禁言 {user}，原因如下：\n"
+"{reason}"
+
+#: redbot/cogs/mutes/mutes.py:443
+msgid "\n"
+"Unmuted in channels: "
+msgstr "\n"
+"已在以下频道中取消禁言："
+
+#: redbot/cogs/mutes/mutes.py:469
+msgid "{member} could not be unmuted for the following reasons:\n"
+msgstr "{member} 无法被取消禁言，原因如下：\n"
+
+#: redbot/cogs/mutes/mutes.py:473
+msgid "{reason} In the following channels: {channels}\n"
+msgstr "{reason} 在以下频道中：{channels}\n"
+
+#: redbot/cogs/mutes/mutes.py:519 redbot/cogs/mutes/mutes.py:734
+#: redbot/cogs/mutes/voicemutes.py:224
+msgid "Voice unmute"
+msgstr "取消语音禁言"
+
+#: redbot/cogs/mutes/mutes.py:522 redbot/cogs/mutes/mutes.py:737
+#: redbot/cogs/mutes/mutes.py:1653
+msgid "Channel unmute"
+msgstr "取消频道禁言"
+
+#: redbot/cogs/mutes/mutes.py:539
+msgid "I am unable to unmute {user} in {channel} for the following reason:\n"
+"{reason}"
+msgstr "我无法在 {channel} 中取消禁言 {user}，原因如下：\n"
+"{reason}"
+
+#: redbot/cogs/mutes/mutes.py:580
+msgid "Unknown"
+msgstr "未知"
+
+#: redbot/cogs/mutes/mutes.py:585
+msgid "No reason provided."
+msgstr "未提供原因。"
+
+#: redbot/cogs/mutes/mutes.py:595
+msgid "Until"
+msgstr "截止时间"
+
+#: redbot/cogs/mutes/mutes.py:596
+msgid "Duration"
+msgstr "时长"
+
+#: redbot/cogs/mutes/mutes.py:597
+msgid "Guild"
+msgstr "服务器"
+
+#: redbot/cogs/mutes/mutes.py:599
+msgid "Moderator"
+msgstr "执行者"
+
+#: redbot/cogs/mutes/mutes.py:607
+msgid "Moderator:"
+msgstr "执行者："
+
+#: redbot/cogs/mutes/mutes.py:609
+msgid "Until:"
+msgstr "截止时间："
+
+#: redbot/cogs/mutes/mutes.py:609
+msgid "Duration:"
+msgstr "时长："
+
+#: redbot/cogs/mutes/mutes.py:613
+msgid "Guild:"
+msgstr "服务器："
+
+#: redbot/cogs/mutes/mutes.py:652 redbot/cogs/mutes/mutes.py:657
+msgid "Manually removed mute role"
+msgstr "手动移除禁言角色"
+
+#: redbot/cogs/mutes/mutes.py:672 redbot/cogs/mutes/mutes.py:681
+msgid "Manually applied mute role"
+msgstr "手动应用禁言角色"
+
+#: redbot/cogs/mutes/mutes.py:681 redbot/cogs/mutes/mutes.py:1280
+msgid "Server mute"
+msgstr "服务器禁言"
+
+#: redbot/cogs/mutes/mutes.py:744 redbot/cogs/mutes/mutes.py:753
+msgid "Manually removed channel overwrites"
+msgstr "手动移除频道覆盖"
+
+#: redbot/cogs/mutes/mutes.py:785
+msgid "Previously muted in this server."
+msgstr "曾在此服务器中被禁言。"
+
+#: redbot/cogs/mutes/mutes.py:791
+#, docstring
+msgid "Mute settings."
+msgstr "禁言设置。"
+
+#: redbot/cogs/mutes/mutes.py:798
+#, docstring
+msgid "Set whether mute notifications should be sent to users in DMs."
+msgstr "设置是否向用户发送禁言私信通知。"
+
+#: redbot/cogs/mutes/mutes.py:801
+msgid "I will now try to send mute notifications to users DMs."
+msgstr "我现在将尝试向用户发送禁言私信通知。"
+
+#: redbot/cogs/mutes/mutes.py:803
+msgid "Mute notifications will no longer be sent to users DMs."
+msgstr "不再向用户发送禁言私信通知。"
+
+#: redbot/cogs/mutes/mutes.py:809
+#, docstring
+msgid "Decide whether the name of the moderator muting a user should be included in the DM to that user."
+msgstr "决定是否在禁言用户的私信中包含执行者的名称。"
+
+#: redbot/cogs/mutes/mutes.py:813
+msgid "I will include the name of the moderator who issued the mute when sending a DM to a user."
+msgstr "在向用户发送禁言私信时，我将包含执行者的名称。"
+
+#: redbot/cogs/mutes/mutes.py:819
+msgid "I will not include the name of the moderator who issued the mute when sending a DM to a user."
+msgstr "在向用户发送禁言私信时，我将不包含执行者的名称。"
+
+#: redbot/cogs/mutes/mutes.py:827
+#, docstring
+msgid "\n"
+"        Shows the current mute settings for this guild.\n"
+"        "
+msgstr "\n"
+"        显示此服务器的当前禁言设置。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:835
+msgid "Mute Role: {role}\n"
+"Notification Channel: {channel}\n"
+"Default Time: {time}\n"
+"Send DM: {dm}\n"
+"Show moderator: {show_mod}"
+msgstr "禁言角色：{role}\n"
+"通知频道：{channel}\n"
+"默认时间：{time}\n"
+"发送私信：{dm}\n"
+"显示执行者：{show_mod}"
+
+#: redbot/cogs/mutes/mutes.py:842 redbot/cogs/mutes/mutes.py:843
+#: redbot/cogs/mutes/mutes.py:844
+msgid "None"
+msgstr "无"
+
+#: redbot/cogs/mutes/mutes.py:859
+#, docstring
+msgid "\n"
+"        Set the notification channel for automatic unmute issues.\n\n"
+"        If no channel is provided this will be cleared and notifications\n"
+"        about issues when unmuting users will not be sent anywhere.\n"
+"        "
+msgstr "\n"
+"        设置自动取消禁言问题的通知频道。\n\n"
+"        如果未提供频道，此设置将被清除，并且关于\n"
+"        取消禁言用户时出现问题的通知将不会发送到任何地方。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:867
+msgid "Notification channel for unmute issues has been cleared."
+msgstr "取消禁言问题的通知频道已清除。"
+
+#: redbot/cogs/mutes/mutes.py:871
+msgid "I will post unmute issues in {channel}."
+msgstr "我将在 {channel} 中发布取消禁言问题。"
+
+#: redbot/cogs/mutes/mutes.py:878
+#, docstring
+msgid "Sets the role to be applied when muting a user.\n\n"
+"        If no role is setup the bot will attempt to mute a user\n"
+"        by utilizing server timeouts.\n\n"
+"        Note: If no role is setup a user may be able to leave the server\n"
+"        and rejoin no longer being muted.\n"
+"        "
+msgstr "设置禁言用户时应用的角色。\n\n"
+"        如果未设置角色，机器人将尝试通过服务器超时\n"
+"        来禁言用户。\n\n"
+"        注意：如果未设置角色，用户可能能够离开服务器\n"
+"        并重新加入后不再被禁言。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:890
+msgid "Discord Timeouts will be used for mutes instead."
+msgstr "将改用 Discord 超时来进行禁言。"
+
+#: redbot/cogs/mutes/mutes.py:894
+msgid "You can't set this role as it is not lower than you in the role hierarchy."
+msgstr "您不能设置此角色，因为它在角色层级中不低于您。"
+
+#: redbot/cogs/mutes/mutes.py:899 redbot/cogs/mutes/mutes.py:962
+msgid "Mute role set to {role}"
+msgstr "禁言角色已设置为 {role}"
+
+#: redbot/cogs/mutes/mutes.py:903 redbot/cogs/mutes/mutes.py:966
+msgid "No notification channel has been setup, use {command_1} to be updated when there's an issue in automatic unmutes."
+msgstr "尚未设置通知频道，请使用 {command_1} 以在自动取消禁言出现问题时获取更新。"
+
+#: redbot/cogs/mutes/mutes.py:914
+#, docstring
+msgid "Create a Muted role.\n\n"
+"        This will create a role and apply overwrites to all available channels\n"
+"        to more easily setup muting a user.\n\n"
+"        If you already have a muted role created on the server use\n"
+"        `[p]muteset role ROLE_NAME_HERE`\n"
+"        "
+msgstr "创建一个禁言角色。\n\n"
+"        这将创建一个角色并覆盖所有可用频道\n"
+"        以更方便地设置禁言用户。\n\n"
+"        如果您已经在服务器上创建了禁言角色，请使用\n"
+"        `[p]muteset role ROLE_NAME_HERE`\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:925
+msgid "There is already a mute role setup in this server. Please remove it with {command} before trying to create a new one."
+msgstr "此服务器中已设置禁言角色。请先使用 {command} 将其移除，然后再尝试创建新的。"
+
+#: redbot/cogs/mutes/mutes.py:944 redbot/cogs/mutes/mutes.py:990
+msgid "Mute role setup"
+msgstr "禁言角色设置"
+
+#: redbot/cogs/mutes/mutes.py:949
+msgid "I could not create a muted role in this server."
+msgstr "我无法在此服务器中创建禁言角色。"
+
+#: redbot/cogs/mutes/mutes.py:956
+msgid "I could not set overwrites for the following channels: {channels}"
+msgstr "我无法为以下频道设置覆盖：{channels}"
+
+#: redbot/cogs/mutes/mutes.py:998
+#, docstring
+msgid "\n"
+"        Set the default mute time for the mute command.\n\n"
+"        If no time interval is provided this will be cleared.\n"
+"        "
+msgstr "\n"
+"        设置禁言命令的默认禁言时间。\n\n"
+"        如果未提供时间间隔，此设置将被清除。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1006
+msgid "Default mute time removed."
+msgstr "默认禁言时间已移除。"
+
+#: redbot/cogs/mutes/mutes.py:1010
+msgid "Please provide a valid time format."
+msgstr "请提供有效的时间格式。"
+
+#: redbot/cogs/mutes/mutes.py:1020
+msgid "Default mute time set to {time}."
+msgstr "默认禁言时间已设置为 {time}。"
+
+#: redbot/cogs/mutes/mutes.py:1032
+msgid "This server does not have a mute role setup and I do not have permission to timeout users.  You can setup a mute role with {command_1} or {command_2} if you just want a basic role created setup.\n\n"
+msgstr "此服务器未设置禁言角色，并且我没有超时禁言用户的权限。您可以使用 {command_1} 或 {command_2}（如果您只想创建一个基本角色设置）来设置禁言角色。\n\n"
+
+#: redbot/cogs/mutes/mutes.py:1053
+#, docstring
+msgid "\n"
+"        Displays active mutes on this server.\n"
+"        "
+msgstr "\n"
+"        显示此服务器上的活跃禁言。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1060
+msgid "__Server Mutes__\n"
+msgstr "__服务器禁言__\n"
+
+#: redbot/cogs/mutes/mutes.py:1076 redbot/cogs/mutes/mutes.py:1087
+#: redbot/cogs/mutes/mutes.py:1108
+msgid "__Until__: {time_left}\n"
+msgstr "__截止时间__：{time_left}\n"
+
+#: redbot/cogs/mutes/mutes.py:1083
+msgid "__Server Timeouts__\n"
+msgstr "__服务器超时禁言__\n"
+
+#: redbot/cogs/mutes/mutes.py:1092
+msgid "__<#{channel_id}> Mutes__\n"
+msgstr "__<#{channel_id}> 频道禁言__\n"
+
+#: redbot/cogs/mutes/mutes.py:1121
+msgid "There are no mutes on this server right now."
+msgstr "此服务器上目前没有禁言。"
+
+#: redbot/cogs/mutes/mutes.py:1134
+#, docstring
+msgid "Timeout users.\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[time_and_reason]` is the time to timeout for and reason. Time is\n"
+"        any valid time length such as `30 minutes` or `2 days`. If nothing\n"
+"        is provided the timeout will use the set default time or give an error if not set.\n\n"
+"        Examples:\n"
+"        `[p]timeout @member1 @member2 spam 5 hours`\n"
+"        `[p]timeout @member1 3 days`\n\n"
+"        "
+msgstr "超时禁言用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[time_and_reason]` 是超时禁言的时间长度和原因。时间可以为\n"
+"        任何有效的时间长度，如 `30 分钟` 或 `2 天`。如果未提供，\n"
+"        将使用设置的默认时间，或如果未设置则报错。\n\n"
+"        示例：\n"
+"        `[p]timeout @member1 @member2 spam 5 hours`\n"
+"        `[p]timeout @member1 3 days`\n\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1149 redbot/cogs/mutes/mutes.py:1231
+#: redbot/cogs/mutes/mutes.py:1385 redbot/cogs/mutes/voicemutes.py:88
+msgid "You cannot mute me."
+msgstr "您不能禁言我。"
+
+#: redbot/cogs/mutes/mutes.py:1151 redbot/cogs/mutes/mutes.py:1233
+#: redbot/cogs/mutes/mutes.py:1387 redbot/cogs/mutes/voicemutes.py:90
+msgid "You cannot mute yourself."
+msgstr "您不能禁言自己。"
+
+#: redbot/cogs/mutes/mutes.py:1162 redbot/cogs/mutes/mutes.py:1172
+#: redbot/cogs/mutes/mutes.py:1245 redbot/cogs/mutes/mutes.py:1255
+#: redbot/cogs/mutes/mutes.py:1396 redbot/cogs/mutes/mutes.py:1406
+#: redbot/cogs/mutes/voicemutes.py:109 redbot/cogs/mutes/voicemutes.py:119
+msgid " for {length} until {duration}"
+msgstr "，时长 {length}，截止于 {duration}"
+
+#: redbot/cogs/mutes/mutes.py:1195
+msgid "{users} has been timed out in this server{time}."
+msgstr "{users} 已在此服务器中被超时禁言{time}。"
+
+#: redbot/cogs/mutes/mutes.py:1197
+msgid "{users} have been timed out in this server{time}."
+msgstr "{users} 已在此服务器中被超时禁言{time}。"
+
+#: redbot/cogs/mutes/mutes.py:1202
+msgid "None of the users provided could be muted properly."
+msgstr "所有提供的用户都无法被正确禁言。"
+
+#: redbot/cogs/mutes/mutes.py:1216
+#, docstring
+msgid "Mute users.\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[time_and_reason]` is the time to mute for and reason. Time is\n"
+"        any valid time length such as `30 minutes` or `2 days`. If nothing\n"
+"        is provided the mute will use the set default time or indefinite if not set.\n\n"
+"        Examples:\n"
+"        `[p]mute @member1 @member2 spam 5 hours`\n"
+"        `[p]mute @member1 3 days`\n\n"
+"        "
+msgstr "禁言用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[time_and_reason]` 是禁言的时间长度和原因。时间可以为\n"
+"        任何有效的时间长度，如 `30 分钟` 或 `2 天`。如果未提供，\n"
+"        将使用设置的默认时间，或如果未设置则永久禁言。\n\n"
+"        示例：\n"
+"        `[p]mute @member1 @member2 spam 5 hours`\n"
+"        `[p]mute @member1 3 days`\n\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1287
+msgid "{users} has been muted in this server{time}."
+msgstr "{users} 已在此服务器中被禁言{time}。"
+
+#: redbot/cogs/mutes/mutes.py:1289
+msgid "{users} have been muted in this server{time}."
+msgstr "{users} 已在此服务器中被禁言{time}。"
+
+#: redbot/cogs/mutes/mutes.py:1301
+msgid "{member} could not be (un)muted for the following reasons:\n"
+msgstr "{member} 无法被禁言或取消禁言，原因如下：\n"
+
+#: redbot/cogs/mutes/mutes.py:1321
+msgid "Some users could not be properly muted or unmuted. Would you like to see who, where, and why?"
+msgstr "部分用户无法被正确禁言或取消禁言。您想查看是哪些用户、在哪里以及原因吗？"
+
+#: redbot/cogs/mutes/mutes.py:1349
+msgid "OK then."
+msgstr "好的。"
+
+#: redbot/cogs/mutes/mutes.py:1371
+#, docstring
+msgid "Mute a user in the current text channel (or in the parent of the current thread).\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[time_and_reason]` is the time to mute for and reason. Time is\n"
+"        any valid time length such as `30 minutes` or `2 days`. If nothing\n"
+"        is provided the mute will use the set default time or indefinite if not set.\n\n"
+"        Examples:\n"
+"        `[p]mutechannel @member1 @member2 spam 5 hours`\n"
+"        `[p]mutechannel @member1 3 days`\n"
+"        "
+msgstr "在当前文字频道（或当前帖子的父频道）中禁言用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[time_and_reason]` 是禁言的时间长度和原因。时间可以为\n"
+"        任何有效的时间长度，如 `30 分钟` 或 `2 天`。如果未提供，\n"
+"        将使用设置的默认时间，或如果未设置则永久禁言。\n\n"
+"        示例：\n"
+"        `[p]mutechannel @member1 @member2 spam 5 hours`\n"
+"        `[p]mutechannel @member1 3 days`\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1438
+msgid "Channel mute"
+msgstr "频道禁言"
+
+#: redbot/cogs/mutes/mutes.py:1446 redbot/cogs/mutes/voicemutes.py:156
+msgid "{users} has been muted in this channel{time}."
+msgstr "{users} 已在此频道中被禁言{time}。"
+
+#: redbot/cogs/mutes/mutes.py:1448 redbot/cogs/mutes/voicemutes.py:158
+msgid "{users} have been muted in this channel{time}."
+msgstr "{users} 已在此频道中被禁言{time}。"
+
+#: redbot/cogs/mutes/mutes.py:1453
+msgid "The following users could not be muted:\n"
+msgstr "以下用户无法被禁言：\n"
+
+#: redbot/cogs/mutes/mutes.py:1468
+#, docstring
+msgid "Unmute users.\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[reason]` is the reason for the unmute.\n"
+"        "
+msgstr "取消禁言用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[reason]` 是取消禁言的原因。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1476 redbot/cogs/mutes/mutes.py:1548
+#: redbot/cogs/mutes/mutes.py:1622 redbot/cogs/mutes/voicemutes.py:184
+msgid "You cannot unmute me."
+msgstr "您不能取消禁言我。"
+
+#: redbot/cogs/mutes/mutes.py:1478 redbot/cogs/mutes/mutes.py:1550
+#: redbot/cogs/mutes/mutes.py:1624 redbot/cogs/mutes/voicemutes.py:186
+msgid "You cannot unmute yourself."
+msgstr "您不能取消禁言自己。"
+
+#: redbot/cogs/mutes/mutes.py:1523 redbot/cogs/mutes/mutes.py:1597
+msgid "{users} unmuted in this server."
+msgstr "{users} 已在此服务器中取消禁言。"
+
+#: redbot/cogs/mutes/mutes.py:1540
+#, docstring
+msgid "Force Unmute users who have had channel overwrite mutes in every channel.\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[reason]` is the reason for the unmute.\n"
+"        "
+msgstr "强制取消禁言在所有频道中拥有频道覆盖禁言的用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[reason]` 是取消禁言的原因。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1614
+#, docstring
+msgid "Unmute a user in this channel (or in the parent of this thread).\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[reason]` is the reason for the unmute.\n"
+"        "
+msgstr "在此频道（或此帖子的父频道）中取消禁言用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[reason]` 是取消禁言的原因。\n"
+"        "
+
+#: redbot/cogs/mutes/mutes.py:1663 redbot/cogs/mutes/voicemutes.py:234
+msgid "{users} unmuted in this channel."
+msgstr "{users} 已在此频道中取消禁言。"
+
+#: redbot/cogs/mutes/mutes.py:1668
+msgid "The following users could not be unmuted:\n"
+msgstr "以下用户无法被取消禁言：\n"
+
+#: redbot/cogs/mutes/mutes.py:1747
+msgid "I lack the moderate members permission."
+msgstr "我缺少管理成员权限。"
+
+#: redbot/cogs/mutes/mutes.py:1791
+msgid "I lack the timeout members permission."
+msgstr "我缺少超时禁言成员权限。"
+
+#: redbot/cogs/mutes/mutes.py:1794
+msgid "this server"
+msgstr "此服务器"
+
+#: redbot/cogs/mutes/voicemutes.py:42
+msgid "That user is not in a voice channel."
+msgstr "该用户不在语音频道中。"
+
+#: redbot/cogs/mutes/voicemutes.py:49
+msgid "I require the {perms} permission(s) in that user's channel to do that."
+msgstr "我需要在那个用户的频道中拥有 {perms} 权限才能这样做。"
+
+#: redbot/cogs/mutes/voicemutes.py:59
+msgid "You must have the {perms} permission(s) in that user's channel to use this command."
+msgstr "您必须在那个用户的频道中拥有 {perms} 权限才能使用此命令。"
+
+#: redbot/cogs/mutes/voicemutes.py:75
+#, docstring
+msgid "Mute a user in their current voice channel.\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[time_and_reason]` is the time to mute for and reason. Time is\n"
+"        any valid time length such as `30 minutes` or `2 days`. If nothing\n"
+"        is provided the mute will use the set default time or indefinite if not set.\n\n"
+"        Examples:\n"
+"        `[p]voicemute @member1 @member2 spam 5 hours`\n"
+"        `[p]voicemute @member1 3 days`"
+msgstr "在用户当前的语音频道中禁言用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[time_and_reason]` 是禁言的时间长度和原因。时间可以为\n"
+"        任何有效的时间长度，如 `30 分钟` 或 `2 天`。如果未提供，\n"
+"        将使用设置的默认时间，或如果未设置则永久禁言。\n\n"
+"        示例：\n"
+"        `[p]voicemute @member1 @member2 spam 5 hours`\n"
+"        `[p]voicemute @member1 3 days`"
+
+#: redbot/cogs/mutes/voicemutes.py:148
+msgid "Voice mute"
+msgstr "语音禁言"
+
+#: redbot/cogs/mutes/voicemutes.py:163
+msgid "The following users could not be muted\n"
+msgstr "以下用户无法被禁言\n"
+
+#: redbot/cogs/mutes/voicemutes.py:177
+#, docstring
+msgid "Unmute a user in their current voice channel.\n\n"
+"        `<users...>` is a space separated list of usernames, ID's, or mentions.\n"
+"        `[reason]` is the reason for the unmute."
+msgstr "在用户当前的语音频道中取消禁言用户。\n\n"
+"        `<users...>` 是以空格分隔的用户名、ID 或提及列表。\n"
+"        `[reason]` 是取消禁言的原因。"
+
+#: redbot/cogs/mutes/voicemutes.py:239
+msgid "The following users could not be unmuted\n"
+msgstr "以下用户无法被取消禁言\n"

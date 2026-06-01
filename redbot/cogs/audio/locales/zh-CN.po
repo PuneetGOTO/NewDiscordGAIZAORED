@@ -1,0 +1,76 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2023-06-14 02:57+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 51\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/audio/converters.py:35
+msgid "\n"
+"Scope must be a valid version of one of the following:\n"
+"​ ​ ​ ​ Global\n"
+"​ ​ ​ ​ Guild\n"
+"​ ​ ​ ​ User\n"
+msgstr "\n范围必须是以下之一的有效版本：\n​ ​ ​ ​ 全局\n​ ​ ​ ​ 服务器\n​ ​ ​ ​ 用户\n"
+
+#: redbot/cogs/audio/converters.py:43
+msgid "\n"
+"Author must be a valid version of one of the following:\n"
+"​ ​ ​ ​ User ID\n"
+"​ ​ ​ ​ User Mention\n"
+"​ ​ ​ ​ User Name#123\n"
+msgstr "\n作者必须是以下之一的有效版本：\n​ ​ ​ ​ 用户ID\n​ ​ ​ ​ 用户提及\n​ ​ ​ ​ 用户名#123\n"
+
+#: redbot/cogs/audio/converters.py:51
+msgid "\n"
+"Guild must be a valid version of one of the following:\n"
+"​ ​ ​ ​ Guild ID\n"
+"​ ​ ​ ​ Exact guild name\n"
+msgstr "\n服务器必须是以下之一的有效版本：\n​ ​ ​ ​ 服务器ID\n​ ​ ​ ​ 精确服务器名称\n"
+
+#: redbot/cogs/audio/converters.py:87
+msgid "\"{arg}\" was not found. It must be the ID or complete name of a server which the bot can see."
+msgstr "\"{arg}\" 未找到。它必须是机器人所能看到的服务器的ID或完整名称。"
+
+#: redbot/cogs/audio/converters.py:96 redbot/cogs/audio/converters.py:138
+msgid "\"{arg}\" does not refer to a unique server. Please use the ID for the server you're trying to specify."
+msgstr "\"{arg}\" 未引用唯一服务器。请使用您要指定的服务器的ID。"
+
+#: redbot/cogs/audio/converters.py:129
+msgid "\"{arg}\" was not found. It must be the ID or name or mention a user which the bot can see."
+msgstr "\"{arg}\" 未找到。它必须是机器人所能看到的用户的ID、名称或提及。"
+
+#: redbot/cogs/audio/converters.py:178
+msgid "Could not match '{}' to a playlist."
+msgstr "无法将 '{}' 与播放列表匹配。"
+
+#: redbot/cogs/audio/converters.py:242 redbot/cogs/audio/converters.py:264
+#: redbot/cogs/audio/converters.py:284 redbot/cogs/audio/converters.py:368
+#: redbot/cogs/audio/converters.py:380 redbot/cogs/audio/converters.py:405
+#: redbot/cogs/audio/converters.py:431 redbot/cogs/audio/converters.py:453
+#: redbot/cogs/audio/converters.py:480
+msgid "Nothing"
+msgstr "无"
+
+#: redbot/cogs/audio/converters.py:262
+msgid "You cannot use `--guild`"
+msgstr "你不能使用 `--guild`"
+
+#: redbot/cogs/audio/converters.py:402
+msgid "You cannot use `--to-server`"
+msgstr "你不能使用 `--to-server`"
+
+#: redbot/cogs/audio/converters.py:428
+msgid "You cannot use `--from-server`"
+msgstr "你不能使用 `--from-server`"
+

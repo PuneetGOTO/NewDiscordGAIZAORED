@@ -1,0 +1,626 @@
+﻿msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2024-10-29 17:58+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 45\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/trivia/checks.py:13 redbot/cogs/trivia/trivia.py:386
+msgid "There is no ongoing trivia session in this channel."
+msgstr "此频道中没有正在进行的问答游戏会话。"
+
+#: redbot/cogs/trivia/converters.py:18
+msgid "`{arg}` is not a number."
+msgstr "`{arg}` 不是数字。"
+
+#: redbot/cogs/trivia/converters.py:20
+msgid "`{arg}` is not a finite number."
+msgstr "`{arg}` 不是有限数字。"
+
+#: redbot/cogs/trivia/schema.py:34
+msgid "The trivia list does not contain any questions."
+msgstr "问答游戏列表不包含任何问题。"
+
+#: redbot/cogs/trivia/schema.py:39
+msgid "{key} key must be a text value."
+msgstr "{key} 键必须是文本值。"
+
+#: redbot/cogs/trivia/schema.py:43
+msgid "{key} key must be a text value not longer than 1000 characters."
+msgstr "{key} 键必须是文本值，且长度不超过1000个字符。"
+
+#: redbot/cogs/trivia/schema.py:48
+msgid "{key} key must be a text value not longer than 200 characters."
+msgstr "{key} 键必须是文本值，且长度不超过200个字符。"
+
+#: redbot/cogs/trivia/schema.py:55
+msgid "{key} key in {parent_key} must be a positive integer."
+msgstr "{parent_key} 中的 {key} 键必须是正整数。"
+
+#: redbot/cogs/trivia/schema.py:60
+msgid "{key} key in {parent_key} must be a positive number."
+msgstr "{parent_key} 中的 {key} 键必须是正数。"
+
+#: redbot/cogs/trivia/schema.py:65
+msgid "{key} key in {parent_key} must be a positive number greater than or equal to 4."
+msgstr "{parent_key} 中的 {key} 键必须是大于等于4的正数。"
+
+#: redbot/cogs/trivia/schema.py:71 redbot/cogs/trivia/schema.py:74
+#: redbot/cogs/trivia/schema.py:82
+msgid "{key} key in {parent_key} must be either true or false."
+msgstr "{parent_key} 中的 {key} 键必须为 true 或 false。"
+
+#: redbot/cogs/trivia/schema.py:79
+msgid "{key} key in {parent_key} must be a non-negative number."
+msgstr "{parent_key} 中的 {key} 键必须是非负数。"
+
+#: redbot/cogs/trivia/schema.py:88
+msgid "{key} is not a key that can be specified in {parent_key}."
+msgstr "{key} 不是可以在 {parent_key} 中指定的键。"
+
+#: redbot/cogs/trivia/schema.py:91
+msgid "{key} should be a 'key: value' mapping."
+msgstr "{key} 应为"键: 值"的映射格式。"
+
+#: redbot/cogs/trivia/schema.py:95
+msgid "Value of question {key} is not a list of text values (answers)."
+msgstr "问题 {key} 的值不是文本值（答案）列表。"
+
+#: redbot/cogs/trivia/schema.py:101
+msgid "A key of question {key} is not a text value."
+msgstr "问题 {key} 的键不是文本值。"
+
+#: redbot/cogs/trivia/schema.py:104
+msgid "A trivia list should be a 'key: value' mapping."
+msgstr "问答游戏列表应为"键: 值"的映射格式。"
+
+#: redbot/cogs/trivia/session.py:21
+msgid "I know this one! {answer}!"
+msgstr "我知道这个！ {answer}！"
+
+#: redbot/cogs/trivia/session.py:22
+msgid "Easy: {answer}."
+msgstr "简单：{answer}"
+
+#: redbot/cogs/trivia/session.py:23
+msgid "Oh really? It's {answer} of course."
+msgstr "真的？当然是 {answer}"
+
+#: redbot/cogs/trivia/session.py:27
+msgid "I know this one! ||{answer}!||"
+msgstr "我知道这个! ||{answer}!||"
+
+#: redbot/cogs/trivia/session.py:28
+msgid "Easy: ||{answer}.||"
+msgstr "简单：||{answer}.||"
+
+#: redbot/cogs/trivia/session.py:29
+msgid "Oh really? It's ||{answer}|| of course."
+msgstr "真的？当然是 ||{answer}||"
+
+#: redbot/cogs/trivia/session.py:33
+msgid "To the next one I guess..."
+msgstr "继续下一题吧..."
+
+#: redbot/cogs/trivia/session.py:34
+msgid "Moving on..."
+msgstr "继续。。。"
+
+#: redbot/cogs/trivia/session.py:35
+msgid "I'm sure you'll know the answer of the next one."
+msgstr "我相信下一题你一定会。"
+
+#: redbot/cogs/trivia/session.py:36
+msgid "😔 Next one."
+msgstr "😔 下一个"
+
+#: redbot/cogs/trivia/session.py:122
+msgid "An unexpected error occurred in the trivia session."
+msgstr "问答游戏会话中发生了意外错误。"
+
+#: redbot/cogs/trivia/session.py:124
+msgid "An unexpected error occurred in the trivia session.\n"
+"Check your console or logs for details."
+msgstr "问答游戏会话中发生了意外错误。\n"
+"请检查控制台或日志以获取详细信息。"
+
+#: redbot/cogs/trivia/session.py:144
+msgid "Question number {num}!"
+msgstr "第 {num} 题！"
+
+#: redbot/cogs/trivia/session.py:153
+msgid "There are no more questions!"
+msgstr "没有更多问题了！"
+
+#: redbot/cogs/trivia/session.py:161
+msgid "{trivia_list} (by {author})"
+msgstr "{trivia_list}（作者：{author}）"
+
+#: redbot/cogs/trivia/session.py:166
+msgid "Starting Trivia: {list_names}"
+msgstr "开始问答游戏：{list_names}"
+
+#: redbot/cogs/trivia/session.py:212
+msgid "Guys...? Well, I guess I'll stop then."
+msgstr "各位...？那好吧，我就此结束。"
+
+#: redbot/cogs/trivia/session.py:223
+msgid " **+1** for me!"
+msgstr " **+1** 加给我！"
+
+#: redbot/cogs/trivia/session.py:228
+msgid "You got it {user}! **+1** to you!"
+msgstr "{user} 答对了！**+1** 给你！"
+
+#: redbot/cogs/trivia/session.py:334
+msgid "Congratulations {users}! You have each received {num} {currency} for winning!"
+msgstr "恭喜 {users}！你们每人获得了 {num} {currency} 作为获胜奖励！"
+
+#: redbot/cogs/trivia/session.py:342
+msgid "Congratulations {user}! You have received {num} {currency} for winning!"
+msgstr "恭喜 {user}！你获得了 {num} {currency} 作为获胜奖励！"
+
+#: redbot/cogs/trivia/trivia.py:44
+msgid "Yes"
+msgstr "是"
+
+#: redbot/cogs/trivia/trivia.py:46
+msgid "No"
+msgstr "否"
+
+#: redbot/cogs/trivia/trivia.py:50
+msgid "{seconds} seconds"
+msgstr "{seconds} 秒"
+
+#: redbot/cogs/trivia/trivia.py:56
+msgid "Bot gains points"
+msgstr "机器人获得分数"
+
+#: redbot/cogs/trivia/trivia.py:57
+msgid "Answer time limit"
+msgstr "回答时间限制"
+
+#: redbot/cogs/trivia/trivia.py:58
+msgid "Lack of response timeout"
+msgstr "无响应超时"
+
+#: redbot/cogs/trivia/trivia.py:59
+msgid "Points to win"
+msgstr "获胜所需分数"
+
+#: redbot/cogs/trivia/trivia.py:60
+msgid "Answers are revealed on timeout"
+msgstr "超时时显示答案"
+
+#: redbot/cogs/trivia/trivia.py:61
+msgid "Payout multiplier"
+msgstr "奖励倍率"
+
+#: redbot/cogs/trivia/trivia.py:62
+msgid "Lists are allowed to override settings"
+msgstr "允许列表覆盖设置"
+
+#: redbot/cogs/trivia/trivia.py:63
+msgid "Answers use spoilers"
+msgstr "使用剧透隐藏答案"
+
+#: redbot/cogs/trivia/trivia.py:75
+#, docstring
+msgid "Play trivia with friends!"
+msgstr "与朋友一起玩问答游戏！"
+
+#: redbot/cogs/trivia/trivia.py:115
+#, docstring
+msgid "Manage Trivia settings."
+msgstr "管理问答游戏设置。"
+
+#: redbot/cogs/trivia/trivia.py:119
+#, docstring
+msgid "Show the current trivia settings."
+msgstr "显示当前问答游戏设置。"
+
+#: redbot/cogs/trivia/trivia.py:121
+msgid "Current settings:\n\n"
+msgstr "当前设置：\n\n"
+
+#: redbot/cogs/trivia/trivia.py:126
+#, docstring
+msgid "Set the total points required to win."
+msgstr "设置获胜所需的总分数。"
+
+#: redbot/cogs/trivia/trivia.py:128
+msgid "Score must be greater than 0."
+msgstr "分数必须大于0。"
+
+#: redbot/cogs/trivia/trivia.py:132
+msgid "Done. Points required to win set to {num}."
+msgstr "完成。获胜所需分数已设置为 {num}。"
+
+#: redbot/cogs/trivia/trivia.py:136
+#, docstring
+msgid "Set the maximum seconds permitted to answer a question."
+msgstr "设置回答每道问题的最长秒数。"
+
+#: redbot/cogs/trivia/trivia.py:138
+msgid "Must be at least 4 seconds."
+msgstr "必须至少4秒。"
+
+#: redbot/cogs/trivia/trivia.py:142
+msgid "Done. Maximum seconds to answer set to {num}."
+msgstr "完成。回答时间上限已设置为 {num} 秒。"
+
+#: redbot/cogs/trivia/trivia.py:146
+#, docstring
+msgid "Set how long until trivia stops due to no response."
+msgstr "设置无人响应时问答游戏的超时时间。"
+
+#: redbot/cogs/trivia/trivia.py:149
+msgid "Must be larger than the answer time limit."
+msgstr "必须大于回答时间限制。"
+
+#: redbot/cogs/trivia/trivia.py:153
+msgid "Done. Trivia sessions will now time out after {num} seconds of no responses."
+msgstr "完成。问答游戏会话将在 {num} 秒无响应后超时。"
+
+#: redbot/cogs/trivia/trivia.py:160
+#, docstring
+msgid "Allow/disallow trivia lists to override settings."
+msgstr "允许/禁止问答游戏列表覆盖设置。"
+
+#: redbot/cogs/trivia/trivia.py:165
+msgid "Done. Trivia lists can now override the trivia settings for this server."
+msgstr "完成。问答游戏列表现在可以覆盖此服务器的问答游戏设置。"
+
+#: redbot/cogs/trivia/trivia.py:169
+msgid "Done. Trivia lists can no longer override the trivia settings for this server."
+msgstr "完成。问答游戏列表不能再覆盖此服务器的问答游戏设置。"
+
+#: redbot/cogs/trivia/trivia.py:177
+#, docstring
+msgid "Set if bot will display the answers in spoilers.\n\n"
+"        If enabled, the bot will use spoilers to hide answers.\n"
+"        "
+msgstr "设置机器人是否以剧透形式显示答案。\n\n"
+"        如果启用，机器人将使用剧透来隐藏答案。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:184
+msgid "Done. I'll put the answers in spoilers next time."
+msgstr "完成。下次我会用剧透格式显示答案。"
+
+#: redbot/cogs/trivia/trivia.py:186
+msgid "Alright, I won't use spoilers to hide answers anymore."
+msgstr "好的，我不会再用剧透隐藏答案了。"
+
+#: redbot/cogs/trivia/trivia.py:190
+#, docstring
+msgid "Set whether or not the bot gains points.\n\n"
+"        If enabled, the bot will gain a point if no one guesses correctly.\n"
+"        "
+msgstr "设置机器人是否获得分数。\n\n"
+"        如果启用，当无人猜对时机器人将获得一分。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:197
+msgid "Done. I'll now gain a point if users don't answer in time."
+msgstr "完成。现在如果用户未能及时回答，我将获得一分。"
+
+#: redbot/cogs/trivia/trivia.py:199
+msgid "Alright, I won't embarrass you at trivia anymore."
+msgstr "好的，我不会再在问答游戏中让你们难堪了。"
+
+#: redbot/cogs/trivia/trivia.py:203
+#, docstring
+msgid "Set whether or not the answer is revealed.\n\n"
+"        If enabled, the bot will reveal the answer if no one guesses correctly\n"
+"        in time.\n"
+"        "
+msgstr "设置是否显示答案。\n\n"
+"        如果启用，当无人及时猜对时，机器人将显示答案。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:211
+msgid "Done. I'll reveal the answer if no one knows it."
+msgstr "完成。如果没人知道答案，我会显示出来。"
+
+#: redbot/cogs/trivia/trivia.py:213
+msgid "Alright, I won't reveal the answer to the questions anymore."
+msgstr "好的，我不会再显示答案了。"
+
+#: redbot/cogs/trivia/trivia.py:219
+#, docstring
+msgid "Set the payout multiplier.\n\n"
+"        This can be any positive decimal number. If a user wins trivia when at\n"
+"        least 3 members are playing, they will receive credits. Set to 0 to\n"
+"        disable.\n\n"
+"        The number of credits is determined by multiplying their total score by\n"
+"        this multiplier.\n"
+"        "
+msgstr "设置奖励倍率。\n\n"
+"        可以是任何正小数。如果用户在有至少3名成员参与时赢得问答游戏，\n"
+"        他们将获得积分。设置为0可禁用。\n\n"
+"        积分数量由他们的总分乘以此倍率决定。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:230
+msgid "Multiplier must be at least 0."
+msgstr "倍率必须至少为0。"
+
+#: redbot/cogs/trivia/trivia.py:234
+msgid "Done. Payout multiplier set to {num}."
+msgstr "完成。奖励倍率已设置为 {num}。"
+
+#: redbot/cogs/trivia/trivia.py:236
+msgid "Done. I will no longer reward the winner with a payout."
+msgstr "完成。我将不再向获胜者发放奖励。"
+
+#: redbot/cogs/trivia/trivia.py:241
+#, docstring
+msgid "Manage Custom Trivia lists."
+msgstr "管理自定义问答游戏列表。"
+
+#: redbot/cogs/trivia/trivia.py:246
+#, docstring
+msgid "List uploaded custom trivia."
+msgstr "列出已上传的自定义问答游戏列表。"
+
+#: redbot/cogs/trivia/trivia.py:248
+msgid "No custom Trivia lists uploaded."
+msgstr "没有上传自定义问答游戏列表。"
+
+#: redbot/cogs/trivia/trivia.py:264 redbot/cogs/trivia/trivia.py:271
+msgid "Uploaded trivia lists"
+msgstr "已上传的问答游戏列表"
+
+#: redbot/cogs/trivia/trivia.py:281
+#, docstring
+msgid "Upload a trivia file."
+msgstr "上传问答游戏文件。"
+
+#: redbot/cogs/trivia/trivia.py:283
+msgid "Supply a file with next message or type anything to cancel."
+msgstr "在下一条消息中提供文件，或输入任意内容取消。"
+
+#: redbot/cogs/trivia/trivia.py:289
+msgid "You took too long to upload a list."
+msgstr "上传列表耗时过长。"
+
+#: redbot/cogs/trivia/trivia.py:292
+msgid "You have cancelled the upload process."
+msgstr "你已取消上传流程。"
+
+#: redbot/cogs/trivia/trivia.py:300
+msgid "Invalid syntax:\n"
+msgstr "无效语法：\n"
+
+#: redbot/cogs/trivia/trivia.py:303
+msgid "There was an error parsing the trivia list. See logs for more info."
+msgstr "解析问答游戏列表时出错。请查看日志获取更多信息。"
+
+#: redbot/cogs/trivia/trivia.py:308
+msgid "The custom trivia list was not saved. The file does not follow the proper data format.\n"
+"{schema_error}"
+msgstr "自定义问答游戏列表未保存。文件不符合正确的数据格式。\n"
+"{schema_error}"
+
+#: redbot/cogs/trivia/trivia.py:317
+#, docstring
+msgid "Delete a trivia file."
+msgstr "删除问答游戏文件。"
+
+#: redbot/cogs/trivia/trivia.py:321
+msgid "Trivia {filename} was deleted."
+msgstr "问答游戏 {filename} 已删除。"
+
+#: redbot/cogs/trivia/trivia.py:323
+msgid "Trivia file was not found."
+msgstr "未找到问答游戏文件。"
+
+#: redbot/cogs/trivia/trivia.py:328
+#, docstring
+msgid "Start trivia session on the specified category.\n\n"
+"        You may list multiple categories, in which case the trivia will involve\n"
+"        questions from all of them.\n"
+"        "
+msgstr "在指定类别上开始问答游戏会话。\n\n"
+"        你可以列出多个类别，届时问答游戏将涉及\n"
+"        所有类别中的问题。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:336
+msgid "There is already an ongoing trivia session in this channel."
+msgstr "此频道中已有一个正在进行的问答游戏会话。"
+
+#: redbot/cogs/trivia/trivia.py:347
+msgid "Invalid category `{name}`. See `{prefix}trivia list` for a list of trivia categories."
+msgstr "无效类别 `{name}`。请查看 `{prefix}trivia list` 获取问答游戏类别列表。"
+
+#: redbot/cogs/trivia/trivia.py:354
+msgid "There was an error parsing the trivia list for the `{name}` category. It may be formatted incorrectly."
+msgstr "解析 `{name}` 类别的问答游戏列表时出错。可能格式不正确。"
+
+#: redbot/cogs/trivia/trivia.py:369
+msgid "The trivia list was parsed successfully, however it appears to be empty!"
+msgstr "问答游戏列表解析成功，但似乎是空的！"
+
+#: redbot/cogs/trivia/trivia.py:383
+#, docstring
+msgid "Stop an ongoing trivia session."
+msgstr "停止正在进行的问答游戏会话。"
+
+#: redbot/cogs/trivia/trivia.py:390
+msgid "Trivia stopped."
+msgstr "问答游戏已停止。"
+
+#: redbot/cogs/trivia/trivia.py:394
+#, docstring
+msgid "List available trivia categories."
+msgstr "列出可用的问答游戏类别。"
+
+#: redbot/cogs/trivia/trivia.py:399 redbot/cogs/trivia/trivia.py:405
+msgid "Available trivia lists"
+msgstr "可用的问答游戏列表"
+
+#: redbot/cogs/trivia/trivia.py:413
+#, docstring
+msgid "Get information about a trivia category."
+msgstr "获取问答游戏类别的信息。"
+
+#: redbot/cogs/trivia/trivia.py:418
+msgid "Category {name} does not exist. See {command} for the list of available trivia categories."
+msgstr "类别 {name} 不存在。请查看 {command} 获取可用问答游戏类别列表。"
+
+#: redbot/cogs/trivia/trivia.py:425
+msgid "There was an error parsing the trivia list for the {name} category. It may be formatted incorrectly."
+msgstr "解析 {name} 类别的问答游戏列表时出错。可能格式不正确。"
+
+#: redbot/cogs/trivia/trivia.py:434
+msgid "\"{category}\" Category Details"
+msgstr ""{category}" 类别详情"
+
+#: redbot/cogs/trivia/trivia.py:438
+msgid "Authors"
+msgstr "作者"
+
+#: redbot/cogs/trivia/trivia.py:438
+msgid "Not provided."
+msgstr "未提供。"
+
+#: redbot/cogs/trivia/trivia.py:440
+msgid "Question count"
+msgstr "问题数量"
+
+#: redbot/cogs/trivia/trivia.py:442
+msgid "Custom"
+msgstr "自定义"
+
+#: redbot/cogs/trivia/trivia.py:448
+msgid "Description"
+msgstr "描述"
+
+#: redbot/cogs/trivia/trivia.py:451
+msgid "No description provided for this category."
+msgstr "此类别未提供描述。"
+
+#: redbot/cogs/trivia/trivia.py:458
+msgid "Config"
+msgstr "配置"
+
+#: redbot/cogs/trivia/trivia.py:468
+#, docstring
+msgid "Leaderboard for trivia.\n\n"
+"        Defaults to the top 10 of this server, sorted by total wins. Use\n"
+"        subcommands for a more customised leaderboard.\n"
+"        "
+msgstr "问答游戏排行榜。\n\n"
+"        默认显示本服务器前10名，按总获胜次数排序。使用\n"
+"        子命令可进一步定制排行榜。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:483
+#, docstring
+msgid "Leaderboard for this server.\n\n"
+"        `<sort_by>` can be any of the following fields:\n"
+"         - `wins`  : total wins\n"
+"         - `avg`   : average score\n"
+"         - `total` : total correct answers\n"
+"         - `games` : total games played\n\n"
+"        `<top>` is the number of ranks to show on the leaderboard.\n"
+"        "
+msgstr "本服务器排行榜。\n\n"
+"        `<sort_by>` 可以是以下任意字段：\n"
+"         - `wins`  : 总获胜次数\n"
+"         - `avg`   : 平均分数\n"
+"         - `total` : 总正确回答数\n"
+"         - `games` : 总游戏次数\n\n"
+"        `<top>` 是排行榜上显示的排名数量。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:496 redbot/cogs/trivia/trivia.py:525
+msgid "Unknown field `{field_name}`, see `{prefix}help trivia leaderboard server` for valid fields to sort by."
+msgstr "未知字段 `{field_name}`，请查看 `{prefix}help trivia leaderboard server` 获取有效的排序字段。"
+
+#: redbot/cogs/trivia/trivia.py:512
+#, docstring
+msgid "Global trivia leaderboard.\n\n"
+"        `<sort_by>` can be any of the following fields:\n"
+"         - `wins`  : total wins\n"
+"         - `avg`   : average score\n"
+"         - `total` : total correct answers from all sessions\n"
+"         - `games` : total games played\n\n"
+"        `<top>` is the number of ranks to show on the leaderboard.\n"
+"        "
+msgstr "全局问答游戏排行榜。\n\n"
+"        `<sort_by>` 可以是以下任意字段：\n"
+"         - `wins`  : 总获胜次数\n"
+"         - `avg`   : 平均分数\n"
+"         - `total` : 所有会话的总正确回答数\n"
+"         - `games` : 总游戏次数\n\n"
+"        `<top>` 是排行榜上显示的排名数量。\n"
+"        "
+
+#: redbot/cogs/trivia/trivia.py:580
+msgid "There are no scores on record!"
+msgstr "没有任何分数记录！"
+
+#: redbot/cogs/trivia/trivia.py:610
+msgid "Rank"
+msgstr "排名"
+
+#: redbot/cogs/trivia/trivia.py:611
+msgid "Member"
+msgstr "成员"
+
+#: redbot/cogs/trivia/trivia.py:612
+msgid "Wins"
+msgstr "获胜次数"
+
+#: redbot/cogs/trivia/trivia.py:613
+msgid "Games Played"
+msgstr "游戏次数"
+
+#: redbot/cogs/trivia/trivia.py:614
+msgid "Total Score"
+msgstr "总分"
+
+#: redbot/cogs/trivia/trivia.py:615
+msgid "Average Score"
+msgstr "平均分"
+
+#: redbot/cogs/trivia/trivia.py:724
+msgid "{filename} is a reserved trivia name and cannot be replaced.\n"
+"Choose another name."
+msgstr "{filename} 是保留的问答游戏名称，无法替换。\n"
+"请选择其他名称。"
+
+#: redbot/cogs/trivia/trivia.py:733
+msgid "{filename} already exists. Do you wish to overwrite?"
+msgstr "{filename} 已存在。是否覆盖？"
+
+#: redbot/cogs/trivia/trivia.py:755
+msgid "You took too long answering."
+msgstr "你回答时间过长。"
+
+#: redbot/cogs/trivia/trivia.py:759
+msgid "I am not replacing the existing file."
+msgstr "我不会替换现有文件。"
+
+#: redbot/cogs/trivia/trivia.py:772
+msgid "There was an error saving the file.\n"
+"Please check the filename and try again, as it could be longer than your system supports."
+msgstr "保存文件时出错。\n"
+"请检查文件名并重试，文件路径可能超出了系统支持的长度。"
+
+#: redbot/cogs/trivia/trivia.py:779
+msgid "Saved Trivia list as {filename}."
+msgstr "问答游戏列表已保存为 {filename}。"

@@ -1,0 +1,426 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2026-03-04 21:50+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 17\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/general/general.py:49
+#, docstring
+msgid "General commands."
+msgstr "通用命令。"
+
+#: redbot/cogs/general/general.py:54
+msgid "As I see it, yes"
+msgstr "我看到了，是"
+
+#: redbot/cogs/general/general.py:55
+msgid "It is certain"
+msgstr "这是肯定的"
+
+#: redbot/cogs/general/general.py:56
+msgid "It is decidedly so"
+msgstr "这是确定的，因此"
+
+#: redbot/cogs/general/general.py:57
+msgid "Most likely"
+msgstr "非常可能的"
+
+#: redbot/cogs/general/general.py:58
+msgid "Outlook good"
+msgstr "前景很好"
+
+#: redbot/cogs/general/general.py:59
+msgid "Signs point to yes"
+msgstr "标志指向是"
+
+#: redbot/cogs/general/general.py:60
+msgid "Without a doubt"
+msgstr "毫无疑问"
+
+#: redbot/cogs/general/general.py:61
+msgid "Yes"
+msgstr "是"
+
+#: redbot/cogs/general/general.py:62
+msgid "Yes – definitely"
+msgstr "绝对是的"
+
+#: redbot/cogs/general/general.py:63
+msgid "You may rely on it"
+msgstr "你可以依靠它"
+
+#: redbot/cogs/general/general.py:64
+msgid "Reply hazy, try again"
+msgstr "回复不清楚。再试一次"
+
+#: redbot/cogs/general/general.py:65
+msgid "Ask again later"
+msgstr "稍后重新问"
+
+#: redbot/cogs/general/general.py:66
+msgid "Better not tell you now"
+msgstr "最好现在不告诉你"
+
+#: redbot/cogs/general/general.py:67
+msgid "Cannot predict now"
+msgstr "现在无法预测"
+
+#: redbot/cogs/general/general.py:68
+msgid "Concentrate and ask again"
+msgstr "集中精力再问"
+
+#: redbot/cogs/general/general.py:69
+msgid "Don't count on it"
+msgstr "不要指望它"
+
+#: redbot/cogs/general/general.py:70
+msgid "My reply is no"
+msgstr "我的答复是不"
+
+#: redbot/cogs/general/general.py:71
+msgid "My sources say no"
+msgstr "我的消息来源说不"
+
+#: redbot/cogs/general/general.py:72
+msgid "Outlook not so good"
+msgstr "前景不是很好"
+
+#: redbot/cogs/general/general.py:73
+msgid "Very doubtful"
+msgstr "非常可疑"
+
+#: redbot/cogs/general/general.py:88
+#, docstring
+msgid "Choose between multiple options.\n\n"
+"        There must be at least 2 options to pick from.\n"
+"        Options are separated by spaces.\n\n"
+"        To denote options which include whitespace, you should enclose the options in double quotes.\n"
+"        "
+msgstr "在多个选项之间进行选择。\n\n"
+"        必须至少有 2 个选项可供选择。\n"
+"        选项之间用空格分隔。\n\n"
+"        要表示包含空格的选项，应使用双引号将选项括起来。\n"
+"        "
+
+#: redbot/cogs/general/general.py:97
+msgid "Not enough options to pick from."
+msgstr "没有足够的选项可供选择。"
+
+#: redbot/cogs/general/general.py:103
+#, docstring
+msgid "Roll a random number.\n\n"
+"        The result will be between 1 and `<number>`.\n\n"
+"        `<number>` defaults to 100.\n"
+"        "
+msgstr "掷一个随机数。\n\n"
+"        结果将在 1 和 `<number>` 之间。\n\n"
+"        `<number>` 默认为 100。\n"
+"        "
+
+#: redbot/cogs/general/general.py:118
+msgid "{author.mention} Maybe higher than 1? ;P"
+msgstr "{author.mention} 也许要比 1 大？;P"
+
+#: redbot/cogs/general/general.py:121
+msgid "{author.mention} Max allowed number is {maxamount}."
+msgstr "{author.mention} 允许的最大数字是 {maxamount}。"
+
+#: redbot/cogs/general/general.py:128
+#, docstring
+msgid "Flip a coin... or a user.\n\n"
+"        Defaults to a coin.\n"
+"        "
+msgstr "掷硬币...或翻转用户。\n\n"
+"        默认为硬币。\n"
+"        "
+
+#: redbot/cogs/general/general.py:136
+msgid "Nice try. You think this is funny?\n"
+" How about *this* instead:\n\n"
+msgstr "干得不错。你觉得这很好笑吗？\n"
+" 那换成*这个*怎么样：\n\n"
+
+#: redbot/cogs/general/general.py:147
+msgid "*flips a coin and... "
+msgstr "*掷硬币和..."
+
+#: redbot/cogs/general/general.py:147
+msgid "HEADS!*"
+msgstr "头部！*"
+
+#: redbot/cogs/general/general.py:147
+msgid "TAILS!*"
+msgstr "尾部！*"
+
+#: redbot/cogs/general/general.py:151
+#, docstring
+msgid "Play Rock Paper Scissors."
+msgstr "玩石头剪刀布。"
+
+#: redbot/cogs/general/general.py:156
+msgid "This isn't a valid option. Try {r}, {p}, or {s}."
+msgstr "这不是一个有效的选项。尝试 {r}、{p} 或 {s}。"
+
+#: redbot/cogs/general/general.py:177
+msgid "{choice} You win {author.mention}!"
+msgstr "{choice} 你赢了 {author.mention}！"
+
+#: redbot/cogs/general/general.py:183
+msgid "{choice} You lose {author.mention}!"
+msgstr "{choice} 你输了 {author.mention}！"
+
+#: redbot/cogs/general/general.py:189
+msgid "{choice} We're square {author.mention}!"
+msgstr "{choice} 我们打平了 {author.mention}！"
+
+#: redbot/cogs/general/general.py:196
+#, docstring
+msgid "Ask 8 ball a question.\n\n"
+"        Question must end with a question mark.\n"
+"        "
+msgstr "向占卜球问一个问题。\n\n"
+"        问题必须以问号结尾。\n"
+"        "
+
+#: redbot/cogs/general/general.py:203
+msgid "That doesn't look like a question."
+msgstr "这看起来不像是个问题。"
+
+#: redbot/cogs/general/general.py:207
+#, docstring
+msgid "Start or stop the stopwatch."
+msgstr "启动或停止计时秒表。"
+
+#: redbot/cogs/general/general.py:211
+msgid " Stopwatch started!"
+msgstr "计时秒表已开始！"
+
+#: redbot/cogs/general/general.py:216
+msgid " Stopwatch stopped! Time: **{seconds}**"
+msgstr " 计时秒表已停止！时间：**{seconds}**"
+
+#: redbot/cogs/general/general.py:222
+#, docstring
+msgid "Create a lmgtfy link."
+msgstr "创建一个 lmgtfy 链接。"
+
+#: redbot/cogs/general/general.py:231
+#, docstring
+msgid "Because everyone likes hugs!\n\n"
+"        Up to 10 intensity levels.\n"
+"        "
+msgstr "因为每个人都喜欢拥抱！\n\n"
+"        最多 10 个强度级别。\n"
+"        "
+
+#: redbot/cogs/general/general.py:255
+#, docstring
+msgid "\n"
+"        Show server information.\n\n"
+"        `details`: Shows more information when set to `True`.\n"
+"        Default to False.\n"
+"        "
+msgstr "\n"
+"        显示服务器信息。\n\n"
+"        `details`：设置为 `True` 时显示更多信息。\n"
+"        默认为 False。\n"
+"        "
+
+#: redbot/cogs/general/general.py:262
+msgid "Created on {date_and_time}. That's {relative_time}!"
+msgstr "创建于 {date_and_time}。那是 {relative_time}！"
+
+#: redbot/cogs/general/general.py:276
+msgid "Users online"
+msgstr "在线用户"
+
+#: redbot/cogs/general/general.py:277
+msgid "Not available"
+msgstr "不可用"
+
+#: redbot/cogs/general/general.py:279
+msgid "Text Channels"
+msgstr "文字频道"
+
+#: redbot/cogs/general/general.py:280
+msgid "Voice Channels"
+msgstr "语音频道"
+
+#: redbot/cogs/general/general.py:281
+msgid "Roles"
+msgstr "角色"
+
+#: redbot/cogs/general/general.py:282
+msgid "Owner"
+msgstr "所有者"
+
+#: redbot/cogs/general/general.py:284
+msgid "Server ID: "
+msgstr "服务器 ID："
+
+#: redbot/cogs/general/general.py:286
+msgid "  •  Use {command} for more info on the server."
+msgstr "  •  使用 {command} 获取更多服务器信息。"
+
+#: redbot/cogs/general/general.py:312
+msgid "\n"
+"Shard ID: **{shard_id}/{shard_count}**"
+msgstr "\n"
+"分片 ID：**{shard_id}/{shard_count}**"
+
+#: redbot/cogs/general/general.py:321
+msgid "Humans: "
+msgstr "人类："
+
+#: redbot/cogs/general/general.py:322
+msgid " • Bots: "
+msgstr " • 机器人："
+
+#: redbot/cogs/general/general.py:334
+msgid "Users online: **{online}/{total_users}**\n"
+msgstr "在线用户：**{online}/{total_users}**\n"
+
+#: redbot/cogs/general/general.py:351
+msgid "0 - None"
+msgstr "0 - 无"
+
+#: redbot/cogs/general/general.py:352
+msgid "1 - Low"
+msgstr "1 - 低"
+
+#: redbot/cogs/general/general.py:353
+msgid "2 - Medium"
+msgstr "2 - 中"
+
+#: redbot/cogs/general/general.py:354
+msgid "3 - High"
+msgstr "3 - 高"
+
+#: redbot/cogs/general/general.py:355
+msgid "4 - Highest"
+msgstr "4 - 最高"
+
+#: redbot/cogs/general/general.py:358
+msgid "{bot_name} joined this server on {bot_join}. That's over {since_join} days ago!"
+msgstr "{bot_name} 于 {bot_join} 加入此服务器。那是 {since_join} 多天前！"
+
+#: redbot/cogs/general/general.py:380
+msgid "Members:"
+msgstr "成员："
+
+#: redbot/cogs/general/general.py:382
+msgid "Channels:"
+msgstr "频道："
+
+#: redbot/cogs/general/general.py:383
+msgid "💬 Text: {text}\n"
+"🔊 Voice: {voice}\n"
+"🎙 Stage: {stage}"
+msgstr "💬 文字：{text}\n"
+"🔊 语音：{voice}\n"
+"🎙 舞台：{stage}"
+
+#: redbot/cogs/general/general.py:394
+msgid "Utility:"
+msgstr "实用信息："
+
+#: redbot/cogs/general/general.py:395
+msgid "Owner: {owner}\n"
+"Verif. level: {verif}\n"
+"Server ID: {id}{shard_info}"
+msgstr "所有者：{owner}\n"
+"验证级别：{verif}\n"
+"服务器 ID：{id}{shard_info}"
+
+#: redbot/cogs/general/general.py:406
+msgid "Misc:"
+msgstr "杂项："
+
+#: redbot/cogs/general/general.py:407
+msgid "AFK channel: {afk_chan}\n"
+"AFK timeout: {afk_timeout}\n"
+"Custom emojis: {emoji_count}\n"
+"Roles: {role_count}"
+msgstr "AFK 频道：{afk_chan}\n"
+"AFK 超时：{afk_timeout}\n"
+"自定义表情：{emoji_count}\n"
+"角色：{role_count}"
+
+#: redbot/cogs/general/general.py:412
+msgid "Not set"
+msgstr "未设置"
+
+#: redbot/cogs/general/general.py:450
+msgid "Server features:"
+msgstr "服务器特性："
+
+#: redbot/cogs/general/general.py:450
+msgid "Server features (continued):"
+msgstr "服务器特性（续）："
+
+#: redbot/cogs/general/general.py:455
+msgid "Tier {boostlevel} with {nitroboosters} boosts\n"
+"File size limit: {filelimit}\n"
+"Emoji limit: {emojis_limit}\n"
+"VCs max bitrate: {bitrate}"
+msgstr "等级 {boostlevel}，{nitroboosters} 个 boost\n"
+"文件大小限制：{filelimit}\n"
+"表情限制：{emojis_limit}\n"
+"语音频道最大比特率：{bitrate}"
+
+#: redbot/cogs/general/general.py:467
+msgid "Nitro Boost:"
+msgstr "Nitro Boost："
+
+#: redbot/cogs/general/general.py:476
+#, docstring
+msgid "Search the Urban Dictionary.\n\n"
+"        This uses the unofficial Urban Dictionary API.\n"
+"        "
+msgstr "搜索 Urban Dictionary。\n\n"
+"        这使用了非官方的 Urban Dictionary API。\n"
+"        "
+
+#: redbot/cogs/general/general.py:494 redbot/cogs/general/general.py:565
+msgid "No Urban Dictionary entries were found, or there was an error in the process."
+msgstr "未找到 Urban Dictionary 条目，或处理过程中出现错误。"
+
+#: redbot/cogs/general/general.py:500
+msgid "No Urban Dictionary entries were found."
+msgstr "未找到 Urban Dictionary 条目。"
+
+#: redbot/cogs/general/general.py:506
+msgid "{word} by {author}"
+msgstr "{word} 作者 {author}"
+
+#: redbot/cogs/general/general.py:514 redbot/cogs/general/general.py:548
+msgid "{definition}\n\n"
+"**Example:** {example}"
+msgstr "{definition}\n\n"
+"**示例：** {example}"
+
+#: redbot/cogs/general/general.py:520
+msgid "{thumbs_down} Down / {thumbs_up} Up, Powered by Urban Dictionary."
+msgstr "{thumbs_down} 踩 / {thumbs_up} 赞，由 Urban Dictionary 提供支持。"
+
+#: redbot/cogs/general/general.py:538
+msgid "<{permalink}>\n"
+" {word} by {author}\n\n"
+"{description}\n\n"
+"{thumbs_down} Down / {thumbs_up} Up, Powered by Urban Dictionary."
+msgstr "<{permalink}>\n"
+" {word} 作者 {author}\n\n"
+"{description}\n\n"
+"{thumbs_down} 踩 / {thumbs_up} 赞，由 Urban Dictionary 提供支持。"
+

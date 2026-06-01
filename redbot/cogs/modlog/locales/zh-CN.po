@@ -1,0 +1,86 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: red-discordbot\n"
+"POT-Creation-Date: 2024-03-05 19:45+0000\n"
+"Last-Translator: \n"
+"Language-Team: Chinese Simplified\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: redgettext 3.4.2\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Crowdin-Project: red-discordbot\n"
+"X-Crowdin-Project-ID: 289505\n"
+"X-Crowdin-Language: zh-CN\n"
+"X-Crowdin-File-ID: 38\n"
+"Language: zh_CN\n"
+
+#: redbot/cogs/modlog/modlog.py:19
+#, docstring
+msgid "Browse and manage modlog cases. To manage modlog settings, use `[p]modlogset`."
+msgstr "浏览和管理管理日志案例。要管理管理日志设置，请使用 `[p]modlogset`。"
+
+#: redbot/cogs/modlog/modlog.py:32
+#, docstring
+msgid "Show the specified case."
+msgstr "显示指定的案例。"
+
+#: redbot/cogs/modlog/modlog.py:36
+msgid "That case does not exist for this server."
+msgstr "该服务器不存在该案例。"
+
+#: redbot/cogs/modlog/modlog.py:45 redbot/cogs/modlog/modlog.py:82
+#: redbot/cogs/modlog/modlog.py:117
+msgid "Timestamp:"
+msgstr "时间戳："
+
+#: redbot/cogs/modlog/modlog.py:52
+#, docstring
+msgid "Display cases for the specified member."
+msgstr "显示指定成员的案例。"
+
+#: redbot/cogs/modlog/modlog.py:64 redbot/cogs/modlog/modlog.py:103
+msgid "That user does not exist."
+msgstr "那个用户不存在。"
+
+#: redbot/cogs/modlog/modlog.py:67 redbot/cogs/modlog/modlog.py:106
+msgid "Something unexpected went wrong while fetching that user by ID."
+msgstr "通过 ID 获取该用户时发生了意外错误。"
+
+#: redbot/cogs/modlog/modlog.py:71 redbot/cogs/modlog/modlog.py:109
+msgid "That user does not have any cases."
+msgstr "该用户没有任何案例。"
+
+#: redbot/cogs/modlog/modlog.py:91
+#, docstring
+msgid "List cases for the specified member."
+msgstr "列出指定成员的案例。"
+
+#: redbot/cogs/modlog/modlog.py:126
+#, docstring
+msgid "Specify a reason for a modlog case.\n\n"
+"        Please note that you can only edit cases you are\n"
+"        the owner of unless you are a mod, admin or server owner.\n\n"
+"        If no case number is specified, the latest case will be used.\n"
+"        "
+msgstr "为管理日志案例指定原因。\n\n"
+"        请注意，您只能编辑自己创建的案例，\n"
+"        除非您是管理员、服主或拥有相应权限。\n\n"
+"        如果未指定案例编号，将使用最新的案例。\n"
+"        "
+
+#: redbot/cogs/modlog/modlog.py:139
+msgid "There are no modlog cases in this server."
+msgstr "该服务器没有管理日志案例。"
+
+#: redbot/cogs/modlog/modlog.py:145
+msgid "That case does not exist!"
+msgstr "该案例不存在！"
+
+#: redbot/cogs/modlog/modlog.py:152
+msgid "You are not authorized to modify that case!"
+msgstr "您没有权限修改该案例！"
+
+#: redbot/cogs/modlog/modlog.py:160
+msgid "Reason for case #{num} has been updated."
+msgstr "案例 #{num} 的原因已更新。"
