@@ -2398,6 +2398,7 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
         commands = []
         async with ctx.typing():
             try:
+                await self.bot.tree.red_check_enabled()
                 commands = await self.bot.tree.sync(guild=guild)
             except discord.Forbidden as e:
                 # Should only be possible when syncing a guild, but just in case

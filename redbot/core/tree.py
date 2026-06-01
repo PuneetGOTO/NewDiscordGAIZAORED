@@ -185,7 +185,7 @@ class RedTree(CommandTree):
         to_remove_commands = set()
         to_remove_context = set()
 
-        # 如果是全新安裝 (沒有任何斜槓指令被啟用過)，自動啟用全部指令
+        # 如果是全新安裝 (沒有任何斜槓指令被啟用/禁用過)，自動啟用全部指令
         is_fresh_install = (
             not enabled_commands["slash"]
             and not enabled_commands["message"]
