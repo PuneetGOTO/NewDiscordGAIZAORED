@@ -446,6 +446,10 @@ if [[ "$INSTALL_SERVICE" =~ ^[Yy]$ ]]; then
     echo "    journalctl -u $SERVICE_NAME -f   # 查看日誌"
 fi
 echo ""
+echo ""
+echo -e "${YELLOW}  首次啟動後，在 Discord 中執行以下指令以啟用斜槓指令 (/):${NC}"
+echo "    ${CMD_PREFIX}slash sync              (同步全部 / 指令到 Discord)"
+echo ""
 echo -e "${YELLOW}  Discord 中切換語言:${NC}"
 echo "    ${CMD_PREFIX}set locale zh-CN       (當前伺服器改為中文)"
 echo "    ${CMD_PREFIX}set locale en-US       (切回英文)"
