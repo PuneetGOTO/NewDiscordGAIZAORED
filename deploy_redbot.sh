@@ -297,20 +297,13 @@ log ">>> 配置機器人參數 <<<"
 # 第一次啟動時這些參數會自動保存到 config
 
 log "寫入初始配置..."
-# 先以編輯模式設定 owner
+# 使用 --edit 模式保存 token、owner 到 config (永久儲存)
 redbot "$INSTANCE_NAME" \
     --edit \
     --no-prompt \
-    --owner "$OWNER_ID" >> "$LOG_FILE" 2>&1
-
-# 然後用完整參數啟動一次以保存 token 和 prefix
-log "首次啟動以保存 token 和 prefix..."
-timeout 15 redbot "$INSTANCE_NAME" \
-    --no-prompt \
-    --token "$DISCORD_TOKEN" \
-    --prefix "$CMD_PREFIX" \
     --owner "$OWNER_ID" \
-    --dry-run >> "$LOG_FILE" 2>&1 || true
+    --token "$DISCORD_TOKEN" \
+    --prefix "$CMD_PREFIX" >> "$LOG_FILE" 2>&1
 
 log "機器人配置完成"
 
@@ -373,7 +366,7 @@ if [[ "$INSTALL_SERVICE" =~ ^[Yy]$ ]]; then
 
     cat > "/etc/systemd/system/$SERVICE_NAME.service" << SERVICEEOF
 [Unit]
-Description=Red-DiscordBot - $INSTANCE_NAME
+Description=Discord GAIZAORED Bot - $INSTANCE_NAME
 After=network-online.target
 Wants=network-online.target
 
@@ -381,15 +374,13 @@ Wants=network-online.target
 Type=simple
 User=root
 WorkingDirectory=$BOT_DIR
-Environment=RED_TOKEN=$DISCORD_TOKEN
-ExecStart=$(which redbot) $INSTANCE_NAME --no-prompt --token "\$RED_TOKEN" --prefix "$CMD_PREFIX"
+ExecStart=$(which redbot) $INSTANCE_NAME --no-prompt
 Restart=on-failure
 RestartSec=15
 StandardOutput=journal
 StandardError=journal
 SyslogIdentifier=$SERVICE_NAME
 
-# 安全強化
 NoNewPrivileges=yes
 PrivateTmp=yes
 ProtectSystem=strict
