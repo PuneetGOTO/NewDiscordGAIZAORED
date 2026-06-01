@@ -2437,6 +2437,52 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             )
         )
 
+    @slash.command(name="all")
+    @commands.is_owner()
+    async def slash_all(self, ctx: commands.Context):
+        """一鍵啟用全部斜槓指令並同步到 Discord。
+
+        等同於對所有指令執行 `[p]slash enable` + `[p]slash sync`。
+        僅機器人擁有者可使用。
+        """
+        if ctx.assume_yes:
+            return
+
+        async with ctx.typing():
+            await self.bot.tree.red_check_enabled()
+
+            # 統計已啟用的指令數
+            enabled_count = len(self.bot.tree._global_commands)
+            remaining = len(self.bot.tree._disabled_global_commands)
+
+            if remaining > 0:
+                # 還有未啟用的，全部啟用
+                for name in list(self.bot.tree._disabled_global_commands.keys()):
+                    try:
+                        await self.bot.enable_app_command(name, discord.AppCommandType.chat_input)
+                    except Exception:
+                        pass
+                await self.bot.tree.red_check_enabled()
+                enabled_count = len(self.bot.tree._global_commands)
+
+            # 同步到 Discord
+            try:
+                commands = await self.bot.tree.sync()
+            except discord.Forbidden:
+                await ctx.send(
+                    _(
+                        "I need the `applications.commands` scope to sync. "
+                        "Use `{prefix}inviteset commandscope` first."
+                    ).format(prefix=ctx.clean_prefix)
+                )
+                return
+
+        await ctx.send(
+            _("Enabled {enabled} slash commands and synced {synced} to Discord.").format(
+                enabled=enabled_count, synced=len(commands)
+            )
+        )
+
     @commands.command(name="shutdown")
     @commands.is_owner()
     async def _shutdown(self, ctx: commands.Context, silently: bool = False):
