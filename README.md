@@ -1,134 +1,151 @@
 <h1 align="center">
   <br>
-  <a href="https://github.com/Cog-Creators/Red-DiscordBot/tree/V3/develop"><img src="https://imgur.com/pY1WUFX.png" alt="Red - Discord Bot"></a>
-  <br>
-  Red Discord Bot
+  Discord GAIZAORED Bot
   <br>
 </h1>
 
-<h4 align="center">Music, Moderation, Trivia, Stream Alerts and Fully Modular.</h4>
+<h4 align="center">多功能 Discord 機器人 | 音樂、管理、問答、直播通知、經濟系統 | 支援中英雙語</h4>
 
 <p align="center">
-  <a href="https://discord.gg/red">
-    <img src="https://discordapp.com/api/guilds/133049272517001216/widget.png?style=shield" alt="Discord Server">
-  </a>
-  <a href="https://pypi.org/project/Red-DiscordBot/">
-     <img alt="PyPI" src="https://img.shields.io/pypi/v/Red-Discordbot">
-  </a>
   <a href="https://www.python.org/downloads/">
-    <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/Red-Discordbot">
+     <img alt="Python" src="https://img.shields.io/badge/Python-3.9%2B-blue">
   </a>
   <a href="https://github.com/Rapptz/discord.py/">
      <img src="https://img.shields.io/badge/discord-py-blue.svg" alt="discord.py">
   </a>
-  <a href="https://www.patreon.com/Red_Devs">
-    <img src="https://img.shields.io/badge/Support-Red!-red.svg" alt="Support Red on Patreon!">
-  </a>
-</p>
-<p align="center">
-  <a href="https://github.com/Cog-Creators/Red-DiscordBot/actions">
-    <img src="https://img.shields.io/github/actions/workflow/status/Cog-Creators/Red-Discordbot/tests.yml?label=tests" alt="GitHub Actions">
-  </a>
-  <a href="http://docs.discord.red/en/stable/?badge=stable">
-    <img src="https://readthedocs.org/projects/red-discordbot/badge/?version=stable" alt="Red on readthedocs.org">
-  </a>
   <a href="https://github.com/psf/black">
     <img src="https://img.shields.io/badge/code%20style-black-000000.svg" alt="Code Style: Black">
   </a>
-  <a href="http://makeapullrequest.com">
-    <img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg">
-  </a>
-  <a href="https://crowdin.com/project/red-discordbot">
-    <img src="https://d322cqt584bo4o.cloudfront.net/red-discordbot/localized.svg" alt="Localized with Crowdin">
-  </a>
 </p>
 
 <p align="center">
-  <a href="#overview">Overview</a>
+  <a href="#概述">概述</a>
   •
-  <a href="#installation">Installation</a>
+  <a href="#功能">功能</a>
   •
-  <a href="http://docs.discord.red/en/stable/index.html">Documentation</a>
+  <a href="#一鍵部署">一鍵部署</a>
   •
-  <a href="#plugins">Plugins</a>
+  <a href="#手動安裝">手動安裝</a>
   •
-  <a href="#join-the-community">Community</a>
+  <a href="#指令列表">指令列表</a>
   •
-  <a href="#license">License</a>
+  <a href="#授權">授權</a>
 </p>
 
-# Overview
+---
 
-Red is a fully modular bot – meaning all features and commands can be enabled/disabled to your
-liking, making it completely customizable. This is a *self-hosted bot* – meaning you will need
-to host and maintain your own instance. You can turn Red into an admin bot, music bot, trivia bot,
-new best friend or all of these together!  
+# 概述
 
-[Installation](#installation) is easy, and you do **NOT** need to know anything about coding! Aside
-from installing and updating, every part of the bot can be controlled from within Discord.
+這是一個功能完整的 Discord 機器人，採用模組化設計，所有功能和指令皆可自由啟用/停用。
+內建 **簡體中文 (zh-CN)** 與 **英文 (en-US)** 雙語支援，可隨時切換。
 
-**The default set of modules includes and is not limited to:**
+這是一個 **自託管機器人** – 你需要自行架設和維護自己的實例。
 
-- Moderation features (kick/ban/softban/hackban, mod-log, filter, chat cleanup)
-- Trivia (lists are included and can be easily added)
-- Music features (YouTube, SoundCloud, local files, playlists, queues)
-- Stream alerts (Twitch, Youtube, Picarto)
-- Bank (slot machine, user credits)
-- Custom commands
-- Imgur/gif search
-- Admin automation (self-role assignment, cross-server announcements, mod-mail reports)
-- Customisable command permissions
+---
 
-**Additionally, other [plugins](#plugins) (cogs) can be easily found and added from our growing
-community of cog repositories.**
+# 功能
 
-# Installation
+內建 **19 個模組**，包含以下功能：
 
-**The following platforms are officially supported:** 
+| 模組 | 功能 |
+|------|------|
+| 🛡️ **管理系統** | 踢出、封禁、解封、臨時封禁、軟封禁、批量封禁、語音封禁 |
+| 🎵 **音樂播放** | YouTube、SoundCloud、本地文件、播放列表、隊列管理、等化器 |
+| 📺 **直播通知** | Twitch、YouTube、Picarto 直播提醒 |
+| 🎮 **問答遊戲** | 內建 50+ 題庫，支援自訂題庫 |
+| 💰 **經濟系統** | 銀行、轉帳、老虎機、每日薪水、排行榜 |
+| 🔇 **禁言系統** | 文字禁言、語音禁言、定時禁言 |
+| ⚠️ **警告系統** | 可設定自動處罰階梯（警告→踢出→封禁） |
+| 📝 **管理日誌** | 記錄所有管理操作 |
+| 🚫 **過濾器** | 敏感詞過濾、自動刪除/處罰 |
+| 🧹 **訊息清理** | 批量刪除訊息 |
+| 📋 **自訂指令** | 建立自訂回應 |
+| 🔗 **指令別名** | 為指令建立捷徑 |
+| 🎨 **自助角色** | 用戶自行領取角色 |
+| 📢 **公告系統** | 跨伺服器公告 |
+| 🔒 **權限管理** | 精細指令/插件權限控制 |
+| 📊 **通用工具** | 伺服器資訊、用戶資訊、擲骰、選擇、猜拳 |
+| 🖼️ **圖片搜尋** | Giphy GIF 搜尋、Imgur 圖片搜尋 |
+| 📥 **插件下載器** | 安裝第三方社群插件 |
+| ⚙️ **核心系統** | 語言切換、前綴設置、自動免疫、黑白名單 |
 
-- [Windows](https://docs.discord.red/en/stable/install_guides/windows.html)
-- [MacOS](https://docs.discord.red/en/stable/install_guides/mac.html)
-- [Most major linux distributions](https://docs.discord.red/en/stable/install_guides/index.html)
+---
 
-If after reading the guide you are still experiencing issues, feel free to join the
-[Official Discord Server](https://discord.gg/red) and ask in the **#support** channel for help.
+# 一鍵部署 (Ubuntu)
 
-# Plugins
+```bash
+git clone https://github.com/PuneetGOTO/NewDiscordGAIZAORED.git
+cd NewDiscordGAIZAORED
+sudo chmod +x deploy_redbot.sh
+sudo ./deploy_redbot.sh
+```
 
-Red is fully modular, allowing you to load and unload plugins of your choice, and install 3rd party
-plugins directly from Discord! A few examples are:
+腳本會自動完成：
+- ✅ 系統升級
+- ✅ 安裝 Python 3.11 及所有依賴
+- ✅ 安裝 Java (音樂功能可選)
+- ✅ 配置 Discord Token、前綴、擁有者
+- ✅ 設定默認語言為簡體中文
+- ✅ 建立 systemd 服務 (開機自動啟動)
 
-- Cleverbot integration (talk to Red and she talks back)
-- Ban sync
-- Welcome messages
-- Casino
-- Reaction roles
-- Slow Mode
-- AniList
-- And much, much more!
+---
 
-Feel free to take a [peek](https://index.discord.red) at a list of
-available 3rd party cogs!
+# 手動安裝
 
-# Join the community!
+支援平台：**Windows / macOS / Linux**
 
-**Red** is in continuous development, and it’s supported by an active community which produces new
-content (cogs/plugins) for everyone to enjoy. New features are constantly added. If you can’t
-[find](https://index.discord.red) the cog you’re looking for,
-consult our [guide](https://docs.discord.red/en/stable/guide_cog_creation.html) on
-building your own cogs!
+### 1. 安裝 Python 3.9+
 
-Join us on our [Official Discord Server](https://discord.gg/red)!
+從 [python.org](https://www.python.org/downloads/) 下載安裝
 
-# License
+### 2. 安裝依賴
 
-Released under the [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) license.
+```bash
+cd NewDiscordGAIZAORED
+pip install -e .
+```
 
-Red is named after the main character of "Transistor", a video game by
-[Super Giant Games](https://www.supergiantgames.com/games/transistor/).
+### 3. 創建實例
 
-Artwork created by [Sinlaire](https://sinlaire.deviantart.com/) on Deviant Art for the Red Discord
-Bot Project.
+```bash
+redbot-setup
+```
 
-This project vendors [discord.ext.menus](https://github.com/Rapptz/discord-ext-menus) package made by Danny Y. (Rapptz) which is distributed under MIT License.
-A copy of this license can be found in the [discord-ext-menus.LICENSE](redbot/vendored/discord-ext-menus.LICENSE) file in the [redbot/vendored](redbot/vendored) folder of this repository.
+按提示輸入實例名稱、數據路徑
+
+### 4. 啟動機器人
+
+```bash
+redbot <實例名稱> --token <你的Token> --prefix !
+```
+
+啟動後在 Discord 中設定語言：
+
+```
+!set locale global zh-CN
+```
+
+---
+
+# 語言切換
+
+| 命令 | 說明 |
+|------|------|
+| `!set locale zh-CN` | 當前伺服器切換為簡體中文 |
+| `!set locale en-US` | 切換為英文 |
+| `!set locale global zh-CN` | 全局切換為簡體中文 |
+| `!set locale default` | 恢復預設語言 |
+
+---
+
+# 指令列表
+
+完整指令請參考上方功能表中的各模組說明，或在 Discord 中使用 `!help` 查看。
+
+---
+
+# 授權
+
+本項目基於 [GNU GPL v3](https://www.gnu.org/licenses/gpl-3.0.en.html) 授權。
+
+本項目使用了 [discord.py](https://github.com/Rapptz/discord.py) 和 [discord.ext.menus](https://github.com/Rapptz/discord-ext-menus) (MIT License)。
