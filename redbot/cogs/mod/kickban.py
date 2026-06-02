@@ -299,7 +299,7 @@ class KickBanMixin(MixinMeta):
                     changed = True
         return changed
 
-    @commands.hybrid_command(name="踢出該用戶")
+    @commands.hybrid_command(name="kick")
     @commands.guild_only()
     @commands.bot_has_permissions(kick_members=True)
     @commands.admin_or_permissions(kick_members=True)
@@ -382,7 +382,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. That felt good."))
 
-    @commands.hybrid_command(name="封禁該用戶")
+    @commands.hybrid_command(name="ban")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -422,7 +422,7 @@ class KickBanMixin(MixinMeta):
 
         await ctx.send(message)
 
-    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]", name="大量封禁")
+    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]", name="massban")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -608,7 +608,7 @@ class KickBanMixin(MixinMeta):
             )
         await show_results()
 
-    @commands.hybrid_command(name="暫時封禁該用戶")
+    @commands.hybrid_command(name="tempban")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -733,7 +733,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. Enough chaos for now."))
 
-    @commands.hybrid_command(name="軟封禁")
+    @commands.hybrid_command(name="softban")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -826,7 +826,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. Enough chaos."))
 
-    @commands.hybrid_command(name="語音踢出")
+    @commands.hybrid_command(name="voicekick")
     @commands.guild_only()
     @commands.mod_or_permissions(move_members=True)
     async def voicekick(
@@ -877,7 +877,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("User has been kicked from the voice channel."))
 
-    @commands.hybrid_command(name="解除語音封禁")
+    @commands.hybrid_command(name="voiceunban")
     @commands.guild_only()
     @commands.admin_or_permissions(mute_members=True, deafen_members=True)
     async def voiceunban(
@@ -924,7 +924,7 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User is now allowed to speak and listen in voice channels."))
 
-    @commands.hybrid_command(name="語音封禁")
+    @commands.hybrid_command(name="voiceban")
     @commands.guild_only()
     @commands.admin_or_permissions(mute_members=True, deafen_members=True)
     async def voiceban(self, ctx: commands.Context, member: discord.Member, *, reason: str = None):
@@ -969,7 +969,7 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User has been banned from speaking or listening in voice channels."))
 
-    @commands.hybrid_command(name="解除封禁")
+    @commands.hybrid_command(name="unban")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
