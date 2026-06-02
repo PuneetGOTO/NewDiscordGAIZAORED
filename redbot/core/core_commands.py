@@ -2486,30 +2486,25 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
     async def slash_all(self, ctx: commands.Context):
         """一鍵啟用全部斜槓指令並同步到 Discord。
 
-        等同於對所有指令執行 `[p]slash enable` + `[p]slash sync`。
+        會先清除所有已儲存的啟用設定，然後讓系統自動偵測並啟用全部指令。
+        等同於全新安裝時的自動同步行為。
         僅機器人擁有者可使用。
         """
         if ctx.assume_yes:
             return
 
         async with ctx.typing():
+            # 清除所有已儲存的啟用設定，觸發全新安裝邏輯
+            async with self.bot._config.all() as cfg:
+                cfg["enabled_slash_commands"] = {}
+                cfg["enabled_message_commands"] = {}
+                cfg["enabled_user_commands"] = {}
+
+            # 重新掃描：空設定 = 全新安裝 = 自動啟用全部
             await self.bot.tree.red_check_enabled()
 
-            # 統計已啟用的指令數
             enabled_count = len(self.bot.tree._global_commands)
-            remaining = len(self.bot.tree._disabled_global_commands)
 
-            if remaining > 0:
-                # 還有未啟用的，全部啟用
-                for name in list(self.bot.tree._disabled_global_commands.keys()):
-                    try:
-                        await self.bot.enable_app_command(name, discord.AppCommandType.chat_input)
-                    except Exception:
-                        pass
-                await self.bot.tree.red_check_enabled()
-                enabled_count = len(self.bot.tree._global_commands)
-
-            # 同步到 Discord
             try:
                 commands = await self.bot.tree.sync()
             except discord.Forbidden:
