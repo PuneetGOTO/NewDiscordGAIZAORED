@@ -392,7 +392,7 @@ class Warnings(commands.Cog):
         else:
             await ctx.send(_("There are no actions configured!"))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(with_app_command=False)
     @commands.guild_only()
     @commands.admin_or_permissions(ban_members=True)
     async def warn(

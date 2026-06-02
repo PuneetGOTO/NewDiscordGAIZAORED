@@ -383,7 +383,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. That felt good."))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(with_app_command=False)
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -421,7 +421,7 @@ class KickBanMixin(MixinMeta):
 
         await ctx.send(message)
 
-    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]")
+    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]", with_app_command=False)
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -961,7 +961,7 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User has been banned from speaking or listening in voice channels."))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(with_app_command=False)
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)

@@ -243,7 +243,7 @@ class Cleanup(commands.Cog):
         await mass_purge(to_delete, channel, reason=reason)
         await self.send_optional_notification(len(to_delete), channel, subtract_invoking=True)
 
-    @cleanup.command()
+    @cleanup.command(with_app_command=False)
     @commands.guild_only()
     @commands.mod_or_permissions(manage_messages=True)
     @commands.bot_has_permissions(manage_messages=True)
