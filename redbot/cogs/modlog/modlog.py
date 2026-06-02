@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+﻿from datetime import datetime, timezone
 
 from typing import Optional, Union
 
@@ -26,7 +26,7 @@ class ModLog(commands.Cog):
         """Nothing to delete"""
         return
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     async def case(self, ctx: commands.Context, number: int):
         """Show the specified case."""
@@ -46,7 +46,7 @@ class ModLog(commands.Cog):
                 )
                 await ctx.send(message)
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     async def casesfor(self, ctx: commands.Context, *, member: Union[discord.Member, int]):
         """Display cases for the specified member."""
@@ -85,7 +85,7 @@ class ModLog(commands.Cog):
 
         await menu(ctx, rendered_cases)
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     async def listcases(self, ctx: commands.Context, *, member: Union[discord.Member, int]):
         """List cases for the specified member."""
@@ -120,7 +120,7 @@ class ModLog(commands.Cog):
                 rendered_cases.append(page)
         await menu(ctx, rendered_cases)
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     async def reason(self, ctx: commands.Context, case: Optional[int], *, reason: str):
         """Specify a reason for a modlog case.

@@ -1,4 +1,4 @@
-from __future__ import annotations
+﻿from __future__ import annotations
 
 import asyncio
 import datetime
@@ -88,7 +88,7 @@ class MixinMeta(ABC):
     async def command_llset(self, ctx: commands.Context):
         raise NotImplementedError()
 
-    @commands.command()
+    @commands.hybrid_command()
     @abstractmethod
     async def command_audioset_restart(self, ctx: commands.Context):
         raise NotImplementedError()

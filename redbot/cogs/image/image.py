@@ -1,4 +1,4 @@
-from random import shuffle
+﻿from random import shuffle
 from typing import Optional
 
 import aiohttp
@@ -39,7 +39,7 @@ class Image(commands.Cog):
         """Nothing to delete"""
         return
 
-    @commands.group(name="imgur")
+    @commands.hybrid_group(name="imgur")
     async def _imgur(self, ctx):
         """Retrieve pictures from Imgur.
 
@@ -154,7 +154,7 @@ class Image(commands.Cog):
             )
 
     @commands.is_owner()
-    @commands.command()
+    @commands.hybrid_command()
     async def imgurcreds(self, ctx):
         """Explain how to set imgur API tokens."""
 
@@ -175,7 +175,7 @@ class Image(commands.Cog):
         await ctx.maybe_send_embed(message)
 
     @commands.guild_only()
-    @commands.command(usage="<keywords...>")
+    @commands.hybrid_command(usage="<keywords...>")
     async def gif(self, ctx, *, keywords):
         """Retrieve the first search result from Giphy.
 
@@ -202,7 +202,7 @@ class Image(commands.Cog):
                 await ctx.send(_("Error contacting the Giphy API."))
 
     @commands.guild_only()
-    @commands.command(usage="<keywords...>")
+    @commands.hybrid_command(usage="<keywords...>")
     async def gifr(self, ctx, *, keywords):
         """Retrieve a random GIF from a Giphy search.
 
@@ -229,7 +229,7 @@ class Image(commands.Cog):
                 await ctx.send(_("Error contacting the API."))
 
     @commands.is_owner()
-    @commands.command()
+    @commands.hybrid_command()
     async def giphycreds(self, ctx):
         """Explains how to set GIPHY API tokens."""
 

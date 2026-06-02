@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 from collections import defaultdict, deque
 from datetime import timedelta
 
@@ -16,7 +16,7 @@ class ModSettings(MixinMeta):
     This is a mixin for the mod cog containing all settings commands.
     """
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guildowner_or_permissions(administrator=True)
     async def modset(self, ctx: commands.Context):
         """Manage server administration settings."""

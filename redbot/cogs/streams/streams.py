@@ -1,4 +1,4 @@
-import discord
+﻿import discord
 from redbot.core.utils.chat_formatting import humanize_list
 from redbot.core.bot import Red
 from redbot.core import commands, Config
@@ -203,7 +203,7 @@ class Streams(commands.Cog):
                 await self.get_twitch_bearer_token()
 
     @commands.guild_only()
-    @commands.command()
+    @commands.hybrid_command()
     async def twitchstream(self, ctx: commands.Context, channel_name: str):
         """Check if a Twitch channel is live."""
         await self.maybe_renew_twitch_bearer_token()
@@ -217,7 +217,7 @@ class Streams(commands.Cog):
         await self.check_online(ctx, stream)
 
     @commands.guild_only()
-    @commands.command()
+    @commands.hybrid_command()
     @commands.cooldown(1, 30, commands.BucketType.guild)
     async def youtubestream(self, ctx: commands.Context, channel_id_or_name: str):
         """Check if a YouTube channel is live."""
@@ -236,7 +236,7 @@ class Streams(commands.Cog):
         await self.check_online(ctx, stream)
 
     @commands.guild_only()
-    @commands.command()
+    @commands.hybrid_command()
     async def picarto(self, ctx: commands.Context, channel_name: str):
         """Check if a Picarto channel is live."""
         stream = PicartoStream(_bot=self.bot, name=channel_name)
@@ -303,7 +303,7 @@ class Streams(commands.Cog):
                 )
             await ctx.send(embed=embed, view=view)
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.mod_or_permissions(manage_channels=True)
     async def streamalert(self, ctx: commands.Context):
@@ -493,7 +493,7 @@ class Streams(commands.Cog):
 
         await self.add_or_remove(ctx, stream, discord_channel)
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.mod_or_permissions(manage_channels=True)
     async def streamset(self, ctx: commands.Context):
         """Manage stream alert settings."""

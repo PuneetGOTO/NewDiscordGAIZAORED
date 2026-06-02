@@ -1,4 +1,4 @@
-import contextlib
+﻿import contextlib
 import math
 from pathlib import Path
 from typing import MutableMapping
@@ -19,7 +19,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class LocalTrackCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.group(name="local")
+    @commands.hybrid_group(name="local")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     @commands.bot_can_react()

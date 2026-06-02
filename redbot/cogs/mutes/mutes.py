@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 import logging
 from abc import ABC
@@ -785,7 +785,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
                     guild, guild.me, member, until, _("Previously muted in this server.")
                 )
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     async def muteset(self, ctx: commands.Context):
         """Mute settings."""
@@ -1046,7 +1046,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
 
         return True
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.mod_or_permissions(manage_roles=True)
     async def activemutes(self, ctx: commands.Context):
@@ -1120,7 +1120,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
             return
         await ctx.maybe_send_embed(_("There are no mutes on this server right now."))
 
-    @commands.command(usage="<users...> [time_and_reason]")
+    @commands.hybrid_command(usage="<users...> [time_and_reason]")
     @commands.guild_only()
     @commands.mod_or_permissions(moderate_members=True)
     @commands.bot_has_permissions(moderate_members=True)
@@ -1203,7 +1203,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
         if issues_list:
             await self.handle_issues(ctx, issues_list)
 
-    @commands.command(usage="<users...> [time_and_reason]")
+    @commands.hybrid_command(usage="<users...> [time_and_reason]")
     @commands.guild_only()
     @commands.mod_or_permissions(manage_roles=True, moderate_members=True)
     async def mute(
@@ -1356,7 +1356,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
             resp = pagify(issue)
             await ctx.send_interactive(resp)
 
-    @commands.command(
+    @commands.hybrid_command(
         name="mutechannel", aliases=["channelmute"], usage="<users...> [time_and_reason]"
     )
     @commands.mod_or_permissions(manage_roles=True)
@@ -1455,7 +1455,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
                 msg += f"- `{issue.user}`: {issue.reason}\n"
             await ctx.send_interactive(pagify(msg))
 
-    @commands.command(usage="<users...> [reason]")
+    @commands.hybrid_command(usage="<users...> [reason]")
     @commands.guild_only()
     @commands.mod_or_permissions(manage_roles=True)
     async def unmute(
@@ -1527,7 +1527,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
         if issue_list:
             await self.handle_issues(ctx, issue_list)
 
-    @commands.command(usage="<users...> [reason]", hidden=True)
+    @commands.hybrid_command(usage="<users...> [reason]", hidden=True, with_app_command=False)
     @commands.guild_only()
     @commands.mod_or_permissions(manage_roles=True)
     async def forceunmute(
@@ -1602,7 +1602,7 @@ class Mutes(VoiceMutes, commands.Cog, metaclass=CompositeMetaClass):
             await self.handle_issues(ctx, issue_list)
 
     @commands.mod_or_permissions(manage_roles=True)
-    @commands.command(name="unmutechannel", aliases=["channelunmute"], usage="<users...> [reason]")
+    @commands.hybrid_command(name="unmutechannel", aliases=["channelunmute"], usage="<users...> [reason]")
     @commands.bot_has_guild_permissions(manage_permissions=True)
     async def unmute_channel(
         self,

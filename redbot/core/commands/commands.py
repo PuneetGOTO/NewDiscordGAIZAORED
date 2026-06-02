@@ -1146,11 +1146,13 @@ def hybrid_command(
     Same interface as `discord.ext.commands.hybrid_command`.
     """
 
+    cls = attrs.pop("cls", HybridCommand)
+
     def decorator(func: CommandCallback[_CogT, ContextT, _P, _T]) -> HybridCommand[_CogT, _P, _T]:
         if isinstance(func, Command):
             raise TypeError("callback is already a command.")
         attrs["help_override"] = attrs.pop("help", None)
-        return HybridCommand(func, name=name, with_app_command=with_app_command, **attrs)
+        return cls(func, name=name, with_app_command=with_app_command, **attrs)
 
     return decorator
 
@@ -1166,11 +1168,13 @@ def hybrid_group(
     Same interface as `discord.ext.commands.hybrid_group`.
     """
 
+    cls = attrs.pop("cls", HybridGroup)
+
     def decorator(func: CommandCallback[_CogT, ContextT, _P, _T]):
         if isinstance(func, Command):
             raise TypeError("callback is already a command.")
         attrs["help_override"] = attrs.pop("help", None)
-        return HybridGroup(func, name=name, with_app_command=with_app_command, **attrs)
+        return cls(func, name=name, with_app_command=with_app_command, **attrs)
 
     return decorator
 

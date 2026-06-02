@@ -1,4 +1,4 @@
-"""Module for Trivia cog."""
+﻿"""Module for Trivia cog."""
 import asyncio
 import math
 import pathlib
@@ -108,7 +108,7 @@ class Trivia(commands.Cog):
             if user_id in guild_data:
                 await self.config.member_from_ids(guild_id, user_id).clear()
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.mod_or_permissions(administrator=True)
     async def triviaset(self, ctx: commands.Context):
@@ -322,7 +322,7 @@ class Trivia(commands.Cog):
         else:
             await ctx.send(_("Trivia file was not found."))
 
-    @commands.group(invoke_without_command=True, require_var_positional=True)
+    @commands.hybrid_group(invoke_without_command=True, require_var_positional=True, with_app_command=False)
     @commands.guild_only()
     async def trivia(self, ctx: commands.Context, *categories: str):
         """Start trivia session on the specified category.

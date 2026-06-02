@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import logging
 from copy import copy
 from re import search
@@ -197,7 +197,7 @@ class Alias(commands.Cog):
             return
         await menu(ctx, alias_list)
 
-    @commands.group()
+    @commands.hybrid_group()
     async def alias(self, ctx: commands.Context):
         """Manage command aliases."""
         pass

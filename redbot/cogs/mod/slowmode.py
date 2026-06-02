@@ -1,4 +1,4 @@
-import discord
+﻿import discord
 import re
 from .abc import MixinMeta
 from datetime import timedelta
@@ -13,7 +13,7 @@ class Slowmode(MixinMeta):
     Commands regarding channel slowmode management.
     """
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_can_manage_channel()
     @commands.admin_or_can_manage_channel()

@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import json
 import math
 import os
@@ -37,7 +37,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class PlaylistCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.group(name="playlist")
+    @commands.hybrid_group(name="playlist")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     @commands.bot_can_react()

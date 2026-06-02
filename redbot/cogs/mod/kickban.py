@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 import logging
 from datetime import datetime, timedelta, timezone
@@ -299,7 +299,7 @@ class KickBanMixin(MixinMeta):
                     changed = True
         return changed
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(kick_members=True)
     @commands.admin_or_permissions(kick_members=True)
@@ -383,7 +383,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. That felt good."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -421,7 +421,7 @@ class KickBanMixin(MixinMeta):
 
         await ctx.send(message)
 
-    @commands.command(aliases=["hackban"], usage="<user_ids...> [days] [reason]")
+    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -600,7 +600,7 @@ class KickBanMixin(MixinMeta):
             )
         await show_results()
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -725,7 +725,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. Enough chaos for now."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -818,7 +818,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. Enough chaos."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.mod_or_permissions(move_members=True)
     async def voicekick(
@@ -869,7 +869,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("User has been kicked from the voice channel."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(mute_members=True, deafen_members=True)
     async def voiceunban(
@@ -916,7 +916,7 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User is now allowed to speak and listen in voice channels."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(mute_members=True, deafen_members=True)
     async def voiceban(self, ctx: commands.Context, member: discord.Member, *, reason: str = None):
@@ -961,7 +961,7 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User has been banned from speaking or listening in voice channels."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)

@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import logging
 from typing import Tuple, Union
 
@@ -213,7 +213,7 @@ class Admin(commands.Cog):
                 )
             )
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(manage_roles=True)
     async def addrole(
@@ -231,7 +231,7 @@ class Admin(commands.Cog):
         """
         await self._addrole(ctx, user, rolename)
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(manage_roles=True)
     async def removerole(
@@ -249,7 +249,7 @@ class Admin(commands.Cog):
         """
         await self._removerole(ctx, user, rolename)
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.admin_or_permissions(manage_roles=True)
     async def editrole(self, ctx: commands.Context):
@@ -326,7 +326,7 @@ class Admin(commands.Cog):
             log.info(reason)
             await ctx.send(_("Done."))
 
-    @commands.group(invoke_without_command=True)
+    @commands.hybrid_group(invoke_without_command=True)
     @commands.is_owner()
     async def announce(self, ctx: commands.Context, *, message: str):
         """Announce a message to all servers the bot is in."""
@@ -350,7 +350,7 @@ class Admin(commands.Cog):
         self.__current_announcer.cancel()
         await ctx.send(_("The current announcement has been cancelled."))
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.guildowner_or_permissions(administrator=True)
     async def announceset(self, ctx):
@@ -395,7 +395,7 @@ class Admin(commands.Cog):
         return valid_roles
 
     @commands.guild_only()
-    @commands.group(invoke_without_command=True)
+    @commands.hybrid_group(invoke_without_command=True)
     async def selfrole(self, ctx: commands.Context, *, selfrole: SelfRole):
         """
         Add or remove a selfrole from yourself.
@@ -408,7 +408,7 @@ class Admin(commands.Cog):
         else:
             return await self._addrole(ctx, ctx.author, selfrole, check_user=False)
 
-    @selfrole.command(name="add", hidden=True)
+    @selfrole.command(name="add", hidden=True, with_app_command=False)
     async def selfrole_add(self, ctx: commands.Context, *, selfrole: SelfRole):
         """
         Add a selfrole to yourself.
@@ -419,7 +419,7 @@ class Admin(commands.Cog):
         # noinspection PyTypeChecker
         await self._addrole(ctx, ctx.author, selfrole, check_user=False)
 
-    @selfrole.command(name="remove", hidden=True)
+    @selfrole.command(name="remove", hidden=True, with_app_command=False)
     async def selfrole_remove(self, ctx: commands.Context, *, selfrole: SelfRole):
         """
         Remove a selfrole from yourself.
@@ -445,13 +445,13 @@ class Admin(commands.Cog):
         msg = _("Available Selfroles:\n{selfroles}").format(selfroles=fmt_selfroles)
         await ctx.send(box(msg, "diff"))
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.admin_or_permissions(manage_roles=True)
     async def selfroleset(self, ctx: commands.Context):
         """Manage selfroles."""
         pass
 
-    @selfroleset.command(name="add", require_var_positional=True)
+    @selfroleset.command(name="add", require_var_positional=True, with_app_command=False)
     async def selfroleset_add(self, ctx: commands.Context, *roles: discord.Role):
         """
         Add a role, or a selection of roles, to the list of available selfroles.
@@ -484,7 +484,7 @@ class Admin(commands.Cog):
 
         await ctx.send(message)
 
-    @selfroleset.command(name="remove", require_var_positional=True)
+    @selfroleset.command(name="remove", require_var_positional=True, with_app_command=False)
     async def selfroleset_remove(self, ctx: commands.Context, *roles: SelfRole):
         """
         Remove a role, or a selection of roles, from the list of available selfroles.
@@ -545,7 +545,7 @@ class Admin(commands.Cog):
         else:
             await ctx.send(_("No changes have been made."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.is_owner()
     async def serverlock(self, ctx: commands.Context):
         """Lock a bot to its current servers only."""

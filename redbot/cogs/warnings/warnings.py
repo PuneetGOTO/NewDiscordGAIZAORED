@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 from datetime import timezone
 from collections import namedtuple
@@ -110,7 +110,7 @@ class Warnings(commands.Cog):
         except RuntimeError:
             pass
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.guildowner_or_permissions(administrator=True)
     async def warningset(self, ctx: commands.Context):
@@ -218,7 +218,7 @@ class Warnings(commands.Cog):
         else:
             await ctx.send(_("I will send self requested user warnings to the current channel."))
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.guildowner_or_permissions(administrator=True)
     async def warnaction(self, ctx: commands.Context):
@@ -284,7 +284,7 @@ class Warnings(commands.Cog):
             else:
                 await ctx.send(_("No action named {name} exists!").format(name=action_name))
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.guildowner_or_permissions(administrator=True)
     async def warnreason(self, ctx: commands.Context):
@@ -328,7 +328,7 @@ class Warnings(commands.Cog):
             else:
                 await ctx.send(_("That is not a registered reason name."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(ban_members=True)
     async def reasonlist(self, ctx: commands.Context):
@@ -357,7 +357,7 @@ class Warnings(commands.Cog):
         else:
             await ctx.send(_("There are no reasons configured!"))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(ban_members=True)
     async def actionlist(self, ctx: commands.Context):
@@ -392,7 +392,7 @@ class Warnings(commands.Cog):
         else:
             await ctx.send(_("There are no actions configured!"))
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(ban_members=True)
     async def warn(
@@ -598,7 +598,7 @@ class Warnings(commands.Cog):
             channel=None,
         )
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin()
     async def warnings(self, ctx: commands.Context, member: Union[discord.Member, int]):
@@ -640,7 +640,7 @@ class Warnings(commands.Cog):
                     ),
                 )
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     async def mywarnings(self, ctx: commands.Context):
         """List warnings for yourself."""
@@ -697,7 +697,7 @@ class Warnings(commands.Cog):
                 box_lang=_("Warnings for {user}").format(user=user),
             )
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.admin_or_permissions(ban_members=True)
     async def unwarn(

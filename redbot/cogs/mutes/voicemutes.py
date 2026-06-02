@@ -1,4 +1,4 @@
-from typing import Optional, Tuple
+﻿from typing import Optional, Tuple
 from datetime import timezone, timedelta, datetime
 from .abc import MixinMeta
 
@@ -63,7 +63,7 @@ class VoiceMutes(MixinMeta):
             )
         return True, None
 
-    @commands.command(name="voicemute", usage="<users...> [reason]")
+    @commands.hybrid_command(name="voicemute", usage="<users...> [reason]")
     @commands.guild_only()
     async def voice_mute(
         self,
@@ -165,7 +165,7 @@ class VoiceMutes(MixinMeta):
                 msg += f"{user}: {issue}\n"
             await ctx.send_interactive(pagify(msg))
 
-    @commands.command(name="voiceunmute", usage="<users...> [reason]")
+    @commands.hybrid_command(name="voiceunmute", usage="<users...> [reason]")
     @commands.guild_only()
     async def unmute_voice(
         self,

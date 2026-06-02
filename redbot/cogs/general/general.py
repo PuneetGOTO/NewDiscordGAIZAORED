@@ -1,4 +1,4 @@
-import datetime
+﻿import datetime
 import time
 from enum import Enum
 from random import randint, choice
@@ -83,7 +83,7 @@ class General(commands.Cog):
         """Nothing to delete"""
         return
 
-    @commands.command(usage="<first> <second> [others...]")
+    @commands.hybrid_command(usage="<first> <second> [others...]")
     async def choose(self, ctx, *choices):
         """Choose between multiple options.
 
@@ -98,7 +98,7 @@ class General(commands.Cog):
         else:
             await ctx.send(choice(choices))
 
-    @commands.command()
+    @commands.hybrid_command()
     async def roll(self, ctx, number: int = 100):
         """Roll a random number.
 
@@ -123,7 +123,7 @@ class General(commands.Cog):
                 )
             )
 
-    @commands.command()
+    @commands.hybrid_command()
     async def flip(self, ctx, user: discord.Member = None):
         """Flip a coin... or a user.
 
@@ -146,7 +146,7 @@ class General(commands.Cog):
         else:
             await ctx.send(_("*flips a coin and... ") + choice([_("HEADS!*"), _("TAILS!*")]))
 
-    @commands.command()
+    @commands.hybrid_command()
     async def rps(self, ctx, your_choice: RPSParser):
         """Play Rock Paper Scissors."""
         author = ctx.author
@@ -191,7 +191,7 @@ class General(commands.Cog):
                 )
             )
 
-    @commands.command(name="8", aliases=["8ball"])
+    @commands.hybrid_command(name="8", aliases=["8ball"])
     async def _8ball(self, ctx, *, question: str):
         """Ask 8 ball a question.
 
@@ -202,7 +202,7 @@ class General(commands.Cog):
         else:
             await ctx.send(_("That doesn't look like a question."))
 
-    @commands.command(aliases=["sw"])
+    @commands.hybrid_command(aliases=["sw"])
     async def stopwatch(self, ctx):
         """Start or stop the stopwatch."""
         author = ctx.author
@@ -217,7 +217,7 @@ class General(commands.Cog):
             )
             self.stopwatches.pop(author.id, None)
 
-    @commands.command()
+    @commands.hybrid_command()
     async def lmgtfy(self, ctx, *, search_terms: str):
         """Create a lmgtfy link."""
         search_terms = escape(urllib.parse.quote_plus(search_terms), mass_mentions=True)
@@ -225,7 +225,7 @@ class General(commands.Cog):
             f"https://cog-creators.github.io/lmgtfy/search?q={search_terms}&btnK=Google+Search"
         )
 
-    @commands.command(hidden=True)
+    @commands.hybrid_command(hidden=True, with_app_command=False)
     @commands.guild_only()
     async def hug(self, ctx, user: discord.Member, intensity: int = 1):
         """Because everyone likes hugs!
@@ -248,7 +248,7 @@ class General(commands.Cog):
             raise RuntimeError
         await ctx.send(msg)
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def serverinfo(self, ctx, details: bool = False):
@@ -471,7 +471,7 @@ class General(commands.Cog):
 
         await ctx.send(embed=data)
 
-    @commands.command()
+    @commands.hybrid_command()
     async def urban(self, ctx, *, word):
         """Search the Urban Dictionary.
 

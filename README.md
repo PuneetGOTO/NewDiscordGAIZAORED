@@ -5,7 +5,7 @@
 </h1>
 
 <h4 align="center">多功能 Discord 機器人 | 音樂、管理、問答、直播通知、經濟系統 | 支援中英雙語</h4>
-<h5 align="center">基於 <a href="https://github.com/Cog-Creators/Red-DiscordBot">Red-DiscordBot</a> 二次開發</h5>
+<h5 align="center">基於 <a href="https://github.com/Cog-Creators/Red-DiscordBot">Red-DiscordBot</a> 二次開發 | 全面支援 Slash Commands + 文字前綴雙模式</h5>
 
 <p align="center">
   <a href="https://www.python.org/downloads/">
@@ -125,6 +125,35 @@ redbot <實例名稱> --token <你的Token> --prefix !
 ```
 !set locale global zh-CN
 ```
+
+---
+
+# Slash Commands 斜線指令
+
+所有 **116 條指令** 現已全面支援 **雙模式運行**：
+
+| 模式 | 用法 | 說明 |
+|------|------|------|
+| 文字前綴 | `!play <歌曲>` | 傳統文字指令（向後兼容） |
+| 斜線指令 | `/play <歌曲>` | Discord 原生斜線指令 |
+
+### 首次設定
+
+首次啟動後，使用以下指令將斜線指令同步到 Discord：
+
+```
+!slash all
+```
+
+或手動逐步操作：
+
+```
+!slash list          # 查看所有指令狀態
+!slash enablecog <模組名稱>   # 啟用特定模組的斜線指令
+!slash sync          # 同步到 Discord
+```
+
+> **注意：** Discord 對 API 有速率限制，請在完成所有設定後再執行 `!slash sync`，避免頻繁同步。
 
 ---
 

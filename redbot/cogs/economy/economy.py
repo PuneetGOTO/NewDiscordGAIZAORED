@@ -1,4 +1,4 @@
-import calendar
+﻿import calendar
 import logging
 import random
 from collections import defaultdict, deque, namedtuple
@@ -175,7 +175,7 @@ class Economy(commands.Cog):
                 await self.config.member_from_ids(guild_id, user_id).clear()
 
     @guild_only_check()
-    @commands.group(name="bank")
+    @commands.hybrid_group(name="bank")
     async def _bank(self, ctx: commands.Context):
         """Base command to manage the bank."""
         pass
@@ -287,7 +287,7 @@ class Economy(commands.Cog):
             await ctx.send(msg)
 
     @guild_only_check()
-    @commands.command()
+    @commands.hybrid_command()
     async def payday(self, ctx: commands.Context):
         """Get some free currency.
 
@@ -404,7 +404,7 @@ class Economy(commands.Cog):
                     )
                 )
 
-    @commands.command()
+    @commands.hybrid_command()
     @guild_only_check()
     async def leaderboard(self, ctx: commands.Context, top: int = 10, show_global: bool = False):
         """Print the leaderboard.
@@ -522,7 +522,7 @@ class Economy(commands.Cog):
         else:
             await ctx.send(_("No balances found."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @guild_only_check()
     async def payouts(self, ctx: commands.Context):
         """Show the payouts for the slot machine."""
@@ -531,7 +531,7 @@ class Economy(commands.Cog):
         except discord.Forbidden:
             await ctx.send(_("I can't send direct messages to you."))
 
-    @commands.command()
+    @commands.hybrid_command()
     @guild_only_check()
     async def slot(self, ctx: commands.Context, bid: int):
         """Use the slot machine.
@@ -657,7 +657,7 @@ class Economy(commands.Cog):
     @guild_only_check()
     @bank.is_owner_if_bank_global()
     @commands.admin_or_permissions(manage_guild=True)
-    @commands.group()
+    @commands.hybrid_group()
     async def economyset(self, ctx: commands.Context):
         """Base command to manage Economy settings."""
 

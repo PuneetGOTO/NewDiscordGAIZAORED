@@ -1,4 +1,4 @@
-import logging
+﻿import logging
 import asyncio
 from typing import Union, List, Literal
 from datetime import timedelta
@@ -99,7 +99,7 @@ class Reports(commands.Cog):
 
     @commands.admin_or_permissions(manage_guild=True)
     @commands.guild_only()
-    @commands.group(name="reportset")
+    @commands.hybrid_group(name="reportset")
     async def reportset(self, ctx: commands.Context):
         """Manage Reports."""
         pass
@@ -239,7 +239,7 @@ class Reports(commands.Cog):
         )
         return ticket_number
 
-    @commands.group(name="report", usage="[text]", invoke_without_command=True)
+    @commands.hybrid_group(name="report", usage="[text]", invoke_without_command=True)
     async def report(self, ctx: commands.Context, *, _report: str = ""):
         """Send a report.
 

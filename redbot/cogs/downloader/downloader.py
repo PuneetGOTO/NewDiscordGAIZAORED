@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 import os
 import re
@@ -484,7 +484,7 @@ class Downloader(commands.Cog):
         for page in pagify(content):
             await target.send(page)
 
-    @commands.command(require_var_positional=True)
+    @commands.hybrid_command(require_var_positional=True, with_app_command=False)
     @commands.is_owner()
     async def pipinstall(self, ctx: commands.Context, *deps: str) -> None:
         """
@@ -518,7 +518,7 @@ class Downloader(commands.Cog):
                 )
             )
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.is_owner()
     async def repo(self, ctx: commands.Context) -> None:
         """Base command for repository management."""
@@ -614,7 +614,7 @@ class Downloader(commands.Cog):
                     )
                 )
 
-    @repo.command(name="delete", aliases=["remove", "del"], require_var_positional=True)
+    @repo.command(name="delete", aliases=["remove", "del"], require_var_positional=True, with_app_command=False)
     async def _repo_del(self, ctx: commands.Context, *repos: Repo) -> None:
         """
         Remove repos and their files.
@@ -728,13 +728,13 @@ class Downloader(commands.Cog):
 
         await self.send_pagified(ctx, message)
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.is_owner()
     async def cog(self, ctx: commands.Context) -> None:
         """Base command for cog installation management commands."""
         pass
 
-    @cog.command(name="reinstallreqs", hidden=True)
+    @cog.command(name="reinstallreqs", hidden=True, with_app_command=False)
     async def _cog_reinstallreqs(self, ctx: commands.Context) -> None:
         """
         This command should not be used unless Red specifically asks for it.
@@ -794,7 +794,7 @@ class Downloader(commands.Cog):
                 )
             )
 
-    @cog.command(name="install", usage="<repo> <cogs...>", require_var_positional=True)
+    @cog.command(name="install", usage="<repo> <cogs...>", require_var_positional=True, with_app_command=False)
     async def _cog_install(self, ctx: commands.Context, repo: Repo, *cog_names: str) -> None:
         """Install a cog from the given repo.
 
@@ -810,7 +810,7 @@ class Downloader(commands.Cog):
         await self._cog_installrev(ctx, repo, None, cog_names)
 
     @cog.command(
-        name="installversion", usage="<repo> <revision> <cogs...>", require_var_positional=True
+        name="installversion", usage="<repo> <revision> <cogs...>", require_var_positional=True, with_app_command=False
     )
     async def _cog_installversion(
         self, ctx: commands.Context, repo: Repo, revision: str, *cog_names: str
@@ -946,7 +946,7 @@ class Downloader(commands.Cog):
                     )
                 )
 
-    @cog.command(name="uninstall", require_var_positional=True)
+    @cog.command(name="uninstall", require_var_positional=True, with_app_command=False)
     async def _cog_uninstall(self, ctx: commands.Context, *cogs: InstalledCog) -> None:
         """Uninstall cogs.
 
@@ -1020,7 +1020,7 @@ class Downloader(commands.Cog):
                     )
         await self.send_pagified(ctx, message)
 
-    @cog.command(name="pin", require_var_positional=True)
+    @cog.command(name="pin", require_var_positional=True, with_app_command=False)
     async def _cog_pin(self, ctx: commands.Context, *cogs: InstalledCog) -> None:
         """Pin cogs - this will lock cogs on their current version.
 
@@ -1055,7 +1055,7 @@ class Downloader(commands.Cog):
             ) + humanize_list(already_pinned)
         await self.send_pagified(ctx, message)
 
-    @cog.command(name="unpin", require_var_positional=True)
+    @cog.command(name="unpin", require_var_positional=True, with_app_command=False)
     async def _cog_unpin(self, ctx: commands.Context, *cogs: InstalledCog) -> None:
         """Unpin cogs - this will remove the update lock from those cogs.
 
@@ -1176,7 +1176,7 @@ class Downloader(commands.Cog):
             ctx.assume_yes = True
         await self._cog_update_logic(ctx, cogs=cogs)
 
-    @cog.command(name="updateallfromrepos", require_var_positional=True)
+    @cog.command(name="updateallfromrepos", require_var_positional=True, with_app_command=False)
     async def _cog_updateallfromrepos(
         self, ctx: commands.Context, reload: Optional[bool], *repos: Repo
     ) -> None:
@@ -1761,7 +1761,7 @@ class Downloader(commands.Cog):
         splitted = instance.__module__.split(".")
         return splitted[0]
 
-    @commands.command()
+    @commands.hybrid_command()
     async def findcog(self, ctx: commands.Context, command_name: str) -> None:
         """Find which cog a command comes from.
 

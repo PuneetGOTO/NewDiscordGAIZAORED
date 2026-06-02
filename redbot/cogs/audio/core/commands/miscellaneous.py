@@ -1,4 +1,4 @@
-import datetime
+﻿import datetime
 import heapq
 import math
 import random
@@ -22,7 +22,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class MiscellaneousCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.command(name="sing")
+    @commands.hybrid_command(name="sing")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_sing(self, ctx: commands.Context):
@@ -38,7 +38,7 @@ class MiscellaneousCommands(MixinMeta, metaclass=CompositeMetaClass):
         url = f"https://www.youtube.com/watch?v={random.choice(ids)}"
         await ctx.invoke(self.command_play, query=url)
 
-    @commands.command(name="audiostats")
+    @commands.hybrid_command(name="audiostats")
     @commands.guild_only()
     @commands.is_owner()
     @commands.bot_has_permissions(embed_links=True)
@@ -94,7 +94,7 @@ class MiscellaneousCommands(MixinMeta, metaclass=CompositeMetaClass):
 
         await menu(ctx, servers_embed)
 
-    @commands.command(name="percent")
+    @commands.hybrid_command(name="percent")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_percent(self, ctx: commands.Context):

@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 import math
 from pathlib import Path
@@ -30,7 +30,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class QueueCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.group(name="queue", invoke_without_command=True)
+    @commands.hybrid_group(name="queue", invoke_without_command=True)
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     @commands.bot_can_react()

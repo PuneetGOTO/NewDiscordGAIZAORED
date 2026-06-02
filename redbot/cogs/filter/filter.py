@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import discord
 import re
 from datetime import timezone
@@ -78,7 +78,7 @@ class Filter(commands.Cog):
             ]
         )
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.guild_only()
     @commands.admin_or_permissions(manage_guild=True)
     async def filterset(self, ctx: commands.Context):
@@ -142,7 +142,7 @@ class Filter(commands.Cog):
                 guild_data["filterban_time"] = timeframe
             await ctx.send(_("Count and time have been set."))
 
-    @commands.group(name="filter")
+    @commands.hybrid_group(name="filter")
     @commands.guild_only()
     @commands.mod_or_permissions(manage_messages=True)
     async def _filter(self, ctx: commands.Context):
@@ -250,7 +250,7 @@ class Filter(commands.Cog):
         except discord.Forbidden:
             await ctx.send(_("I can't send direct messages to you."))
 
-    @_filter_channel.command(name="add", require_var_positional=True)
+    @_filter_channel.command(name="add", require_var_positional=True, with_app_command=False)
     async def filter_channel_add(
         self,
         ctx: commands.Context,
@@ -279,7 +279,7 @@ class Filter(commands.Cog):
         else:
             await ctx.send(_("Words already in the filter."))
 
-    @_filter_channel.command(name="delete", aliases=["remove", "del"], require_var_positional=True)
+    @_filter_channel.command(name="delete", aliases=["remove", "del"], require_var_positional=True, with_app_command=False)
     async def filter_channel_remove(
         self,
         ctx: commands.Context,
@@ -308,7 +308,7 @@ class Filter(commands.Cog):
         else:
             await ctx.send(_("Those words weren't in the filter."))
 
-    @_filter.command(name="add", require_var_positional=True)
+    @_filter.command(name="add", require_var_positional=True, with_app_command=False)
     async def filter_add(self, ctx: commands.Context, *words: str):
         """Add words to the filter.
 
@@ -330,7 +330,7 @@ class Filter(commands.Cog):
         else:
             await ctx.send(_("Those words were already in the filter."))
 
-    @_filter.command(name="delete", aliases=["remove", "del"], require_var_positional=True)
+    @_filter.command(name="delete", aliases=["remove", "del"], require_var_positional=True, with_app_command=False)
     async def filter_remove(self, ctx: commands.Context, *words: str):
         """Remove words from the filter.
 

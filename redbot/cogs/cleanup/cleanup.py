@@ -1,4 +1,4 @@
-import contextlib
+﻿import contextlib
 import logging
 from datetime import datetime, timedelta, timezone
 from typing import Callable, List, Optional, Set, Union
@@ -182,7 +182,7 @@ class Cleanup(commands.Cog):
                 pass
         return message
 
-    @commands.group()
+    @commands.hybrid_group()
     async def cleanup(self, ctx: commands.Context):
         """Base command for deleting messages."""
         pass
@@ -751,7 +751,7 @@ class Cleanup(commands.Cog):
         await mass_purge(to_delete, ctx.channel, reason="Duplicate message cleanup")
         await self.send_optional_notification(len(to_delete), ctx.channel, subtract_invoking=True)
 
-    @commands.group()
+    @commands.hybrid_group()
     @commands.admin_or_permissions(manage_messages=True)
     async def cleanupset(self, ctx: commands.Context):
         """Manage the settings for the cleanup command."""

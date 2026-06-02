@@ -1,4 +1,4 @@
-import re
+﻿import re
 from io import BytesIO
 from pathlib import Path
 
@@ -30,7 +30,7 @@ log = getLogger("red.cogs.Audio.cog.Commands.lavalink_setup")
 _ = Translator("Audio", Path(__file__))
 
 
-class LavalinkSetupJavaCommand(commands.Command):
+class LavalinkSetupJavaCommand(commands.HybridCommand):
     def format_text_for_context(self, ctx: commands.Context, text: str) -> str:
         text = super().format_text_for_context(ctx, text)
         return text.format(
@@ -41,7 +41,7 @@ class LavalinkSetupJavaCommand(commands.Command):
 
 
 class LavalinkSetupCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.group(name="llset")
+    @commands.hybrid_group(name="llset")
     @commands.is_owner()
     @commands.bot_has_permissions(embed_links=True)
     async def command_llset(self, ctx: commands.Context):

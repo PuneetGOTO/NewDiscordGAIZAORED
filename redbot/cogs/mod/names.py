@@ -1,4 +1,4 @@
-import datetime
+﻿import datetime
 from typing import List, Tuple, cast
 
 import discord
@@ -30,7 +30,7 @@ class ModInfo(MixinMeta):
         nicks = list(map(escape_spoilers_and_mass_mentions, filter(None, nicks)))
         return usernames, display_names, nicks
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(manage_nicknames=True)
     @commands.admin_or_permissions(manage_nicknames=True)
@@ -169,7 +169,7 @@ class ModInfo(MixinMeta):
             string += f"{status_string}\n"
         return string
 
-    @commands.command()
+    @commands.hybrid_command()
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def userinfo(self, ctx, *, member: discord.Member = None):
@@ -303,7 +303,7 @@ class ModInfo(MixinMeta):
 
         await ctx.send(embed=data)
 
-    @commands.command()
+    @commands.hybrid_command()
     async def names(self, ctx: commands.Context, *, member: discord.Member):
         """Show previous usernames, global display names, and server nicknames of a member."""
         usernames, display_names, nicks = await self.get_names(member)

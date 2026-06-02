@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import re
 import random
 from datetime import datetime, timedelta
@@ -260,7 +260,7 @@ class CustomCommands(commands.Cog):
 
         await self.commandobj.redact_author_ids(user_id)
 
-    @commands.group(aliases=["cc"])
+    @commands.hybrid_group(aliases=["cc"])
     @commands.guild_only()
     async def customcom(self, ctx: commands.Context):
         """Base command for Custom Commands management."""

@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 import time
 from pathlib import Path
@@ -25,7 +25,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.command(name="disconnect")
+    @commands.hybrid_command(name="disconnect")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_disconnect(self, ctx: commands.Context):
@@ -79,7 +79,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
             self._ll_guild_updates.discard(ctx.guild.id)
             await self.api_interface.persistent_queue_api.drop(ctx.guild.id)
 
-    @commands.command(name="now")
+    @commands.hybrid_command(name="now")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     @commands.bot_can_react()
@@ -194,7 +194,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
         elif react == "close":
             await message.delete()
 
-    @commands.command(name="pause")
+    @commands.hybrid_command(name="pause")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_pause(self, ctx: commands.Context):
@@ -236,7 +236,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
 
         await self.send_embed_msg(ctx, title=_("Nothing playing."))
 
-    @commands.command(name="prev")
+    @commands.hybrid_command(name="prev")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_prev(self, ctx: commands.Context):
@@ -299,7 +299,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
             embed = discord.Embed(title=_("Replaying Track"), description=description)
             await self.send_embed_msg(ctx, embed=embed)
 
-    @commands.command(name="seek")
+    @commands.hybrid_command(name="seek")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_seek(self, ctx: commands.Context, seconds: Union[int, str]):
@@ -384,7 +384,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
         else:
             await self.send_embed_msg(ctx, title=_("Nothing playing."))
 
-    @commands.group(name="shuffle", autohelp=False)
+    @commands.hybrid_group(name="shuffle", autohelp=False)
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_shuffle(self, ctx: commands.Context):
@@ -469,7 +469,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
         if self._player_check(ctx):
             await self.set_player_settings(ctx)
 
-    @commands.command(name="skip")
+    @commands.hybrid_command(name="skip")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_skip(self, ctx: commands.Context, skip_to_track: int = None):
@@ -559,7 +559,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
         else:
             return await self._skip_action(ctx, skip_to_track)
 
-    @commands.command(name="stop")
+    @commands.hybrid_command(name="stop")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_stop(self, ctx: commands.Context):
@@ -614,7 +614,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
             await self.send_embed_msg(ctx, title=_("Stopping..."))
             await self.api_interface.persistent_queue_api.drop(ctx.guild.id)
 
-    @commands.command(name="summon")
+    @commands.hybrid_command(name="summon")
     @commands.guild_only()
     @commands.cooldown(1, 15, commands.BucketType.guild)
     @commands.bot_has_permissions(embed_links=True)
@@ -693,7 +693,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
                 description=_("Connection to the Lavalink node has not yet been established."),
             )
 
-    @commands.command(name="volume")
+    @commands.hybrid_command(name="volume")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_volume(self, ctx: commands.Context, vol: int = None):
@@ -740,7 +740,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
             embed.set_footer(text=_("Nothing playing."))
         await self.send_embed_msg(ctx, embed=embed)
 
-    @commands.command(name="repeat")
+    @commands.hybrid_command(name="repeat")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_repeat(self, ctx: commands.Context):
@@ -784,7 +784,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
         if self._player_check(ctx):
             await self.set_player_settings(ctx)
 
-    @commands.command(name="remove")
+    @commands.hybrid_command(name="remove")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_remove(self, ctx: commands.Context, index_or_url: Union[int, str]):
@@ -861,7 +861,7 @@ class PlayerControllerCommands(MixinMeta, metaclass=CompositeMetaClass):
                     ).format(removed_tracks=removed_tracks),
                 )
 
-    @commands.command(name="bump")
+    @commands.hybrid_command(name="bump")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_bump(self, ctx: commands.Context, index: int):

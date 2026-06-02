@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 import os
 import tarfile
@@ -30,7 +30,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class AudioSetCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.group(name="audioset")
+    @commands.hybrid_group(name="audioset")
     @commands.bot_has_permissions(embed_links=True)
     async def command_audioset(self, ctx: commands.Context):
         """Music configuration options."""

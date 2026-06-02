@@ -1,4 +1,4 @@
-import contextlib
+﻿import contextlib
 import math
 import time
 from pathlib import Path
@@ -32,7 +32,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class PlayerCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.command(name="play")
+    @commands.hybrid_command(name="play")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_play(self, ctx: commands.Context, *, query: str):
@@ -138,7 +138,7 @@ class PlayerCommands(MixinMeta, metaclass=CompositeMetaClass):
             self.update_player_lock(ctx, False)
             raise e
 
-    @commands.command(name="bumpplay")
+    @commands.hybrid_command(name="bumpplay")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_bumpplay(
@@ -350,7 +350,7 @@ class PlayerCommands(MixinMeta, metaclass=CompositeMetaClass):
 
         self.update_player_lock(ctx, False)
 
-    @commands.command(name="genre")
+    @commands.hybrid_command(name="genre")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def command_genre(self, ctx: commands.Context):
@@ -539,7 +539,7 @@ class PlayerCommands(MixinMeta, metaclass=CompositeMetaClass):
             ctx, title=_("Couldn't find tracks for the selected playlist.")
         )
 
-    @commands.command(name="autoplay")
+    @commands.hybrid_command(name="autoplay")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     @commands.mod_or_permissions(manage_guild=True)
@@ -635,7 +635,7 @@ class PlayerCommands(MixinMeta, metaclass=CompositeMetaClass):
         elif player.current:
             await self.send_embed_msg(ctx, title=_("Adding a track to queue."))
 
-    @commands.command(name="search")
+    @commands.hybrid_command(name="search")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     @commands.bot_can_react()

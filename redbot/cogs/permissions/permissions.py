@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import io
 import textwrap
 from copy import copy
@@ -200,7 +200,7 @@ class Permissions(commands.Cog):
         # this delegates to permissions rules, do not change to False which would deny
         return None
 
-    @commands.group()
+    @commands.hybrid_group()
     async def permissions(self, ctx: commands.Context):
         """Command permission management tools."""
         pass
@@ -372,7 +372,7 @@ class Permissions(commands.Cog):
         await self._permissions_acl_set(ctx, guild_id=ctx.guild.id, update=True)
 
     @commands.is_owner()
-    @permissions.command(name="addglobalrule", require_var_positional=True)
+    @permissions.command(name="addglobalrule", require_var_positional=True, with_app_command=False)
     async def permissions_addglobalrule(
         self,
         ctx: commands.Context,
@@ -401,7 +401,7 @@ class Permissions(commands.Cog):
     @commands.guild_only()
     @commands.guildowner_or_permissions(administrator=True)
     @permissions.command(
-        name="addserverrule", aliases=["addguildrule"], require_var_positional=True
+        name="addserverrule", aliases=["addguildrule"], require_var_positional=True, with_app_command=False
     )
     async def permissions_addguildrule(
         self,
@@ -429,7 +429,7 @@ class Permissions(commands.Cog):
         await ctx.send(_("Rule added."))
 
     @commands.is_owner()
-    @permissions.command(name="removeglobalrule", require_var_positional=True)
+    @permissions.command(name="removeglobalrule", require_var_positional=True, with_app_command=False)
     async def permissions_removeglobalrule(
         self,
         ctx: commands.Context,
@@ -450,7 +450,7 @@ class Permissions(commands.Cog):
     @commands.guild_only()
     @commands.guildowner_or_permissions(administrator=True)
     @permissions.command(
-        name="removeserverrule", aliases=["removeguildrule"], require_var_positional=True
+        name="removeserverrule", aliases=["removeguildrule"], require_var_positional=True, with_app_command=False
     )
     async def permissions_removeguildrule(
         self,

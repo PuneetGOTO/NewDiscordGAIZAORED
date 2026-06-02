@@ -1,4 +1,4 @@
-import asyncio
+﻿import asyncio
 import contextlib
 import re
 from pathlib import Path
@@ -22,7 +22,7 @@ _ = Translator("Audio", Path(__file__))
 
 
 class EqualizerCommands(MixinMeta, metaclass=CompositeMetaClass):
-    @commands.group(name="eq", invoke_without_command=True)
+    @commands.hybrid_group(name="eq", invoke_without_command=True)
     @commands.guild_only()
     @commands.cooldown(1, 15, commands.BucketType.guild)
     @commands.bot_has_permissions(embed_links=True)
