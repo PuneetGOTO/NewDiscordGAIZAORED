@@ -2494,6 +2494,14 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             return
 
         async with ctx.typing():
+            # 先顯示當前狀態
+            current_active = len(self.bot.tree._global_commands)
+            current_disabled = len(self.bot.tree._disabled_global_commands)
+            log.info(
+                "slash_all: active=%d, disabled=%d before reset",
+                current_active, current_disabled,
+            )
+
             # 清除所有已儲存的啟用設定，觸發全新安裝邏輯
             async with self.bot._config.all() as cfg:
                 cfg["enabled_slash_commands"] = {}
@@ -2503,10 +2511,16 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             # 重新掃描：空設定 = 全新安裝 = 自動啟用全部
             await self.bot.tree.red_check_enabled()
 
-            enabled_count = len(self.bot.tree._global_commands)
+            after_active = len(self.bot.tree._global_commands)
+            after_disabled = len(self.bot.tree._disabled_global_commands)
+            log.info(
+                "slash_all: active=%d, disabled=%d after red_check_enabled",
+                after_active, after_disabled,
+            )
 
             try:
                 commands = await self.bot.tree.sync()
+                log.info("slash_all: discord returned %d commands", len(commands))
             except discord.Forbidden:
                 await ctx.send(
                     _(
@@ -2517,8 +2531,10 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
                 return
 
         await ctx.send(
-            _("Enabled {enabled} slash commands and synced {synced} to Discord.").format(
-                enabled=enabled_count, synced=len(commands)
+            _("Enabled {enabled} slash commands and synced {synced} to Discord.\n"
+              "(active={active}, disabled={disabled} before reset)").format(
+                enabled=after_active, synced=len(commands),
+                active=current_active, disabled=current_disabled,
             )
         )
 
