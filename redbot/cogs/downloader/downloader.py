@@ -691,7 +691,7 @@ class Downloader(commands.Cog):
 
         await ctx.send(msg)
 
-    @repo.command(name="update")
+    @repo.command(name="update", with_app_command=False)
     async def _repo_update(self, ctx: commands.Context, *repos: Repo) -> None:
         """Update all repos, or ones of your choosing.
 

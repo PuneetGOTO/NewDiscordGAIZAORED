@@ -237,7 +237,7 @@ class Economy(commands.Cog):
 
     @bank.is_owner_if_bank_global()
     @commands.admin_or_permissions(manage_guild=True)
-    @_bank.command(name="set")
+    @_bank.command(name="set", with_app_command=False)
     async def _set(self, ctx: commands.Context, to: discord.Member, creds: SetParser):
         """Set the balance of a user's bank account.
 
