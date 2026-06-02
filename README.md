@@ -4,7 +4,7 @@
   <br>
 </h1>
 
-<h4 align="center">多功能 Discord 機器人 | 音樂、管理、問答、直播通知、經濟系統 | 支援中英雙語</h4>
+<h4 align="center">多功能 Discord 機器人 | 音樂、管理、問答、直播通知、經濟系統 | 支援中英雙語 (繁簡體皆可)</h4>
 <h5 align="center">基於 <a href="https://github.com/Cog-Creators/Red-DiscordBot">Red-DiscordBot</a> 二次開發 | 全面支援 Slash Commands + 文字前綴雙模式</h5>
 
 <p align="center">
@@ -38,7 +38,7 @@
 # 概述
 
 這是一個功能完整的 Discord 機器人，採用模組化設計，所有功能和指令皆可自由啟用/停用。
-內建 **簡體中文 (zh-CN)** 與 **英文 (en-US)** 雙語支援，可隨時切換。
+內建 **繁體中文 (zh-TW)**、**簡體中文 (zh-CN)** 與 **英文 (en-US)** 三語支援，可隨時切換。
 
 這是一個 **自託管機器人** – 你需要自行架設和維護自己的實例。
 
@@ -86,7 +86,7 @@ sudo ./deploy_redbot.sh
 - ✅ 安裝 Python 3.11 及所有依賴
 - ✅ 安裝 Java (音樂功能可選)
 - ✅ 配置 Discord Token、前綴、擁有者
-- ✅ 設定默認語言為簡體中文
+- ✅ 設定默認語言為繁體中文
 - ✅ 建立 systemd 服務 (開機自動啟動)
 
 ---
@@ -123,7 +123,7 @@ redbot <實例名稱> --token <你的Token> --prefix !
 啟動後在 Discord 中設定語言：
 
 ```
-!set locale global zh-CN
+!set locale global zh-TW
 ```
 
 ---
@@ -161,9 +161,10 @@ redbot <實例名稱> --token <你的Token> --prefix !
 
 | 命令 | 說明 |
 |------|------|
+| `!set locale zh-TW` | 當前伺服器切換為繁體中文 |
 | `!set locale zh-CN` | 當前伺服器切換為簡體中文 |
 | `!set locale en-US` | 切換為英文 |
-| `!set locale global zh-CN` | 全局切換為簡體中文 |
+| `!set locale global zh-TW` | 全局切換為繁體中文 |
 | `!set locale default` | 恢復預設語言 |
 
 ---

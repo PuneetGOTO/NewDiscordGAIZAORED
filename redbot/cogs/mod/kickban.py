@@ -299,22 +299,21 @@ class KickBanMixin(MixinMeta):
                     changed = True
         return changed
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="踢出該用戶")
     @commands.guild_only()
     @commands.bot_has_permissions(kick_members=True)
     @commands.admin_or_permissions(kick_members=True)
     async def kick(self, ctx: commands.Context, member: discord.Member, *, reason: str = None):
         """
-        Kick a user.
+        踢出一個用戶。
 
-        Examples:
-        - `[p]kick 428675506947227648 wanted to be kicked.`
-            This will kick the user with ID 428675506947227648 from the server.
-        - `[p]kick @Twentysix wanted to be kicked.`
-            This will kick Twentysix from the server.
+        範例：
+        - `[p]踢出該用戶 428675506947227648 想要被踢。`
+            這將從伺服器中踢出 ID 為 428675506947227648 的用戶。
+        - `[p]踢出該用戶 @Twentysix 想要被踢。`
+            這將從伺服器中踢出 Twentysix。
 
-        If a reason is specified, it will be the reason that shows up
-        in the audit log.
+        如果指定了原因，它將會顯示在審核日誌中。
         """
         author = ctx.author
         guild = ctx.guild
@@ -383,7 +382,7 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. That felt good."))
 
-    @commands.hybrid_command(with_app_command=False)
+    @commands.hybrid_command(with_app_command=False, name="封禁該用戶")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -395,19 +394,19 @@ class KickBanMixin(MixinMeta):
         *,
         reason: str = None,
     ):
-        """Ban a user from this server and optionally delete days of messages.
+        """封禁該用戶並可選擇刪除過去幾天的訊息。
 
-        `days` is the amount of days of messages to cleanup on ban.
+        `days` 是封禁時要清理的訊息天數。
 
-        Examples:
-        - `[p]ban 428675506947227648 7 Continued to spam after told to stop.`
-            This will ban the user with ID 428675506947227648 and it will delete 7 days worth of messages.
-        - `[p]ban @Twentysix 7 Continued to spam after told to stop.`
-            This will ban Twentysix and it will delete 7 days worth of messages.
+        範例：
+        - `[p]封禁該用戶 428675506947227648 7 被告知停止後繼續洗頻。`
+            這將封禁 ID 為 428675506947227648 的用戶，並刪除其過去 7 天的訊息。
+        - `[p]封禁該用戶 @Twentysix 7 被告知停止後繼續洗頻。`
+            這將封禁 Twentysix，並刪除其過去 7 天的訊息。
 
-        A user ID should be provided if the user is not a member of this server.
-        If days is not a number, it's treated as the first word of the reason.
-        Minimum 0 days, maximum 7. If not specified, the defaultdays setting will be used instead.
+        如果該用戶不是此伺服器的成員，應提供用戶 ID。
+        如果 days 不是數字，則將其視為原因的第一個字。
+        最少 0 天，最多 7 天。如果未指定，則將使用 defaultdays 設定。
         """
         guild = ctx.guild
         if days is None:
@@ -421,7 +420,7 @@ class KickBanMixin(MixinMeta):
 
         await ctx.send(message)
 
-    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]", with_app_command=False)
+    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]", with_app_command=False, name="大量封禁")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -433,16 +432,16 @@ class KickBanMixin(MixinMeta):
         *,
         reason: str = None,
     ):
-        """Mass bans user(s) from the server.
+        """從伺服器大量封禁用戶。
 
-        `days` is the amount of days of messages to cleanup on massban.
+        `days` 是大量封禁時要清理的訊息天數。
 
-        Example:
-           - `[p]massban 345628097929936898 57287406247743488 7 they broke all rules.`
-            This will ban all the added userids and delete 7 days worth of their messages.
+        範例：
+           - `[p]大量封禁 345628097929936898 57287406247743488 7 他們違反了所有規定。`
+            這將封禁所有添加的用戶 ID，並刪除他們過去 7 天的訊息。
 
-        User IDs need to be provided in order to ban
-        using this command.
+        使用此指令進行封禁時
+        必須提供用戶 ID。
         """
         banned = []
         errors = {}
@@ -600,7 +599,7 @@ class KickBanMixin(MixinMeta):
             )
         await show_results()
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="暫時封禁該用戶")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
@@ -613,18 +612,18 @@ class KickBanMixin(MixinMeta):
         *,
         reason: str = None,
     ):
-        """Temporarily ban a user from this server.
+        """從此伺服器暫時封禁一名用戶。
 
-        `duration` is the amount of time the user should be banned for.
-        `days` is the amount of days of messages to cleanup on tempban.
+        `duration` 是用戶應被封禁的時間量。
+        `days` 是暫時封禁時要清理的訊息天數。
 
-        Examples:
-        - `[p]tempban @Twentysix Because I say so`
-            This will ban Twentysix for the default amount of time set by an administrator.
-        - `[p]tempban @Twentysix 15m You need a timeout`
-            This will ban Twentysix for 15 minutes.
-        - `[p]tempban 428675506947227648 1d2h15m 5 Evil person`
-            This will ban the user with ID 428675506947227648 for 1 day 2 hours 15 minutes and will delete the last 5 days of their messages.
+        範例：
+        - `[p]暫時封禁該用戶 @Twentysix 因為我這麼說`
+            這將在管理員設定的預設時間內封禁 Twentysix。
+        - `[p]暫時封禁該用戶 @Twentysix 15m 你需要暫停一下`
+            這將封禁 Twentysix 15 分鐘。
+        - `[p]暫時封禁該用戶 428675506947227648 1d2h15m 5 邪惡的人`
+            這將封禁 ID 為 428675506947227648 的用戶 1 天 2 小時 15 分鐘，並將刪除他們過去 5 天的訊息。
         """
         guild = ctx.guild
         author = ctx.author
@@ -725,12 +724,12 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. Enough chaos for now."))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="軟封禁")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
     async def softban(self, ctx: commands.Context, member: discord.Member, *, reason: str = None):
-        """Kick a user and delete 1 day's worth of their messages."""
+        """踢出一個用戶並刪除其過去1天的訊息。"""
         guild = ctx.guild
         author = ctx.author
 
@@ -818,13 +817,13 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. Enough chaos."))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="語音踢出")
     @commands.guild_only()
     @commands.mod_or_permissions(move_members=True)
     async def voicekick(
         self, ctx: commands.Context, member: discord.Member, *, reason: str = None
     ):
-        """Kick a member from a voice channel."""
+        """將一名成員從語音頻道中踢出。"""
         if reason is None and await self.config.guild(ctx.guild).require_reason():
             await ctx.send(_("You must provide a reason for the voice kick."))
             return
@@ -869,13 +868,13 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("User has been kicked from the voice channel."))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="解除語音封禁")
     @commands.guild_only()
     @commands.admin_or_permissions(mute_members=True, deafen_members=True)
     async def voiceunban(
         self, ctx: commands.Context, member: discord.Member, *, reason: str = None
     ):
-        """Unban a user from speaking and listening in the server's voice channels."""
+        """解除用戶在伺服器語音頻道中的發言和聆聽限制。"""
         if reason is None and await self.config.guild(ctx.guild).require_reason():
             await ctx.send(_("You must provide a reason for the voice unban."))
             return
@@ -916,11 +915,11 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User is now allowed to speak and listen in voice channels."))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="語音封禁")
     @commands.guild_only()
     @commands.admin_or_permissions(mute_members=True, deafen_members=True)
     async def voiceban(self, ctx: commands.Context, member: discord.Member, *, reason: str = None):
-        """Ban a user from speaking and listening in the server's voice channels."""
+        """禁止用戶在伺服器語音頻道中發言和聆聽。"""
         if reason is None and await self.config.guild(ctx.guild).require_reason():
             await ctx.send(_("You must provide a reason for the voice ban."))
             return
@@ -961,18 +960,18 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User has been banned from speaking or listening in voice channels."))
 
-    @commands.hybrid_command(with_app_command=False)
+    @commands.hybrid_command(with_app_command=False, name="解除封禁")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
     async def unban(
         self, ctx: commands.Context, user_id: RawUserIdConverter, *, reason: str = None
     ):
-        """Unban a user from this server.
+        """從此伺服器解除封禁一名用戶。
 
-        Requires specifying the target user's ID. To find this, you may either:
-        1. Copy it from the mod log case (if one was created), or
-        2. Enable Developer Mode, go to Bans in this server's settings, right-click the user and select 'Copy ID'.
+        需要指定目標用戶的 ID。若要尋找此 ID，您可以：
+        1. 從審核日誌案例中複製（如果已建立），或
+        2. 啟用開發者模式，前往此伺服器設定中的「封鎖名單」，右鍵點擊用戶並選擇「複製 ID」。
         """
         if reason is None and await self.config.guild(ctx.guild).require_reason():
             await ctx.send(_("You must provide a reason for the unban."))

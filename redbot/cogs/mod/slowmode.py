@@ -13,7 +13,7 @@ class Slowmode(MixinMeta):
     Commands regarding channel slowmode management.
     """
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="慢速模式")
     @commands.guild_only()
     @commands.bot_can_manage_channel()
     @commands.admin_or_can_manage_channel()
@@ -25,10 +25,10 @@ class Slowmode(MixinMeta):
             minimum=timedelta(seconds=0), maximum=timedelta(hours=6), default_unit="seconds"
         ) = timedelta(seconds=0),
     ):
-        """Changes thread's or text channel's slowmode setting.
+        """更改討論串或文字頻道的慢速模式設定。
 
-        Interval can be anything from 0 seconds to 6 hours.
-        Use without parameters to disable.
+        時間間隔可以從 0 秒到 6 小時。
+        不帶參數使用此指令將會停用慢速模式。
         """
         seconds = interval.total_seconds()
         await ctx.channel.edit(slowmode_delay=seconds)

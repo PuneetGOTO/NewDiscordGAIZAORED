@@ -30,14 +30,14 @@ class ModInfo(MixinMeta):
         nicks = list(map(escape_spoilers_and_mass_mentions, filter(None, nicks)))
         return usernames, display_names, nicks
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="重新命名")
     @commands.guild_only()
     @commands.bot_has_permissions(manage_nicknames=True)
     @commands.admin_or_permissions(manage_nicknames=True)
     async def rename(self, ctx: commands.Context, member: discord.Member, *, nickname: str = ""):
-        """Change a member's server nickname.
+        """更改成員的伺服器暱稱。
 
-        Leaving the nickname argument empty will remove it.
+        將暱稱參數留空將會移除暱稱。
         """
         nickname = nickname.strip()
         me = cast(discord.Member, ctx.me)
@@ -169,17 +169,15 @@ class ModInfo(MixinMeta):
             string += f"{status_string}\n"
         return string
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="用戶資訊")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def userinfo(self, ctx, *, member: discord.Member = None):
-        """Show information about a member.
+        """顯示成員的詳細資訊。
 
-        This includes fields for status, discord join date, server
-        join date, voice state and previous usernames/global display names/nicknames.
+        包含：狀態、加入 Discord 日期、加入伺服器日期、語音狀態、以及之前的用戶名/全域顯示名稱/暱稱。
 
-        If the member has no roles, previous usernames, global display names, or server nicknames,
-        these fields will be omitted.
+        如果成員沒有任何身分組、之前的用戶名、全域顯示名稱或暱稱，這些欄位將會被省略。
         """
         author = ctx.author
         guild = ctx.guild
@@ -303,9 +301,9 @@ class ModInfo(MixinMeta):
 
         await ctx.send(embed=data)
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="歷史名稱")
     async def names(self, ctx: commands.Context, *, member: discord.Member):
-        """Show previous usernames, global display names, and server nicknames of a member."""
+        """顯示成員以前的用戶名、全域顯示名稱和伺服器暱稱。"""
         usernames, display_names, nicks = await self.get_names(member)
         parts = []
         for header, names in (

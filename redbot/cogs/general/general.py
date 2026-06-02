@@ -83,14 +83,14 @@ class General(commands.Cog):
         """Nothing to delete"""
         return
 
-    @commands.hybrid_command(usage="<first> <second> [others...]")
+    @commands.hybrid_command(usage="<first> <second> [others...]", name="選擇")
     async def choose(self, ctx, *choices):
-        """Choose between multiple options.
+        """在多個選項中做出選擇。
 
-        There must be at least 2 options to pick from.
-        Options are separated by spaces.
+        至少必須有 2 個選項可供選擇。
+        選項之間以空格分隔。
 
-        To denote options which include whitespace, you should enclose the options in double quotes.
+        若要表示包含空白字元的選項，您應該將該選項用雙引號括起來。
         """
         choices = [escape(c, mass_mentions=True) for c in choices if c]
         if len(choices) < 2:
@@ -98,13 +98,13 @@ class General(commands.Cog):
         else:
             await ctx.send(choice(choices))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="擲骰子")
     async def roll(self, ctx, number: int = 100):
-        """Roll a random number.
+        """擲出一個隨機數字。
 
-        The result will be between 1 and `<number>`.
+        結果將介於 1 和 `<number>` 之間。
 
-        `<number>` defaults to 100.
+        `<number>` 預設為 100。
         """
         author = ctx.author
         if 1 < number <= MAX_ROLL:
@@ -123,11 +123,11 @@ class General(commands.Cog):
                 )
             )
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="翻轉")
     async def flip(self, ctx, user: discord.Member = None):
-        """Flip a coin... or a user.
+        """扔硬幣...或者翻轉一個用戶。
 
-        Defaults to a coin.
+        預設為扔硬幣。
         """
         if user is not None:
             msg = ""
@@ -146,9 +146,9 @@ class General(commands.Cog):
         else:
             await ctx.send(_("*flips a coin and... ") + choice([_("HEADS!*"), _("TAILS!*")]))
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="剪刀石頭布")
     async def rps(self, ctx, your_choice: RPSParser):
-        """Play Rock Paper Scissors."""
+        """玩剪刀石頭布遊戲。"""
         author = ctx.author
         player_choice = your_choice.choice
         if not player_choice:
@@ -191,20 +191,20 @@ class General(commands.Cog):
                 )
             )
 
-    @commands.hybrid_command(name="8", aliases=["8ball"])
+    @commands.hybrid_command(name="神奇八號球", aliases=["8", "8ball"])
     async def _8ball(self, ctx, *, question: str):
-        """Ask 8 ball a question.
+        """向神奇八號球提問。
 
-        Question must end with a question mark.
+        問題必須以問號結尾。
         """
         if question.endswith("?") and question != "?":
             await ctx.send("`" + T_(choice(self.ball)) + "`")
         else:
             await ctx.send(_("That doesn't look like a question."))
 
-    @commands.hybrid_command(aliases=["sw"])
+    @commands.hybrid_command(aliases=["sw"], name="碼錶")
     async def stopwatch(self, ctx):
-        """Start or stop the stopwatch."""
+        """啟動或停止碼錶。"""
         author = ctx.author
         if author.id not in self.stopwatches:
             self.stopwatches[author.id] = int(time.perf_counter())
@@ -217,20 +217,20 @@ class General(commands.Cog):
             )
             self.stopwatches.pop(author.id, None)
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="搜尋連結")
     async def lmgtfy(self, ctx, *, search_terms: str):
-        """Create a lmgtfy link."""
+        """建立一個 LMGTFY 連結。"""
         search_terms = escape(urllib.parse.quote_plus(search_terms), mass_mentions=True)
         await ctx.send(
             f"https://cog-creators.github.io/lmgtfy/search?q={search_terms}&btnK=Google+Search"
         )
 
-    @commands.hybrid_command(hidden=True, with_app_command=False)
+    @commands.hybrid_command(hidden=True, with_app_command=False, name="抱抱")
     @commands.guild_only()
     async def hug(self, ctx, user: discord.Member, intensity: int = 1):
-        """Because everyone likes hugs!
+        """因為每個人都喜歡擁抱！
 
-        Up to 10 intensity levels.
+        最多 10 個強度等級。
         """
         name = italics(user.display_name)
         if intensity <= 0:
@@ -248,15 +248,14 @@ class General(commands.Cog):
             raise RuntimeError
         await ctx.send(msg)
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(name="伺服器資訊")
     @commands.guild_only()
     @commands.bot_has_permissions(embed_links=True)
     async def serverinfo(self, ctx, details: bool = False):
-        """
-        Show server information.
+        """顯示伺服器資訊。
 
-        `details`: Shows more information when set to `True`.
-        Default to False.
+        `details`: 當設定為 `True` 時顯示更多資訊。
+        預設為 False。
         """
         guild = ctx.guild
         created_at = _("Created on {date_and_time}. That's {relative_time}!").format(
