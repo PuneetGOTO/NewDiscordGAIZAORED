@@ -2066,7 +2066,10 @@ class Red(
                 if permissions_not_loaded:
                     subcommand.requires.ready_event.set()
         if isinstance(command, (commands.HybridCommand, commands.HybridGroup)):
-            command.app_command.extras = command.extras
+            try:
+                command.app_command.extras = command.extras
+            except AttributeError:
+                pass
 
     def remove_command(self, name: str, /) -> Optional[commands.Command]:
         command = super().remove_command(name)

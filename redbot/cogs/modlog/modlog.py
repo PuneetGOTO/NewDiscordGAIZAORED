@@ -46,7 +46,7 @@ class ModLog(commands.Cog):
                 )
                 await ctx.send(message)
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(with_app_command=False)
     @commands.guild_only()
     async def casesfor(self, ctx: commands.Context, *, member: Union[discord.Member, int]):
         """Display cases for the specified member."""
@@ -85,7 +85,7 @@ class ModLog(commands.Cog):
 
         await menu(ctx, rendered_cases)
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(with_app_command=False)
     @commands.guild_only()
     async def listcases(self, ctx: commands.Context, *, member: Union[discord.Member, int]):
         """List cases for the specified member."""

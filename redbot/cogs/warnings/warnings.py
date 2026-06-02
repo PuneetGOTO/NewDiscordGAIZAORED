@@ -598,7 +598,7 @@ class Warnings(commands.Cog):
             channel=None,
         )
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(with_app_command=False)
     @commands.guild_only()
     @commands.admin()
     async def warnings(self, ctx: commands.Context, member: Union[discord.Member, int]):
@@ -697,7 +697,7 @@ class Warnings(commands.Cog):
                 box_lang=_("Warnings for {user}").format(user=user),
             )
 
-    @commands.hybrid_command()
+    @commands.hybrid_command(with_app_command=False)
     @commands.guild_only()
     @commands.admin_or_permissions(ban_members=True)
     async def unwarn(
