@@ -382,14 +382,14 @@ class KickBanMixin(MixinMeta):
             )
             await ctx.send(_("Done. That felt good."))
 
-    @commands.hybrid_command(with_app_command=False, name="封禁該用戶")
+    @commands.hybrid_command(name="封禁該用戶")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
     async def ban(
         self,
         ctx: commands.Context,
-        user: Union[discord.Member, RawUserIdConverter],
+        member: discord.Member,
         days: Optional[int] = None,
         *,
         reason: str = None,
@@ -411,6 +411,8 @@ class KickBanMixin(MixinMeta):
         guild = ctx.guild
         if days is None:
             days = await self.config.guild(guild).default_days()
+        
+        user = member
         if isinstance(user, int):
             user = self.bot.get_user(user) or discord.Object(id=user)
 
@@ -420,14 +422,14 @@ class KickBanMixin(MixinMeta):
 
         await ctx.send(message)
 
-    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]", with_app_command=False, name="大量封禁")
+    @commands.hybrid_command(aliases=["hackban"], usage="<user_ids...> [days] [reason]", name="大量封禁")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
     async def massban(
         self,
         ctx: commands.Context,
-        user_ids: commands.Greedy[RawUserIdConverter],
+        user_ids: str,
         days: Optional[int] = None,
         *,
         reason: str = None,
@@ -470,7 +472,14 @@ class KickBanMixin(MixinMeta):
         def remove_processed(ids):
             return [_id for _id in ids if _id not in banned and _id not in errors]
 
-        user_ids = list(set(user_ids))  # No dupes
+        # Parsing user_ids from string to list of ints
+        try:
+            user_id_list = [int(i) for i in user_ids.split()]
+        except ValueError:
+            await ctx.send(_("Invalid User ID(s) provided."))
+            return
+        
+        user_ids = user_id_list
 
         author = ctx.author
         guild = ctx.guild
@@ -960,12 +969,12 @@ class KickBanMixin(MixinMeta):
         )
         await ctx.send(_("User has been banned from speaking or listening in voice channels."))
 
-    @commands.hybrid_command(with_app_command=False, name="解除封禁")
+    @commands.hybrid_command(name="解除封禁")
     @commands.guild_only()
     @commands.bot_has_permissions(ban_members=True)
     @commands.admin_or_permissions(ban_members=True)
     async def unban(
-        self, ctx: commands.Context, user_id: RawUserIdConverter, *, reason: str = None
+        self, ctx: commands.Context, user_id: int, *, reason: str = None
     ):
         """從此伺服器解除封禁一名用戶。
 

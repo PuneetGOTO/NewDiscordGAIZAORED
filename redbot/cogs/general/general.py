@@ -225,7 +225,7 @@ class General(commands.Cog):
             f"https://cog-creators.github.io/lmgtfy/search?q={search_terms}&btnK=Google+Search"
         )
 
-    @commands.hybrid_command(hidden=True, with_app_command=False, name="抱抱")
+    @commands.hybrid_command(hidden=True, name="抱抱")
     @commands.guild_only()
     async def hug(self, ctx, user: discord.Member, intensity: int = 1):
         """因為每個人都喜歡擁抱！
