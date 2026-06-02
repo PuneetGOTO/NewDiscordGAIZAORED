@@ -1955,6 +1955,50 @@ class Core(commands.commands._RuleDropper, commands.Cog, CoreLogic):
             for page in pagify(total_message):
                 await ctx.send(page)
 
+    @commands.hybrid_command()
+    @commands.is_owner()
+    async def reloadall(self, ctx: commands.Context):
+        """Reloads all loaded cog packages.
+
+        This is a convenience command that reloads every currently loaded cog.
+        Useful after updating cog source files.
+        """
+        pkg_names = list(self.bot.extensions.keys())
+        async with ctx.typing():
+            outcomes = await self._reload(pkg_names)
+
+        output = []
+        if loaded := outcomes["loaded_packages"]:
+            loaded_packages = humanize_list([inline(package) for package in loaded])
+            output.append(_("Reloaded {packs}.").format(packs=loaded_packages))
+
+        if failed := outcomes["failed_packages"]:
+            formed = _(
+                "Failed to reload the following packages: {packs}"
+                "\nCheck your console or logs for details."
+            ).format(packs=humanize_list([inline(package) for package in failed]))
+            output.append(formed)
+
+        if failed_with_reason := outcomes["failed_with_reason_packages"]:
+            reasons = "\n".join([f"`{x}`: {y}" for x, y in failed_with_reason.items()])
+            formed = _(
+                "These packages could not be reloaded for the following reasons:\n\n{reasons}"
+            ).format(reasons=reasons)
+            output.append(formed)
+
+        if repos_with_shared_libs := outcomes["repos_with_shared_libs"]:
+            formed = _(
+                "**WARNING**: The following repos are using shared libs: {repos}."
+            ).format(repos=humanize_list([inline(repo) for repo in repos_with_shared_libs]))
+            output.append(formed)
+
+        if output:
+            total_message = "\n\n".join(output)
+            for page in pagify(total_message):
+                await ctx.send(page)
+        else:
+            await ctx.send(_("No cogs were reloaded."))
+
     @staticmethod
     def _is_submodule(parent: str, child: str):
         return parent == child or child.startswith(parent + ".")
