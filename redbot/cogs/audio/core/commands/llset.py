@@ -375,7 +375,7 @@ class LavalinkSetupCommands(MixinMeta, metaclass=CompositeMetaClass):
         finally:
             temp_file.unlink()
 
-    @command_llset.group(name="config", aliases=["conf"])
+    @command_llset.group(name="config", aliases=["conf"], with_app_command=False)
     @has_managed_server()
     async def command_llset_config(self, ctx: commands.Context):
         """Configure the managed Lavalink node runtime options.

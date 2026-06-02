@@ -35,7 +35,7 @@ class AudioSetCommands(MixinMeta, metaclass=CompositeMetaClass):
     async def command_audioset(self, ctx: commands.Context):
         """Music configuration options."""
 
-    @command_audioset.group(name="restrictions")
+    @command_audioset.group(name="restrictions", with_app_command=False)
     @commands.mod_or_permissions(manage_guild=True)
     async def command_audioset_perms(self, ctx: commands.Context):
         """Manages the keyword whitelist and blacklist."""
